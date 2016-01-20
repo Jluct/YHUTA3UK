@@ -1,0 +1,6 @@
+echo "# YHUTA3UK" >> README.md
+git init
+git add README.md [add .]
+git commit -m "first commit"
+git remote add origin https://github.com/Jluct/YHUTA3UK.git [git@github.com:Jluct/YHUTA3UK.git]
+git push -u origin master

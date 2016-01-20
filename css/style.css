@@ -1,0 +1,199 @@
+/* header */
+
+body{
+    background: #DFE3F1;
+}
+
+.head {
+    background: rgba(250,250,250,.3);
+    width: 100%;
+}
+
+/* верхнее меню */
+
+
+.menu_light{
+    height:20px;
+}
+
+.menu_light li{
+    list-style-type: none;
+    float: left;
+    height: 100%;
+}
+
+.menu_light li a{
+    height: 100%;
+}
+
+
+/* основное меню */
+
+.menu_heavy{
+    margin: 10px 0;
+    padding: 15px 0;
+}
+
+.menu_heavy li{
+    background: #475071;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.menu_heavy li a{
+    color: white;
+}
+
+.menu_heavy li a:hover{
+    color: black;
+}
+
+.logo_img{
+    max-height: 100%;
+    height: 40px;
+}
+
+.btn_search{
+    display: block;
+}
+
+/* content index */
+
+/* слайдер */
+
+.item img{
+    display: inline-block !important;
+}
+.item{
+    text-align: center !important;
+}
+
+.big_photo{
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height:100%;
+    position: relative;
+}
+
+.big_photo img{
+    padding: 5px 10px;
+    max-width: 100%;
+    width:100%;
+}
+
+.hello{
+    position: absolute;
+    width:50%;
+    top:30%;
+    right:20%;
+    font-size: 150%;
+}
+
+.hello div{
+    color: whitesmoke;
+
+}
+
+
+/*
+Новости главная начало
+*/
+
+.actual_news {
+    position: relative;
+}
+
+.actual_news>div {
+    position: absolute;
+    top: 0;
+}
+
+.actual_news img{
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.news {
+    /*background: rgba(68, 137, 196, 0.72);*/
+}
+
+.small_news img{
+    max-height: 100%;
+    max-width: 100%;
+    float: left;
+}
+
+/*
+.small_news>div  {
+    max-height: 50%;
+}
+*/
+
+.small_news>div>div  {
+    /*    max-height: 50%;*/
+    /*    border: 1px solid red;*/
+}
+
+.actual_news {
+    position: relative;
+}
+
+.actual_news>div {
+    position: absolute;
+    top: 0;
+}
+
+.actual_news img{
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+/*
+Новости главная конец
+*/
+
+/*
+Новости начало
+*/
+.news_item{
+    padding: 20px 0px;
+    height: auto;
+
+
+}
+
+.news_item .col-sm-3{
+    /*    max-height: 200px;*/
+    overflow: hidden;
+
+}
+
+.news_item div{
+
+    max-height: 150px;
+    height: 100%;
+}
+
+.news_item img{
+
+    padding-top: 20px;
+    width: 50%;
+    max-width: 50%;
+
+}
+
+
+/*
+Специальности
+*/
+
+.specialty{
+    height:230px;
+    width: 48%;
+    float: left;
+    margin:1px;
+}
