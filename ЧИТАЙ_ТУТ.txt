@@ -4,3 +4,11 @@ git add README.md [add .]
 git commit -m "first commit"
 git remote add origin https://github.com/Jluct/YHUTA3UK.git [git@github.com:Jluct/YHUTA3UK.git]
 git push -u origin master
+
+git pull --no-commit
+
+git pull --rebase origin master,
+он убирает ваши локальные коммиты, обновляет ветку (обычно это fast-forward), и потом после обновления снова применяет ваши коммиты.
+А git fetch обновляет ваш origin репозиторий, но не применяет полученные изменения с вашими рабочими копиями
+
+$ git pull origin master
