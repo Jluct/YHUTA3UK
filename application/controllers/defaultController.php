@@ -16,5 +16,4 @@ class defaultController {
         echo $view->render('default.php');
     }
 
-
 } 

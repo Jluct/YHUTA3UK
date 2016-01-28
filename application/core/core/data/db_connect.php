@@ -7,7 +7,7 @@ class db_connect
     private static $hostname = 'localhost';
     private static $username = 'root';
     private static $password = '';
-    private static $base = 'maket';
+    private static $base = 'obuceisea';
 
     protected static function connect()
     {

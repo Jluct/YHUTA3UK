@@ -23,28 +23,29 @@ class menu extends getDataBase
                 }
             }
         }
+//        print_r($menu);
 
-//        echo(json_encode($menu));
 
-        $menuEnd="";
-            for($i=0;$i<count($menu);$i++){
-                if($menu[$i]['sub_menu']){
-                    $a = "<ul>";
-                    for($j=0;$j<count($menu[$i]['sub_menu']);$j++){
-                        $a.="<li role=\"presentation\"><a href='".$menu[$i]['sub_menu'][$j]['sub_menu_url'].$menu[$i]['sub_menu'][$j]['sub_menu_id']."'>".$menu[$i]['sub_menu'][$j]['sub_menu_title']."</a></li>";
+        $menuEnd = "";
+        for ($i = 0; $i < count($menu); $i++) {
+            if ($menu[$i]['sub_menu']) {
+                $a = "<ul class=\"dropdown-menu sub_menu\">";
+                for ($j = 0; $j < count($menu[$i]['sub_menu']); $j++) {
+                    $a .= "<li role=\"presentation\"><a  href='" . $menu[$i]['sub_menu'][$j]['sub_menu_url']."'>" . $menu[$i]['sub_menu'][$j]['sub_menu_title'] . "</a></li>";
 //                        echo $a;
-                    }
-                    $a.="</ul>";
-//                    die();
-                    $menuEnd.="<li role=\"presentation\"><a href='".$menu[$i]['menu_url']."'>".$menu[$i]['menu_title']."</a>".$a."</li>";
-                }else{
-                    $menuEnd.="<li role=\"presentation\"><a href='".$menu[$i]['menu_url']."'>".$menu[$i]['menu_title']."</a></li>";
                 }
-
+                $a .= "</ul>";
+//                    die();
+                $menuEnd[$menu[$i]['menu_type']] .= "<li class=\"dropdown\" role=\"presentation\"><a href='" . $menu[$i]['menu_url'] . "'>" . $menu[$i]['menu_title'] . "<span class=\"caret\"></span></a>" . $a . "</li>";
+            } else {
+                $menuEnd[$menu[$i]['menu_type']] .= "<li role=\"presentation\"><a href='" . $menu[$i]['menu_url'] . "'>" . $menu[$i]['menu_title'] . "</a></li>";
             }
+
+        }
 //        $menuEnd.="</ul>";
 
         return $menuEnd;
+
 
     }
 }

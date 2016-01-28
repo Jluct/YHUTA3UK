@@ -30,7 +30,7 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
         <? print_r ($_SESSION); ?>
         <div class="row">
             <div class="col-sm-8 menu_light">
-
+                <? echo $menu[2]; ?>
             </div>
             <div class="col-sm-4">
                 <?php require_once($authorization); ?>
@@ -43,9 +43,9 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
                 <img class="logo_img" src="images/imgTest.png">
                 Обучайся!
             </div>
-            <div class="col-sm-9">
-                <ul class="nav nav-pills">
-                    <? echo $menu ?>
+            <div class="col-sm-9 actual_menu">
+                <ul class="nav nav-tabs nav-justified menu_heavy">
+                    <? echo $menu[1]; ?>
                 </ul>
             </div>
             <div class="col-sm-1">
