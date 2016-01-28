@@ -11,7 +11,9 @@ require_once("/../include/header.php"); ?>
     <section class="container">
         <div class="row">
             <div class="col-sm-2">
-
+                <div class=\"btn-group-vertical\" role=\"group\">
+                    <? echo $typeMenu; ?>
+                </div>
             </div>
             <div class="col-sm-10">
                 <table class="table table-striped">
@@ -21,7 +23,7 @@ require_once("/../include/header.php"); ?>
                         <td>Имя</td>
                         <td>Кол-во учеников</td>
                     </tr>
-                    <? echo $wisdomData;?>
+                    <? echo $wisdomData; ?>
                 </table>
             </div>
         </div>
