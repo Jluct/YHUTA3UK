@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="833f6229-c3ee-4c63-b88f-a72512c60247" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/wisdom.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/wisdom1.php" />
       <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\controllers\authorization.php" afterPath="" />
       <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\controllers\educationsController.php" afterPath="" />
       <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\controllers\specialtyController.php" afterPath="" />
@@ -17,275 +15,10 @@
       <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\maket.sql" afterPath="" />
       <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ob.sql" afterPath="" />
       <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\obuceisea (1).sql" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/.gitignore" afterPath="$PROJECT_DIR$/kcfinder-3.12/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/cache/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/cache/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/conf/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/conf/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/doc/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/doc/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/integration/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/integration/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/tpl/.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/tpl/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/000._jquery.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/000._jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/css/000.base.css" afterPath="$PROJECT_DIR$/kcfinder-3.12/css/000.base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/002._jqueryui.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/002._jqueryui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/006.jquery.uniform.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/006.jquery.uniform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/01.ui.css" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/01.ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/default/01.ui.css" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/default/01.ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/010.jquery.fixes.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/010.jquery.fixes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/02.misc.css" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/02.misc.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/default/02.misc.css" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/default/02.misc.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/020.jquery.rightClick.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/020.jquery.rightClick.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/021.jquery.taphold.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/021.jquery.taphold.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/029.jquery.agent.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/029.jquery.agent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/030.jquery.helper.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/030.jquery.helper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/031.jquery.md5.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/031.jquery.md5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/040.object.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/040.object.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/041.dialogs.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/041.dialogs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/050.init.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/050.init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/060.toolbar.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/060.toolbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/070.settings.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/070.settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/080.files.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/080.files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/090.folders.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/090.folders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/091.menus.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/091.menus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/091.viewImage.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/091.viewImage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/100.clipboard.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/100.clipboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/110.dropUpload.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/110.dropUpload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/120.misc.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/120.misc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/css/999.agent.css" afterPath="$PROJECT_DIR$/kcfinder-3.12/css/999.agent.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/integration/BolmerCMS.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/integration/BolmerCMS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/doc/Changelog" afterPath="$PROJECT_DIR$/kcfinder-3.12/doc/Changelog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/doc/LICENSE.GPL" afterPath="$PROJECT_DIR$/kcfinder-3.12/doc/LICENSE.GPL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/doc/LICENSE.LGPL" afterPath="$PROJECT_DIR$/kcfinder-3.12/doc/LICENSE.LGPL" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/README.md" afterPath="$PROJECT_DIR$/ckeditor/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/README.md" afterPath="$PROJECT_DIR$/kcfinder-3.12/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/README" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/default/README" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/default/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/about/dialogs/about.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/about/dialogs/about.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/af.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/af.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/af.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/af.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/af.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/af.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/link/dialogs/anchor.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/link/dialogs/anchor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ar.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/autoload.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/cache/base.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/cache/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/bg.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/bg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/bg.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/bg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/bootstrap.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/browse.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/browse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/class/browser.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/class/browser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ca.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ca.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/ca.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/ca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/ckeditor.js" afterPath="$PROJECT_DIR$/ckeditor/ckeditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/class_fastImage.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/class_fastImage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image_gd.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image_gd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image_gmagick.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image_gmagick.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image_imagick.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/class_image_imagick.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/class_zipFolder.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/class_zipFolder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/config.js" afterPath="$PROJECT_DIR$/ckeditor/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/font/config.json" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/font/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/conf/config.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/conf/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/cs.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/cs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/css.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/css.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/default/css.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/default/css.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/cy.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/cy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/da.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/da.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/da.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/da.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/data/db_connect.php" afterPath="$PROJECT_DIR$/application/core/core/data/db_connect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/de.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/de.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/de.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/de.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/pastefromword/filter/default.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/pastefromword/filter/default.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/defaultController.php" afterPath="$PROJECT_DIR$/application/controllers/defaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/dialog/dialogDefinition.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/dialog/dialogDefinition.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/integration/drupal.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/integration/drupal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/el.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/el.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/el.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/el.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/en.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/en.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/eo.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/eo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/es.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/es.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/es.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/es.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/et.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/et.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/et.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/et.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/eu.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/eu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fa.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/fa.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/fa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fi.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/fi.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/fi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/font/fontello.svg" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/font/fontello.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/footer.php" afterPath="$PROJECT_DIR$/application/include/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/fr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/fr.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/fr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/fulltoolbareditor.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/fulltoolbareditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/gl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/gl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/he.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/he.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/he.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/header.php" afterPath="$PROJECT_DIR$/application/include/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_dir.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_dir.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_file.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_file.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_httpCache.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_httpCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_path.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_path.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_text.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lib/helper_text.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/hr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/hr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/hu.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/hu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/hu.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/hu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/id.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/id.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/id.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/id.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/image/dialogs/image.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/image/dialogs/image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/index.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/css/index.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/css/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js/index.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/js/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/init.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/default/init.js" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/default/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/it.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/it.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ja.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ja.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/ja.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/ja.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/javascript.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/javascript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-2.1.1.min.js" afterPath="$PROJECT_DIR$/js/jquery-2.1.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/adapters/jquery.js" afterPath="$PROJECT_DIR$/ckeditor/adapters/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/js.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/dark/js.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/themes/default/js.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/themes/default/js.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/js_localize.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/js_localize.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/km.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/km.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ko.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ko.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ku.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ku.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/old/assets/uilanguages/languages.js" afterPath="$PROJECT_DIR$/ckeditor/samples/old/assets/uilanguages/languages.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/link/dialogs/link.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/link/dialogs/link.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/lt.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/lt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/lt.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/lt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/lv.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/lv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/lv.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/lv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/menu.php" afterPath="$PROJECT_DIR$/application/models/menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/class/minifier.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/class/minifier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/nb.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/nb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/nl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/nl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/nl.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/nl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/no.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/no.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/no.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/no.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obuceisea.sql" afterPath="$PROJECT_DIR$/obuceisea.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/scayt/dialogs/options.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/scayt/dialogs/options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/clipboard/dialogs/paste.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/clipboard/dialogs/paste.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/pl.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/pl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/pt-br.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/pt-br.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pt.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/pt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/pt.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/pt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/ro.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/ro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ru.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ru.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/ru.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/ru.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/js/sf.js" afterPath="$PROJECT_DIR$/ckeditor/samples/js/sf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/si.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/si.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sk.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/sk.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/sk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sl.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/specialchar.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/specialchar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sq.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sv.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/sv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/sv.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/sv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/old/htmlwriter/assets/outputforflash/swfobject.js" afterPath="$PROJECT_DIR$/ckeditor/samples/old/htmlwriter/assets/outputforflash/swfobject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/table/dialogs/table.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/table/dialogs/table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/tabletools/dialogs/tableCell.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/tabletools/dialogs/tableCell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/th.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/th.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/toolbarmodifier.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/toolbarmodifier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/toolbartextmodifier.js" afterPath="$PROJECT_DIR$/ckeditor/samples/toolbarconfigurator/js/toolbartextmodifier.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/tpl/tpl_browser.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/tpl/tpl_browser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/tpl/tpl_css.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/tpl/tpl_css.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/tpl/tpl_javascript.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/tpl/tpl_javascript.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/tr.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/tr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/tr.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/tr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/tt.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/tt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/types/type_img.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/types/type_img.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/types/type_mime.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/types/type_mime.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ug.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/ug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/uk.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/uk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/uk.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/uk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/conf/upload.htaccess" afterPath="$PROJECT_DIR$/kcfinder-3.12/conf/upload.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/upload.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/core/class/uploader.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/core/class/uploader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/vi.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/vi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/vi.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/vi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/wisdom.php" afterPath="$PROJECT_DIR$/application/models/wisdom.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/wisdom1.php" afterPath="$PROJECT_DIR$/application/views/wisdom1.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/wsc.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/wsc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/wsc_ie.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/www.iml" afterPath="$PROJECT_DIR$/.idea/www.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kcfinder-3.12/lang/zh-cn.php" afterPath="$PROJECT_DIR$/kcfinder-3.12/lang/zh-cn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/zh.js" afterPath="$PROJECT_DIR$/ckeditor/plugins/specialchar/dialogs/lang/zh.js" />
+      <change type="MOVED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\controllers\WisdomController.php" afterPath="$PROJECT_DIR$/application/controllers/wisdomController.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -310,25 +43,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="wisdomController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wisdomController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/wisdomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49656358" vertical-offset="0" max-vertical-offset="582">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="425">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="153" max-vertical-offset="1037">
-              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.76632303" vertical-offset="472" max-vertical-offset="1292">
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding>
                 <element signature="e#7#93#0#PHP" expanded="true" />
-                <marker date="1453999132274" expanded="true" signature="322:656" placeholder="SELECT * FRO.._type&#10;left..." />
-                <marker date="1453999132274" expanded="true" signature="754:1078" placeholder="..." />
+                <marker date="1454001144991" expanded="true" signature="322:656" placeholder="SELECT * FRO.._type&#10;left..." />
+                <marker date="1454001144991" expanded="true" signature="754:1067" placeholder="..." />
+                <marker date="1454001144991" expanded="true" signature="1202:1536" placeholder="SELECT * FRO.._type&#10;left..." />
+                <marker date="1454001144991" expanded="true" signature="1634:1947" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -337,8 +72,20 @@
       <file leaf-file-name="wisdom1.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/wisdom1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="408">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="595">
+              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+              <folding>
+                <element signature="e#6#92#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wisdomType.php" pinned="false" current-in-tab="false">
+        <entry file="file://H:/admin.my/obuceisea.my/www/application/views/wisdomType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -372,9 +119,10 @@
         <option value="$PROJECT_DIR$/application/models/wisdom1.php" />
         <option value="$PROJECT_DIR$/application/views/wisdomType.php" />
         <option value="$PROJECT_DIR$/application/views/wisdom.php" />
-        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
-        <option value="$PROJECT_DIR$/application/views/wisdom1.php" />
+        <option value="$PROJECT_DIR$/application/views/View.php" />
         <option value="$PROJECT_DIR$/application/controllers/wisdomController.php" />
+        <option value="$PROJECT_DIR$/application/views/wisdom1.php" />
+        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
       </list>
     </option>
   </component>
@@ -753,8 +501,10 @@
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding>
             <element signature="e#7#93#0#PHP" expanded="true" />
-            <marker date="1453999132274" expanded="true" signature="322:656" placeholder="SELECT * FRO.._type&#10;left..." />
-            <marker date="1453999132274" expanded="true" signature="754:1078" placeholder="..." />
+            <marker date="1454001144991" expanded="true" signature="322:656" placeholder="SELECT * FRO.._type&#10;left..." />
+            <marker date="1454001144991" expanded="true" signature="754:1067" placeholder="..." />
+            <marker date="1454001144991" expanded="true" signature="1202:1536" placeholder="SELECT * FRO.._type&#10;left..." />
+            <marker date="1454001144991" expanded="true" signature="1634:1947" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -811,24 +561,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22323233" vertical-offset="0" max-vertical-offset="0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/load.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="0">
           <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/pageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="0">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1078,31 +814,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/wisdom1.php">
+    <entry file="file://$PROJECT_DIR$/.git/config">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="408">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.38235295" vertical-offset="0" max-vertical-offset="578">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/pageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46735394" vertical-offset="0" max-vertical-offset="582">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+    <entry file="file://$PROJECT_DIR$/application/views/View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="153" max-vertical-offset="1037">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-          <folding>
-            <element signature="e#7#93#0#PHP" expanded="true" />
-            <marker date="1453999132274" expanded="true" signature="322:656" placeholder="SELECT * FRO.._type&#10;left..." />
-            <marker date="1453999132274" expanded="true" signature="754:1078" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="493">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/wisdomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49656358" vertical-offset="0" max-vertical-offset="582">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="425">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/admin.my/obuceisea.my/www/application/views/wisdomType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/wisdom1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="595">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+          <folding>
+            <element signature="e#6#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76632303" vertical-offset="472" max-vertical-offset="1292">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="e#7#93#0#PHP" expanded="true" />
+            <marker date="1454001144991" expanded="true" signature="322:656" placeholder="SELECT * FRO.._type&#10;left..." />
+            <marker date="1454001144991" expanded="true" signature="754:1067" placeholder="..." />
+            <marker date="1454001144991" expanded="true" signature="1202:1536" placeholder="SELECT * FRO.._type&#10;left..." />
+            <marker date="1454001144991" expanded="true" signature="1634:1947" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

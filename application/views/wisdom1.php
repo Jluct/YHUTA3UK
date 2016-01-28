@@ -2,17 +2,28 @@
 /**
  * Created by PhpStorm.
  * User: Listopadov
- * Date: 06.01.2016
- * Time: 10:29
+ * Date: 27.01.2016
+ * Time: 13:31
  */
+
 require_once("/../include/header.php"); ?>
 
     <section class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <?php echo "qwerty"; ?>
-            </div>
+            <div class="col-sm-2">
 
+            </div>
+            <div class="col-sm-10">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Категория</td>
+                        <td>Субкатегория</td>
+                        <td>Имя</td>
+                        <td>Кол-во учеников</td>
+                    </tr>
+                    <? echo $wisdomData;?>
+                </table>
+            </div>
         </div>
     </section>
 

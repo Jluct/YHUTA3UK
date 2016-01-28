@@ -25,7 +25,7 @@ ORDER BY wisdom.wisdom_student_count;
 
         for ($i = 0; $i < count($data); $i++) {
             $out .= "<tr>
-                        <td><div>". $data[$i]['wisdom_category_name'] ."</div></td>
+                        <td>". $data[$i]['wisdom_category_name'] ."</td>
                         <td>". $data[$i]['wisdom_subcategory_name'] ."</td>
                         <td>". $data[$i]['wisdom_name'] ."</td>
                         <td>". $data[$i]['wisdom_student_count'] ."</td>
@@ -37,7 +37,22 @@ ORDER BY wisdom.wisdom_student_count;
 
     public static function getWisdomMenu($type)
     {
+        $data = getDataBase::getData("SELECT * FROM " . $type . "
+left join wisdom on wisdom.wisdom_id = education.wisdom_id
+left join wisdom_subcategory on wisdom_subcategory.wisdom_subcategory_id = wisdom.wisdom_subcategory_id
+left join wisdom_category on wisdom_category.wisdom_category_id = wisdom_subcategory.wisdom_subcategory_id
+ORDER BY wisdom.wisdom_student_count;
+");
+        $out = "";
 
+        for ($i = 0; $i < count($data); $i++) {
+            $out .= "<tr>
+                        <td>". $data[$i]['wisdom_category_name'] ."</td>
+                        <td>". $data[$i]['wisdom_subcategory_name'] ."</td>
+                        <td>". $data[$i]['wisdom_name'] ."</td>
+                        <td>". $data[$i]['wisdom_student_count'] ."</td>
+                     </tr>";
+        }
     }
 
 }

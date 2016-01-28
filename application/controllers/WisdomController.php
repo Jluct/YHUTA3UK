@@ -14,7 +14,7 @@ class wisdomController
         $view = new View();
         $view->menu = menu::getDataMenu();
         $view->wisdomData = wisdom::getWisdomType($type);
-//        echo wisdom::getWisdomType($type);
-        $view->render("wisdom1.php");
+
+        echo $view->render("wisdom1.php");
     }
 }
