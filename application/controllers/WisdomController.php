@@ -16,7 +16,7 @@ class wisdomController
 
         $view = new View();
 
-
+        $view->wisdom = wisdom::getWisdom($type,$subtype,$category);
         echo $view->render("wisdom1.php");
     }
 }

@@ -13,6 +13,15 @@ require_once("/../core/core/services/check.php");
 class wisdom extends getDataBase
 {
 
+    public function getWisdom($type,$subtype=0,$category=0){
+
+        $wisdomType = array(1=>"education",2=>"course",3=>"seminar");
+        $data = self::getData("SELECT * FROM wisdom
+                              LEFT JOIN ".$wisdomType[$type]." ON wisdom.wisdom_id =".$wisdomType[$type].".wisdom_id
+");
+        print_r($data);
+
+    }
 
 }
 
