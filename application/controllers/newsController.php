@@ -18,7 +18,7 @@ class newsController
             $pageNumber=0;
         }
         $view = new View();
-        $view->menu = menu::getDataMenu();
+
         if(isset($article)){
 
         }
@@ -37,7 +37,6 @@ class newsController
         $article = news::getArticle($article_id);
 
         $view = new View();
-        $view->menu = menu::getDataMenu();
         $view->article=$article;
         echo $view->render('article.php');
 

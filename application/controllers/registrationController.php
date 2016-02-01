@@ -9,7 +9,6 @@ class registrationController extends add
     {
 
         $view = new View();
-        $view->menu = menu::getDataMenu();
 
         echo $view->render('registration.php');
     }

@@ -11,7 +11,6 @@ class cabinetController
     function actionGetCabinet(){
 
         $view = new View();
-        $view->menu = menu::getDataMenu();
         $view->cabinet = cabinet::getStudentById();
         if(!isset($_SESSION['student'])){
             return false;

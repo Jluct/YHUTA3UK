@@ -10,11 +10,12 @@ class wisdomController
 {
     public function actionWisdomType()
     {
-        $type=$_GET['type'];
+        $type=$_GET['type'];  //высшее
+        $subtype=$_GET['subtype']; //переподготовка
+        $category=$_GET['category']; //Программирование
+
         $view = new View();
-        $view->menu = menu::getDataMenu();
-        $view->wisdomData = wisdom::getWisdomType($type);
-        $view->typeMenu = wisdom::getWisdomMenu();
+
 
         echo $view->render("wisdom1.php");
     }

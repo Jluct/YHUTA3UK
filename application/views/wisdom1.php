@@ -28,5 +28,5 @@ require_once("/../include/header.php"); ?>
             </div>
         </div>
     </section>
-
+<script type="text/javascript"></script>
 <?php require_once("/../include/footer.php"); ?>

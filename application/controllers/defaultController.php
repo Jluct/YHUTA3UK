@@ -10,7 +10,6 @@ class defaultController {
 
     public function actionDefault() {
         $view = new View();
-        $view->menu = menu::getDataMenu();
         $view->news = news::getDataDefaultNews();
 
         echo $view->render('default.php');

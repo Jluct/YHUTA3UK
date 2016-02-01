@@ -11,7 +11,6 @@ class educationsController
     public function actionAllEducations(){
 
         $view = new View();
-        $view->menu = menu::getDataMenu();
         $view->educationsBlock = educations::getAllEducations();
 
         echo $view->render('allEducations.php');

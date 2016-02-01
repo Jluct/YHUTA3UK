@@ -30,12 +30,12 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
         <? print_r ($_SESSION); ?>
         <div class="row">
             <div class="col-sm-8 menu_light">
-                <? echo $menu[2]; ?>
+                <? $lightMenu = new menu(1);
+                    $lightMenu->ul_tpl="<ul class=\"nav\">";
+                echo $lightMenu->render(); ?>
             </div>
             <div class="col-sm-4">
                 <?php require_once($authorization); ?>
-
-
             </div>
         </div>
         <div class="row menu_heavy">
@@ -44,9 +44,12 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
                 Обучайся!
             </div>
             <div class="col-sm-9 actual_menu">
-                <ul class="nav nav-tabs nav-justified menu_heavy">
-                    <? echo $menu[1]; ?>
-                </ul>
+
+                    <? $bigMenu = new menu(2);
+                        $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+                        $bigMenu->li_tpl = "<li class=\"dropdown\" role=\"presentation\"><a href='%s'>%s<span class=\"caret\"></span></a>%s</li>";
+                    echo $bigMenu->render(); ?>
+
             </div>
             <div class="col-sm-1">
                 <button class="btn btn-block btn_search">Поиск</button>

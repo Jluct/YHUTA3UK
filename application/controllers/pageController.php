@@ -11,7 +11,6 @@ class pageController
     function actionPage(){
         $id=$_GET['id'];
         $view = new View();
-        $view->menu = menu::getDataMenu();
         $view->page = page::getPageById($id);
 
         echo $view->render('page.php');
