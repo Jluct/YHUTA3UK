@@ -6,7 +6,7 @@ class db_connect
 
     private static $hostname = 'localhost';
     private static $username = 'root';
-    private static $password = '';
+    private static $password = '290378';
     private static $base = 'obuceisea';
 
     protected static function connect()
