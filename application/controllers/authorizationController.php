@@ -7,8 +7,9 @@ session_start();
  * Time: 21:25
  */
 
-require_once('/../core/core/data/session/openSession.php');
-require_once('/../core/core/data/session/getSession.php');
+require_once(__DIR__.'/../core/core/data/session/openSession.php');
+require_once(__DIR__.'/../core/core/data/session/getSession.php');
+
 
 class authorizationController
 {

@@ -5,7 +5,7 @@
  * Date: 04.01.2016
  * Time: 9:07
  */
-require_once("/../core/core/data/get/get.php");
+require_once(__DIR__."/../core/core/data/get/get.php");
 
 
 class menu

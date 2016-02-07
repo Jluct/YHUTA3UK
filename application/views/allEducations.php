@@ -5,7 +5,7 @@
  * Date: 05.01.2016
  * Time: 11:38
  */
-require_once("/../include/header.php");
+require_once(__DIR__."/../include/header.php");
 ?>
 
 
@@ -18,4 +18,4 @@ require_once("/../include/header.php");
 </section>
 
 
-<?php require_once("/../include/footer.php"); ?>
+<?php require_once(__DIR__."/../include/footer.php"); ?>

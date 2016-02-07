@@ -1,5 +1,7 @@
 <?php
 
+
+
 function myAutoload($class_name)
 {
     if (file_exists(__DIR__ . '/application/models/' . $class_name . '.php')) {
@@ -12,5 +14,7 @@ function myAutoload($class_name)
         throw new Exception('Нужный класс не найден '.$class_name);
     }
 }
+
+
 
 spl_autoload_register('myAutoload');

@@ -1,6 +1,6 @@
 <?php
-require_once("/../core/core/data/get/get.php");
-require_once("/../core/core/services/check.php");
+require_once(__DIR__.'/../core/core/data/get/get.php');
+require_once(__DIR__.'/../core/core/services/check.php');
 
 /**
  * Created by PhpStorm.

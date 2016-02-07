@@ -6,7 +6,7 @@
  * Time: 14:07
  */
 
-require_once("/../include/header.php"); ?>
+require_once(__DIR__."/../include/header.php"); ?>
     <!-- autorisation -->
     <section class="container">
     <div class="row">
@@ -33,4 +33,4 @@ require_once("/../include/header.php"); ?>
     </section>
 
 
-<?php require_once("/../include/footer.php"); ?>
+<?php require_once(__DIR__."/../include/footer.php"); ?>

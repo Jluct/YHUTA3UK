@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 
-require_once("/../include/header.php"); ?>
+require_once(__DIR__."/../include/header.php"); ?>
     <section class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -22,4 +22,4 @@ require_once("/../include/header.php"); ?>
             <div class="col-md-3"></div>
         </div>
     </section>
-<?php require_once("/../include/footer.php"); ?>
+<?php require_once(__DIR__."/../include/footer.php"); ?>

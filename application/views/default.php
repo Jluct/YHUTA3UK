@@ -1,4 +1,4 @@
-<?php require_once("/../include/header.php"); ?>
+<?php require_once(__DIR__."/../include/header.php"); ?>
 <!-- header end -->
 <!-- content -->
 
@@ -108,4 +108,4 @@
     </div>
 </section>
 <!-- footer begin -->
-<?php require_once("/../include/footer.php"); ?>
+<?php require_once(__DIR__."/../include/footer.php"); ?>

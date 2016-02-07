@@ -1,4 +1,4 @@
-<?php require_once("/../include/header.php"); ?>
+<?php require_once(__DIR__."/../include/header.php"); ?>
     <!-- autorisation -->
     <section class="container">
         <? echo $news ?>
@@ -14,4 +14,4 @@
         <!-- footer begin -->
     </section>
 
-<?php require_once("/../include/footer.php"); ?>
+<?php require_once(__DIR__."/../include/footer.php"); ?>

@@ -2,9 +2,9 @@
 session_start();
 
 if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] == false) {
-    $authorization = "/../include/cabinet.php";
+    $authorization = "cabinet.php";
 } else {
-    $authorization = "/../include/authorization.php";
+    $authorization = "authorization.php";
 
 }
 /**

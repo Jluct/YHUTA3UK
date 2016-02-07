@@ -6,7 +6,10 @@
  * Date: 04.01.2016
  * Time: 11:30
  */
-require_once("/../core/core/services/check.php");
+
+
+require_once(__DIR__.'/../core/core/services/check.php');
+
 class newsController
 {
 

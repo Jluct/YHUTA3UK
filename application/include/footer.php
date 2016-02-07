@@ -11,11 +11,11 @@
         <div class="row">
             <div class="col-sm-4">
                 Разделы сайта
-                <? echo $menu[0] ?>
+
 
             </div>
             <div class="col-sm-4">
-                <? echo $menu[1] ?>
+
             </div>
         </div>
         <div class="row">
