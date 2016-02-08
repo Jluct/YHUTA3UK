@@ -6,6 +6,7 @@
  * Time: 16:09
  */
 ?>
+</section>
 <footer>
     <div class="container container-footer">
         <div class="row">
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+
 </footer>
 
 </body>

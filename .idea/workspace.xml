@@ -1,821 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="833f6229-c3ee-4c63-b88f-a72512c60247" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\controllers\authorization.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getActualInfo.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getArticle.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getComment.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getMenu.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getMenu_2.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getNews.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\getSlide.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\get\searchNews.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\data\set\addComment.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\application\core\load.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\CHANGES.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\adapters\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\build-config.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\ckeditor.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\config.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\contents.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\af.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\bg.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\bn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\bs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\cs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\cy.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\da.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\de.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\el.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\en.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\eo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\es.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\et.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\eu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\fa.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\fi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\fo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\fr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\gl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\gu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\he.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\hi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\hr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\hu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\id.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\is.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\it.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ja.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ka.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\km.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ko.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ku.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\lt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\lv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\mk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\mn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ms.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\nb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\nl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\no.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\pl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\pt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ro.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ru.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\si.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\sk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\sl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\sq.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\sr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\sv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\th.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\tr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\tt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\ug.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\uk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\vi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\lang\zh.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\about\dialogs\about.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\about\dialogs\logo_ckeditor.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\clipboard\dialogs\paste.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\dialog\dialogDefinition.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\icons.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\icons_hidpi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\image\dialogs\image.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\image\images\noimage.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\link\dialogs\anchor.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\link\dialogs\link.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\link\images\anchor.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\link\images\hidpi\anchor.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\magicline\images\hidpi\icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\magicline\images\icon-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\magicline\images\icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\pastefromword\filter\default.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\scayt\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\scayt\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\scayt\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\scayt\dialogs\options.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\scayt\dialogs\toolbar.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\af.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\bg.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\cs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\cy.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\da.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\de.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\el.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\en.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\eo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\es.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\et.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\eu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\fa.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\fi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\fr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\gl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\he.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\hr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\hu.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\id.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\it.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ja.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\km.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ko.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ku.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\lt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\lv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\nb.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\nl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\no.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\pl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\pt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ru.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\si.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\sk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\sl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\sq.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\sv.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\th.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\tr.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\tt.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\ug.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\uk.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\vi.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\lang\zh.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\specialchar\dialogs\specialchar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\table\dialogs\table.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\tabletools\dialogs\tableCell.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\dialogs\ciframe.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\dialogs\wsc.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\dialogs\wsc.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\plugins\wsc\dialogs\wsc_ie.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\css\samples.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\img\github-top.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\img\header-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\img\header-separator.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\img\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\img\navigation-tip.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\js\sample.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\js\sf.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\ajax.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\api.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\appendto.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\assets\inlineall\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\assets\posteddata.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\assets\sample.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\assets\uilanguages\languages.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\datafiltering.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\dialog\assets\my_dialog.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\dialog\dialog.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\divreplace.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\enterkey\enterkey.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\htmlwriter\outputforflash.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\htmlwriter\outputhtml.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\inlineall.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\inlinebycode.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\inlinetextarea.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\jquery.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\magicline\magicline.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\readonly.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\replacebyclass.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\replacebycode.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\sample.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\sample.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\sample_posteddata.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\tabindex.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\toolbar\toolbar.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\uicolor.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\uilanguages.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\wysiwygarea\fullpage.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\old\xhtmlstyle.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\css\fontello.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\font\config.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\font\fontello.eot" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\font\fontello.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\font\fontello.woff" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\dialog_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\dialog_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\dialog_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\dialog_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\editor.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\editor_gecko.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\editor_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\editor_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\editor_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\editor_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\icons.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\icons_hidpi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\close.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\hidpi\close.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\hidpi\lock-open.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\hidpi\lock.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\hidpi\refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\lock-open.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\lock.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\images\spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\skins\moono\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\ckeditor\styles.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\browse.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\base.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\base.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\theme_dark.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\theme_dark.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\theme_default.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\cache\theme_default.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\conf\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\conf\config.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\conf\upload.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\autoload.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\bootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\class\browser.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\class\minifier.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\class\uploader.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\types\type_img.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\core\types\type_mime.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\css\000.base.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\css\999.agent.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\css\index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\doc\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\doc\Changelog" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\doc\LICENSE.GPL" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\doc\LICENSE.LGPL" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\integration\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\integration\BolmerCMS.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\integration\drupal.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\000._jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\002._jqueryui.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\006.jquery.uniform.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\010.jquery.fixes.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\020.jquery.rightClick.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\021.jquery.taphold.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\029.jquery.agent.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\030.jquery.helper.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\031.jquery.md5.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\040.object.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\041.dialogs.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\050.init.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\060.toolbar.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\070.settings.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\080.files.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\090.folders.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\091.menus.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\091.viewImage.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\100.clipboard.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\110.dropUpload.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\120.misc.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js\index.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\js_localize.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\af.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\bg.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\ca.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\cs.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\da.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\de.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\el.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\en.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\es.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\et.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\fa.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\fi.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\fr.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\he.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\hu.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\id.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\it.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\ja.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\lt.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\lv.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\nl.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\no.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\pl.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\pt-br.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\pt.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\ro.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\ru.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\sk.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\sv.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\tr.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\uk.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\vi.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lang\zh-cn.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\class_fastImage.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\class_image.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\class_image_gd.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\class_image_gmagick.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\class_image_imagick.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\class_zipFolder.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\helper_dir.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\helper_file.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\helper_httpCache.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\helper_path.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\lib\helper_text.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\01.ui.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\02.misc.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\README" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\css.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\bg_transparent.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\..png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\.image.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\avi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\bat.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\bmp.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\bz2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\ccd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\cgi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\com.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\csh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\cue.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\deb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\dll.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\doc.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\docx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\exe.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\fla.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\flv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\fon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\gif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\gz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\htm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\html.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\ini.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\iso.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\jar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\java.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\jpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\jpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\js.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mds.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mdx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mid.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\midi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mkv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mov.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mp3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mp4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\mpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\nfo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\nrg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\ogg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\php.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\phps.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\pl.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\pm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\png.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\ppt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\pptx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\psd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\qt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\rar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\rpm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\rtf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\sh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\sql.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\srt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\sub.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\swf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\tgz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\tif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\tiff.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\torrent.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\ttf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\txt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\wav.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\wma.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\xls.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\xlsx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\big\zip.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\..png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\.image.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\avi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\bat.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\bmp.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\bz2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\ccd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\cgi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\com.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\csh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\cue.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\deb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\dll.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\doc.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\docx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\exe.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\fla.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\flv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\fon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\gif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\gz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\htm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\html.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\ini.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\iso.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\jar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\java.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\jpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\jpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\js.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mds.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mdx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mid.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\midi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mkv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mov.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mp3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mp4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\mpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\nfo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\nrg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\ogg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\php.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\phps.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\pl.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\pm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\png.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\ppt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\pptx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\psd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\qt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\rar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\rpm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\rtf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\sh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\sql.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\srt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\sub.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\swf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\tgz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\tif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\tiff.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\torrent.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\ttf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\txt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\wav.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\wma.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\xls.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\xlsx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\files\small\zip.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\about.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\clipboard-add.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\clipboard-clear.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\clipboard.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\copy.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\delete.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\download.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\folder-new.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\maximize.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\move.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\rename.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\select.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\settings.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\upload.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\icons\view.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\kcf_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\tree\denied.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\tree\folder.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\tree\minus.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\tree\plus.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\ui-icons_black.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\ui-icons_grey.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\img\ui-icons_white.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\init.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\dark\js.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\01.ui.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\02.misc.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\README" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\css.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\bg_transparent.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\..png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\.image.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\avi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\bat.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\bmp.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\bz2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\ccd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\cgi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\com.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\csh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\cue.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\deb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\dll.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\doc.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\docx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\exe.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\fla.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\flv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\fon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\gif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\gz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\htm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\html.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\ini.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\iso.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\jar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\java.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\jpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\jpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\js.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mds.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mdx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mid.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\midi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mkv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mov.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mp3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mp4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\mpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\nfo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\nrg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\ogg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\php.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\phps.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\pl.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\pm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\png.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\ppt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\pptx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\psd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\qt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\rar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\rpm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\rtf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\sh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\sql.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\srt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\sub.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\swf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\tgz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\tif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\tiff.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\torrent.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\ttf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\txt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\wav.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\wma.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\xls.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\xlsx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\big\zip.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\..png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\.image.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\avi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\bat.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\bmp.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\bz2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\ccd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\cgi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\com.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\csh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\cue.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\deb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\dll.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\doc.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\docx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\exe.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\fla.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\flv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\fon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\gif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\gz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\htm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\html.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\ini.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\iso.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\jar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\java.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\jpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\jpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\js.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mds.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mdx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mid.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\midi.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mkv.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mov.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mp3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mp4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mpeg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\mpg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\nfo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\nrg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\ogg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\php.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\phps.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\pl.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\pm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\png.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\ppt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\pptx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\psd.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\qt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\rar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\rpm.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\rtf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\sh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\sql.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\srt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\sub.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\swf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\tgz.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\tif.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\tiff.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\torrent.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\ttf.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\txt.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\wav.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\wma.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\xls.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\xlsx.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\files\small\zip.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\about.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\clipboard-add.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\clipboard-clear.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\clipboard.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\copy.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\delete.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\download.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\folder-new.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\maximize.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\move.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\rename.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\select.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\settings.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\upload.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\icons\view.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\kcf_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\tree\denied.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\tree\folder.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\tree\minus.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\tree\plus.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\ui-icons_black.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\img\ui-icons_white.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\init.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\themes\default\js.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\tpl\.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\tpl\tpl_browser.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\tpl\tpl_css.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\tpl\tpl_javascript.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\OpenServer\domains\obuceisea.my\www\kcfinder-3.12\upload.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/data/add/add.php" afterPath="$PROJECT_DIR$/application/core/core/data/add/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/addUser.php" afterPath="$PROJECT_DIR$/application/views/addUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/allEducations.php" afterPath="$PROJECT_DIR$/application/views/allEducations.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/article.php" afterPath="$PROJECT_DIR$/application/views/article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/authorizationController.php" afterPath="$PROJECT_DIR$/application/controllers/authorizationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoload.php" afterPath="$PROJECT_DIR$/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/cabinet.php" afterPath="$PROJECT_DIR$/application/models/cabinet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/cabinet.php" afterPath="$PROJECT_DIR$/application/views/cabinet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/services/check.php" afterPath="$PROJECT_DIR$/application/core/core/services/check.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/data/db_connect.php" afterPath="$PROJECT_DIR$/application/core/core/data/db_connect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/default.php" afterPath="$PROJECT_DIR$/application/views/default.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/defaultController.php" afterPath="$PROJECT_DIR$/application/controllers/defaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/education.php" afterPath="$PROJECT_DIR$/application/models/education.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/education.php" afterPath="$PROJECT_DIR$/application/views/education.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/educations.php" afterPath="$PROJECT_DIR$/application/models/educations.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/footer.php" afterPath="$PROJECT_DIR$/application/include/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/data/get/get.php" afterPath="$PROJECT_DIR$/application/core/core/data/get/get.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/header.php" afterPath="$PROJECT_DIR$/application/include/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/menu.php" afterPath="$PROJECT_DIR$/application/models/menu.php" />
+    <list default="true" id="59b846fa-468e-45fa-a4a4-3414913fb32f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/pagination.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/news.php" afterPath="$PROJECT_DIR$/application/models/news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/news.php" afterPath="$PROJECT_DIR$/application/views/news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/newsController.php" afterPath="$PROJECT_DIR$/application/controllers/newsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/data/session/openSession.php" afterPath="$PROJECT_DIR$/application/core/core/data/session/openSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/page.php" afterPath="$PROJECT_DIR$/application/models/page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/page.php" afterPath="$PROJECT_DIR$/application/views/page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/registration.php" afterPath="$PROJECT_DIR$/application/models/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/registration.php" afterPath="$PROJECT_DIR$/application/views/registration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/registrationController.php" afterPath="$PROJECT_DIR$/application/controllers/registrationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/core/data/set/set.php" afterPath="$PROJECT_DIR$/application/core/core/data/set/set.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/specialty.php" afterPath="$PROJECT_DIR$/application/models/specialty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/specialty.php" afterPath="$PROJECT_DIR$/application/views/specialty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/wisdom.php" afterPath="$PROJECT_DIR$/application/models/wisdom.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/wisdom1.php" afterPath="$PROJECT_DIR$/application/views/wisdom1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/www.iml" afterPath="$PROJECT_DIR$/.idea/www.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/newsController.php" afterPath="$PROJECT_DIR$/application/controllers/newsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pageController.php" afterPath="$PROJECT_DIR$/application/controllers/pageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/footer.php" afterPath="$PROJECT_DIR$/application/include/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/header.php" afterPath="$PROJECT_DIR$/application/include/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/menu.php" afterPath="$PROJECT_DIR$/application/models/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/news.php" afterPath="$PROJECT_DIR$/application/models/news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/page.php" afterPath="$PROJECT_DIR$/application/models/page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/article.php" afterPath="$PROJECT_DIR$/application/views/article.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/default.php" afterPath="$PROJECT_DIR$/application/views/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/news.php" afterPath="$PROJECT_DIR$/application/views/news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/page.php" afterPath="$PROJECT_DIR$/application/views/page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autoload.php" afterPath="$PROJECT_DIR$/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ЧИТАЙ_ТУТ.txt" afterPath="$PROJECT_DIR$/ЧИТАЙ_ТУТ.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db_connect.php" afterPath="$PROJECT_DIR$/application/core/connect/db_connect.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -831,43 +40,73 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="www" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WisdomController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
+      <file leaf-file-name="db_connect.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="459">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.615385">
+              <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_connect.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db_connect.php">
+      <file leaf-file-name="news.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6572935" vertical-offset="1173" max-vertical-offset="3009">
-              <caret line="91" column="85" selection-start-line="91" selection-start-column="85" selection-end-line="91" selection-end-column="85" />
+            <state vertical-scroll-proportion="-31.538462">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
               <folding>
-                <marker date="1454864059426" expanded="true" signature="523:550" placeholder="SELECT ? FRO..." />
-                <marker date="1454864059426" expanded="true" signature="523:551" placeholder="SELECT ? FRO..." />
+                <marker date="1454940128575" expanded="true" signature="245:298" placeholder="SELECT * FRO..news..." />
+                <marker date="1454940128575" expanded="true" signature="245:299" placeholder="SELECT * FRO..news..." />
+                <marker date="1454940128575" expanded="true" signature="245:302" placeholder="SELECT * FRO..news..." />
+                <marker date="1454940128575" expanded="true" signature="245:304" placeholder="SELECT * FRO..news..." />
+                <marker date="1454940128575" expanded="true" signature="647:1186" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="696:734" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="696:736" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="696:811" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="860:1159" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="893:1055" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="893:1128" placeholder="..." />
+                <marker date="1454940128575" expanded="true" signature="1367:1401" placeholder="SELECT * FRO..news..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="page.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/models/page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="204">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.2060606">
+              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+              <folding>
+                <marker date="1454941838591" expanded="true" signature="242:277" placeholder="SELECT * FRO..page..." />
+                <marker date="1454941838591" expanded="true" signature="242:278" placeholder="SELECT * FRO..page..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pageController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/pageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -875,51 +114,45 @@
       </file>
     </leaf>
   </component>
-  <component name="FindManager">
-    <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="true" />
-    </FindUsagesManager>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/models/menu.php" />
+        <option value="$PROJECT_DIR$/ЧИТАЙ_ТУТ.txt" />
         <option value="$PROJECT_DIR$/application/core/db_connect.php" />
+        <option value="$PROJECT_DIR$/application/core/vendor/rb.php" />
+        <option value="$PROJECT_DIR$/autoload.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/db_connect.php" />
+        <option value="$PROJECT_DIR$/load.php" />
+        <option value="$PROJECT_DIR$/application/controllers/newsController.php" />
+        <option value="$PROJECT_DIR$/application/views/news.php" />
+        <option value="$PROJECT_DIR$/application/models/menu.php" />
+        <option value="$PROJECT_DIR$/application/models/pagination.php" />
+        <option value="$PROJECT_DIR$/application/views/article.php" />
+        <option value="$PROJECT_DIR$/application/views/default.php" />
+        <option value="$PROJECT_DIR$/application/include/footer.php" />
+        <option value="$PROJECT_DIR$/application/include/header.php" />
+        <option value="$PROJECT_DIR$/application/models/news.php" />
+        <option value="$PROJECT_DIR$/application/views/page.php" />
+        <option value="$PROJECT_DIR$/application/controllers/pageController.php" />
+        <option value="$PROJECT_DIR$/application/core/connect/db_connect.php" />
+        <option value="$PROJECT_DIR$/application/models/page.php" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true" />
-  <component name="PhpServers">
-    <servers />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="744" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Blade files</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -930,9 +163,6 @@
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
-  </component>
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -945,6 +175,8 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="ProjectPane">
@@ -962,20 +194,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1065,6 +283,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1078,491 +318,267 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.xml" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../inst.my/www" />
-    <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="271" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="299" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="301" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="975" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="293" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="292" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="293" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="968" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OpenServer\domains\obuceisea.my\www" />
-      <recent name="E:\OpenServer\domains\maket.my\www" />
+      <recent name="E:\OpenServer\domains\obuceisea.my\www\application\core\connect" />
+      <recent name="E:\OpenServer\domains\obuceisea.my\www\application\core\vendor" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
       <envs />
       <method />
     </configuration>
-    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="833f6229-c3ee-4c63-b88f-a72512c60247" name="Default" comment="" />
-      <created>1451888794389</created>
+      <changelist id="59b846fa-468e-45fa-a4a4-3414913fb32f" name="Default" comment="" />
+      <created>1454913360075</created>
       <option name="number" value="Default" />
-      <updated>1451888794389</updated>
+      <updated>1454913360075</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17914832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
+    <entry file="file://$PROJECT_DIR$/application/views/View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="459">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_connect.php">
+    <entry file="file://$PROJECT_DIR$/ЧИТАЙ_ТУТ.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1454864059426" expanded="true" signature="523:550" placeholder="SELECT ? FRO..." />
-            <marker date="1454864059426" expanded="true" signature="523:551" placeholder="SELECT ? FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.3011811">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="1071">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="50" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/services/check.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/load.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="0">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/data/session/getSession.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/data/set/set.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/data/add/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.120080724" vertical-offset="0" max-vertical-offset="0">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/authorization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3090909" vertical-offset="0" max-vertical-offset="0">
-          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="0">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/addUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="0">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/default.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84141415" vertical-offset="0" max-vertical-offset="0">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/data/session/openSession.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3954306" vertical-offset="0" max-vertical-offset="0">
-          <caret line="22" column="82" selection-start-line="22" selection-start-column="72" selection-end-line="22" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/exit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14604811" vertical-offset="0" max-vertical-offset="0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/cabinet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15205725" vertical-offset="0" max-vertical-offset="0">
-          <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35051546" vertical-offset="0" max-vertical-offset="0">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="124" selection-start-line="0" selection-start-column="124" selection-end-line="0" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/userMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/cabinet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3949495" vertical-offset="0" max-vertical-offset="0">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/cabinet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14141414" vertical-offset="0" max-vertical-offset="0">
-          <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/data/db_connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5838384" vertical-offset="0" max-vertical-offset="0">
-          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="167" column="20" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4257603" vertical-offset="0" max-vertical-offset="0">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.068686865">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3797251" vertical-offset="0" max-vertical-offset="0">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71704745" vertical-offset="0" max-vertical-offset="0">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.git/config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38235295" vertical-offset="0" max-vertical-offset="0">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="0">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3090909" vertical-offset="0" max-vertical-offset="0">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="0">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24040404" vertical-offset="0" max-vertical-offset="0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/wisdom1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53232324" vertical-offset="0" max-vertical-offset="0">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/core/data/get/get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="0">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/authorizationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="0">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/cabinetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="0">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/defaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/educationsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="0">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/pageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="0">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/registrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="0">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/specialtyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="0">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/newsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34343433" vertical-offset="0" max-vertical-offset="0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="1122">
-          <caret line="49" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="459">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4121212">
+          <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3893">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="204">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.034343433">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_connect.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/defaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6572935" vertical-offset="1173" max-vertical-offset="3009">
-          <caret line="91" column="85" selection-start-line="91" selection-start-column="85" selection-end-line="91" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.40808082">
+          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding>
-            <marker date="1454864059426" expanded="true" signature="523:550" placeholder="SELECT ? FRO..." />
-            <marker date="1454864059426" expanded="true" signature="523:551" placeholder="SELECT ? FRO..." />
+            <marker date="1454930012327" expanded="true" signature="334:457" placeholder="..." />
+            <marker date="1454930012327" expanded="true" signature="386:447" placeholder="..." />
+            <marker date="1454930012327" expanded="true" signature="490:609" placeholder="..." />
+            <marker date="1454930012327" expanded="true" signature="538:599" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.72121215">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+            <marker date="1454928373183" expanded="true" signature="444:570" placeholder="SELECT * FRO..menu..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5151515">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+          <folding>
+            <marker date="1454921881815" expanded="true" signature="467:612" placeholder="..." />
+            <marker date="1454921881815" expanded="true" signature="541:602" placeholder="..." />
+            <marker date="1454921881815" expanded="true" signature="655:796" placeholder="..." />
+            <marker date="1454921881815" expanded="true" signature="725:786" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/newsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/include/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/include/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.807693">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.80404">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/pageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.615385">
+          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.538462">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <marker date="1454940128575" expanded="true" signature="245:298" placeholder="SELECT * FRO..news..." />
+            <marker date="1454940128575" expanded="true" signature="245:299" placeholder="SELECT * FRO..news..." />
+            <marker date="1454940128575" expanded="true" signature="245:302" placeholder="SELECT * FRO..news..." />
+            <marker date="1454940128575" expanded="true" signature="245:304" placeholder="SELECT * FRO..news..." />
+            <marker date="1454940128575" expanded="true" signature="647:1186" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="696:734" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="696:736" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="696:811" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="860:1159" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="893:1055" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="893:1128" placeholder="..." />
+            <marker date="1454940128575" expanded="true" signature="1367:1401" placeholder="SELECT * FRO..news..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2060606">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <marker date="1454941838591" expanded="true" signature="242:277" placeholder="SELECT * FRO..page..." />
+            <marker date="1454941838591" expanded="true" signature="242:278" placeholder="SELECT * FRO..page..." />
           </folding>
         </state>
       </provider>
     </entry>
   </component>
 </project>
-

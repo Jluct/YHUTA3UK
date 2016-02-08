@@ -57,4 +57,5 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
         </div>
     </div>
 </header>
+<section class="container">
 

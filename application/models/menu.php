@@ -5,7 +5,7 @@
  * Date: 04.01.2016
  * Time: 9:07
  */
-require_once(__DIR__."/../core/core/data/get/get.php");
+
 
 
 class menu
@@ -21,10 +21,15 @@ class menu
 
     function __construct($id)
     {
-        $this->items = getDataBase::getData("SELECT *
+        $db = new db_connect();
+        $data = $db->getDb()->prepare("SELECT *
         FROM  `menu` ,  `menu_item`
-        WHERE menu_item.menu_id =" . intval($id) . "
+        WHERE menu_item.menu_id =:id
         AND menu.menu_id = menu_item.menu_id");
+
+        $data->execute(array(':id'=>$id));
+        $this->items = $data->fetchAll(PDO::FETCH_ASSOC);
+
     }
 
     public function render()

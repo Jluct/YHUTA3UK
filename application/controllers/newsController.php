@@ -8,38 +8,29 @@
  */
 
 
-require_once(__DIR__.'/../core/core/services/check.php');
+
+
 
 class newsController
 {
 
     public function actionNews(){
-        $pageNumber;
-        if(isset($_GET['article'])) {
-            $pageNumber = $_GET['article'];
-        }else{
-            $pageNumber=0;
-        }
+        $page = $_GET['page'];
+
         $view = new View();
 
-        if(isset($article)){
-
-        }
-        $news = news::getDataNews($pageNumber);
-
-         $view->paggination = news::getNumbPagesNews();
-
-
-        $view->news = $news;
+        $view->page = (int)$page;
+        $view->news = news::getDataNews($page);
         echo $view->render('news.php');
     }
 
     public function actionGetArticle(){
-        $article_id=$_GET['article'];
-        $article_id=checkClass::checkAll($article_id);
+        $article_id=(int)$_GET['article'];
+
         $article = news::getArticle($article_id);
 
         $view = new View();
+
         $view->article=$article;
         echo $view->render('article.php');
 
