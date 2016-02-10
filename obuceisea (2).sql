@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 02 2016 г., 09:38
+-- Время создания: Фев 10 2016 г., 18:13
 -- Версия сервера: 5.1.67-community-log
 -- Версия PHP: 5.4.11
 
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `menu_item` (
 
 INSERT INTO `menu_item` (`menu_item_id`, `menu_id`, `menu_item_name`, `menu_item_url`, `menu_item_parent`, `menu_item_activ`) VALUES
 (1, 1, 'Главная', '?', 0, 1),
-(2, 1, 'Новости', '?ctrl=news&action=News', 0, 1),
+(2, 1, 'Новости', '?ctrl=news&action=News&page=1', 0, 1),
 (3, 1, 'О нас', '?ctrl=page&action=Page&id=1', 0, 1),
 (4, 2, 'Высшее образование', '?ctrl=wisdom&action=WisdomType&type=1', 0, 1),
 (5, 2, 'Первое высшее образование', '?ctrl=wisdom&action=WisdomType&type=1&subtype=1', 4, 1),
@@ -150,55 +150,31 @@ INSERT INTO `menu_item` (`menu_item_id`, `menu_id`, `menu_item_name`, `menu_item
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `moderator`
---
-
-CREATE TABLE IF NOT EXISTS `moderator` (
-  `moderator_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`moderator_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `moderator_wisdom`
---
-
-CREATE TABLE IF NOT EXISTS `moderator_wisdom` (
-  `lectures_moderator_id` int(11) NOT NULL AUTO_INCREMENT,
-  `moderator_id` int(11) NOT NULL,
-  `wisdom_id` int(11) NOT NULL,
-  PRIMARY KEY (`lectures_moderator_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `news`
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
-  `news_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `news_header` varchar(90) NOT NULL,
   `news_body` text NOT NULL,
   `news_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `news_img` varchar(80) NOT NULL,
   `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`news_id`)
+  `news_activ` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `news`
 --
 
-INSERT INTO `news` (`news_id`, `news_header`, `news_body`, `news_date`, `news_img`, `user_id`) VALUES
-(1, 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного пр', 'Сегодня во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 12:44:27', 'photoTest.png', 1),
-(2, 'Phasellus blandit nisl ac commodo aliquam.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:40:27', 'images/IMG_20151228_120826.jpg', 1),
-(3, 'Praesent semper dui condimentum, auctor velit vitae, sagittis sapien.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:44:56', 'images/20151228_120827.jpg', 1),
-(4, 'Sed in odio ac odio elementum ullamcorper et quis metus.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:45:09', 'images/20151228_115024.jpg', 1),
-(5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:45:40', 'images/12_100229_1_96372.jpg', 1),
-(6, 'Sed molestie quam id sapien consequat, pellentesque fringilla arcu commodo.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:45:50', 'images/12_100229_1_96370.jpg', 1);
+INSERT INTO `news` (`id`, `news_header`, `news_body`, `news_date`, `news_img`, `user_id`, `news_activ`) VALUES
+(1, 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного пр', 'Сегодня во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 12:44:27', 'images/photoTest.png', 1, 1),
+(2, 'Phasellus blandit nisl ac commodo aliquam.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:40:27', 'images/IMG_20151228_120826.jpg', 1, 2),
+(3, 'Praesent semper dui condimentum, auctor velit vitae, sagittis sapien.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:44:56', 'images/20151228_120827.jpg', 1, 3),
+(4, 'Sed in odio ac odio elementum ullamcorper et quis metus.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:45:09', 'images/20151228_115024.jpg', 1, 4),
+(5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:45:40', 'images/12_100229_1_96372.jpg', 1, 5),
+(6, 'Sed molestie quam id sapien consequat, pellentesque fringilla arcu commodo.', 'Вчера во время проведения разведоперации наша группа подверглась нападению неизвестного противника в камуфляжной форме Алиенов.', '2015-11-30 14:45:50', 'images/12_100229_1_96370.jpg', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -207,20 +183,19 @@ INSERT INTO `news` (`news_id`, `news_header`, `news_body`, `news_date`, `news_im
 --
 
 CREATE TABLE IF NOT EXISTS `page` (
-  `page_id` int(11) NOT NULL AUTO_INCREMENT,
-  `page_title` char(40) NOT NULL,
-  `page_body` text NOT NULL,
-  PRIMARY KEY (`page_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` char(40) NOT NULL,
+  `body` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `page`
 --
 
-INSERT INTO `page` (`page_id`, `page_title`, `page_body`) VALUES
+INSERT INTO `page` (`id`, `title`, `body`) VALUES
 (1, 'О нас', '<h1>Мы молодцы</h1>'),
-(2, 'Контакты', '<h1>Садовая 32Б,кв 50</h1>\r\n<h2>Спросить Коровьева<h2>'),
-(3, 'Контакты', '<h1>Садовая 32Б,кв 50</h1>\r\n<h2>Спросить Коровьева<h2>');
+(2, 'Контакты', '<h1>Садовая 32Б,кв 50</h1>\r\n<h2>Спросить Коровьева<h2>');
 
 -- --------------------------------------------------------
 
@@ -237,39 +212,57 @@ CREATE TABLE IF NOT EXISTS `seminar` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `student`
---
-
-CREATE TABLE IF NOT EXISTS `student` (
-  `student_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`student_id`),
-  KEY `student_id` (`student_id`),
-  KEY `student_id_2` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `student_wisdom`
---
-
-CREATE TABLE IF NOT EXISTS `student_wisdom` (
-  `student_lectures_id` int(11) NOT NULL AUTO_INCREMENT,
-  `student_id` int(11) NOT NULL,
-  `wisdom_id` int(11) NOT NULL,
-  PRIMARY KEY (`student_lectures_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_login` char(40) NOT NULL,
+  `user_password` char(40) NOT NULL,
+  `user_status` char(40) NOT NULL,
+  `user_block` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_login`, `user_password`, `user_status`, `user_block`) VALUES
+(1, 'admin', '123', 'admin', 0),
+(2, 'vasea', '123', 'student', 0),
+(3, 'alla', '123', 'teacher', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_data`
+--
+
+CREATE TABLE IF NOT EXISTS `user_data` (
+  `user_data_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_data_name` char(40) NOT NULL,
+  `user_data_family` char(40) NOT NULL,
+  `user_data_surname` char(40) NOT NULL,
+  `user_data_email` char(80) NOT NULL,
+  `user_data_land` char(40) NOT NULL,
+  `user_data_sity` char(40) NOT NULL,
+  `user_data_phone` int(20) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_data_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_wisdom`
+--
+
+CREATE TABLE IF NOT EXISTS `user_wisdom` (
+  `user_wisdom_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `wisdom_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_wisdom_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------

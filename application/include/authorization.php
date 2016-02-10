@@ -19,7 +19,7 @@
                 <h4 class="modal-title" id="myModalLabel">Авторизация</h4>
             </div>
             <div class="modal-body">
-                <form method="post" action="?ctrl=authorization&action=StartSession" target="_parent">
+                <form method="post" action="?ctrl=cabinet&action=Authorisation" target="_parent">
                     <input type="text" class="form-control" name="login" placeholder="Имя"/>
                     <input type="password" class="form-control" name="password" placeholder="Пароль"/>
             </div>

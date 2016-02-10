@@ -7,15 +7,19 @@
  * Date: 04.01.2016
  * Time: 11:46
  */
+db_connect::connect();
+
+//require(__DIR__."/../core/vendor/rb.php");
+//R::setup('mysql:host=localhost;dbname=obuceisea', 'root', '');
+//R::setAutoResolve(TRUE);
+//R::freeze( TRUE );
 class news
 {
     private static function count_news($begin = 0, $count = 5)
     {
 
-        $data = new db_connect();
-        $result = $data->getAll("SELECT * FROM news ORDER BY news.news_date DESC LIMIT ?,?;",[$begin,$count]);
+//        $menu=R::load('menu',1);
 
-        return $result;
     }
 
 

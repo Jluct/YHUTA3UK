@@ -6,30 +6,28 @@ session_start();
  * Date: 06.01.2016
  * Time: 12:23
  */
-require_once(__DIR__."/../core/core/data/get/get.php");
-require_once(__DIR__."/../core/core/services/check.php");
 
-class cabinet extends getDataBase
+
+
+class cabinet
 {
     static function getStudentById()
     {
-        if (!isset($_SESSION['user']) || $_SESSION['user']['user_block'] == true) {
-            die('Авторизуйтесь !!<br><a href="index.php" ');
-        }
 
-        $query = "SELECT `student`.*,`educations`.`educations_name`,`specialty`.`specialty_name`
-FROM student
-LEFT JOIN  `maket`.`educations` ON  `student`.`educations_id` =  `educations`.`educations_id`
-LEFT JOIN  `maket`.`specialty` ON  `student`.`specialty_id` =  `specialty`.`specialty_id`
-WHERE student.user_id =" . $_SESSION['user']['user_id'] . ";";
-        $data = parent::getData($query, 1);
+    }
 
-        if($data){
-            $_SESSION['student']=$data;
-            return true;
-        }else{
+    static function authorisation($array){
+        $db = new db_connect();
+        $user = $db->getAll('SELECT user.* FROM user WHERE user.user_login = alla AND user.user_password = 123');
+
+        print_r($array);
+        print_r($user);die();
+        if(!$user || $user[0]->user_block)
             return false;
-        }
+
+        $_SESSION['user'] = $user;
+
+        return $user;
     }
 }
 

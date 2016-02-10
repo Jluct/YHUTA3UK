@@ -1,13 +1,11 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Listopadov
  * Date: 04.01.2016
  * Time: 9:07
  */
-
-
-
 class menu
 {
 
@@ -21,14 +19,14 @@ class menu
 
     function __construct($id)
     {
-        $db = new db_connect();
-        $data = $db->getDb()->prepare("SELECT *
-        FROM  `menu` ,  `menu_item`
-        WHERE menu_item.menu_id =:id
-        AND menu.menu_id = menu_item.menu_id");
+        $id = (int)$id;
 
-        $data->execute(array(':id'=>$id));
-        $this->items = $data->fetchAll(PDO::FETCH_ASSOC);
+        db_connect::connect();
+
+        $this->items = R::getAll("SELECT menu_item.*
+        FROM  `menu` ,  `menu_item`
+        WHERE menu_item.menu_id = ?
+        AND menu.menu_id = menu_item.menu_id", [$id]);
 
     }
 
@@ -43,7 +41,7 @@ class menu
             }
             $li = new Li($v['menu_item_name'], $v['menu_item_url'], $this->renderSubMenu($v['menu_item_id']));
             $li->tpl = $this->li_tpl;
-            $ul->appendLi($li,$this->ul_tpl);
+            $ul->appendLi($li, $this->ul_tpl);
         }
 
 //        echo($ul);
@@ -55,7 +53,7 @@ class menu
         $ul = new Ul();
         foreach ($this->items as $v) {
             if ($v['menu_item_parent'] === $id) {
-                $ul->appendLi(new Li($v['menu_item_name'], $v['menu_item_url'], $this->renderSubMenu($v['menu_item_id'])),$this->sub_ul_tpl);
+                $ul->appendLi(new Li($v['menu_item_name'], $v['menu_item_url'], $this->renderSubMenu($v['menu_item_id'])), $this->sub_ul_tpl);
             }
         }
         return $ul;
@@ -69,7 +67,7 @@ class Ul
 
     public $li = array();
 
-    public function appendLi($li,$tpl)
+    public function appendLi($li, $tpl)
     {
         $this->li[] = $li;
         $this->ul_tpl = $tpl;
@@ -89,10 +87,10 @@ class Li
     public $ul = "";
     public $url = "";
 
-    function __construct($content,$url ,$ul = "")
+    function __construct($content, $url, $ul = "")
     {
         $this->content = $content;
-        $this->url= $url;
+        $this->url = $url;
         $this->ul = $ul;
     }
 
@@ -100,7 +98,7 @@ class Li
 
     public function __toString()
     {
-        return sprintf($this->tpl,$this->url, $this->content, $this->ul);
+        return sprintf($this->tpl, $this->url, $this->content, $this->ul);
     }
 }
 
