@@ -16,7 +16,7 @@ class page
 
         db_connect::connect();
 
-        $result = R::load('page1',$id);
+        $result = R::load('page',$id);
 
         return $result;
     }
