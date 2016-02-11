@@ -11,23 +11,20 @@ session_start();
 
 class cabinet
 {
-    static function getStudentById()
+    function getStudentById()
     {
 
     }
 
-    static function authorisation($array){
-        $db = new db_connect();
-        $user = $db->getAll('SELECT user.* FROM user WHERE user.user_login = alla AND user.user_password = 123');
+    function authorisation($array){
+        db_connect::connect();
 
-        print_r($array);
-        print_r($user);die();
-        if(!$user || $user[0]->user_block)
+        $user = R::findOne('user',' user_login = :login and user_password=:password',$array);
+        if(!$user || $user->user_block)
             return false;
-
         $_SESSION['user'] = $user;
+        return true;
 
-        return $user;
     }
 }
 

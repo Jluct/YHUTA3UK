@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * Created by PhpStorm.
  * User: Listopadov
@@ -8,25 +8,29 @@
  */
 class cabinetController
 {
-    function actionGetCabinet(){
+    function actionGetCabinet($view){
 
-        $view = new View();
-        $view->cabinet = cabinet::getStudentById();
+
         if(!isset($_SESSION['user'])){
             return false;
         }
-        $view->userMenu = "/../include/userMenu.php";
+
         echo $view->render('cabinet.php');
     }
 
-    function actionAuthorisation(){
-        if(isset($_POST['login']) || isset($_POST['password']))
-            return false;
+    function actionAuthorisation($view){
+
+        if(!isset($_POST['login']) || !isset($_POST['password']))
+
         $userDataArray = array();
         $userDataArray['login']=$_POST['login'];
         $userDataArray['password']=$_POST['password'];
-        $view = new View();
-        $view->user = cabinet::authorisation($userDataArray);
-        echo $view->render('cabinet.php');
+        if(!cabinet::authorisation($userDataArray)) {
+            $_SESSION['userError']['message'] = ["Неверный логин или пароль", "Внимание", 4];
+        }
+
+            header("Location: /?");
+
+//        header("Location: /?ctrl=cabinet&action=GetCabinet");
     }
 }

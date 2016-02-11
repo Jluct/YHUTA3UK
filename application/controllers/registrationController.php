@@ -5,17 +5,17 @@ require_once(__DIR__.'/../core/core/services/check.php');
 
 class registrationController extends add
 {
-    function actionRegistration()
+    function actionRegistration($view)
     {
 
-        $view = new View();
+
 
         echo $view->render('registration.php');
     }
 
-    function actionAddUser()
+    function actionAddUser($view)
     {
-        $view = new View();
+
         $view->menu = menu::getDataMenu();
         $userDataArray = array();
         $userDataArray['login'] = $_POST['login'];

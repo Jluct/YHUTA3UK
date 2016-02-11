@@ -9,16 +9,14 @@
  */
 db_connect::connect();
 
-//require(__DIR__."/../core/vendor/rb.php");
-//R::setup('mysql:host=localhost;dbname=obuceisea', 'root', '');
-//R::setAutoResolve(TRUE);
-//R::freeze( TRUE );
+
 class news
 {
     private static function count_news($begin = 0, $count = 5)
     {
 
-//        $menu=R::load('menu',1);
+        $data=R::getAll("SELECT * FROM news ORDER BY  news.news_date DESC LIMIT ?,?",[$begin,$count]);
+        return $data;
 
     }
 
@@ -33,11 +31,11 @@ class news
         for ($i = 0; $i < count($newsData); $i++) {
             $news .= "<div class=\"row news_item\">
                         <div class=\"col-sm-3\">
-                            <img src='" . $newsData[$i]->news_img . "' alt=\"...\">
+                            <img src='" . $newsData[$i]['news_img'] . "' alt=\"...\">
                         </div>
                         <div class=\"col-sm-9\">
-                            <h3><a href=\"?ctrl=news&action=GetArticle&article=" . $newsData[$i]->news_id . "\">" . $newsData[$i]->news_header . "...</a>
-                                <small>" . $newsData[$i]->news_date . "</small>
+                            <h3><a href=\"?ctrl=news&action=GetArticle&article=" . $newsData[$i]['id'] . "\">" . $newsData[$i]['news_header'] . "...</a>
+                                <small>" . $newsData[$i]['news_date'] . "</small>
                             </h3>
                         </div>
                     </div>";
@@ -49,8 +47,9 @@ class news
     {
 
         $id = (int)$id;
-        $data = new db_connect();
-        return $data->getAll("SELECT * FROM news WHERE news_id=?",[$id])[0];
+        db_connect::connect();
+        return R::getAll("SELECT * FROM news WHERE id=?",[$id])[0];
+
 
     }
 

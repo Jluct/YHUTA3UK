@@ -10,9 +10,8 @@ require_once(__DIR__."/../include/header.php"); ?>
     <section class="container">
         <div class="row">
             <div class="col-sm-12">
-                <? echo $page->page_body ?>
+                <? echo $page->body ?>
             </div>
-
         </div>
     </section>
 

@@ -13,6 +13,9 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
  * Date: 03.01.2016
  * Time: 16:09
  */
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -55,6 +58,16 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
                 <button class="btn btn-block btn_search">Поиск</button>
             </div>
         </div>
+
+<?// print_r($messageData);?>
+
+<? if(isset($_SESSION['userError']['message'])){
+        $mes = new messager($_SESSION['userError']['message'][0]);
+        $mes->setMessageControl(true)->setHeader($_SESSION['userError']['message'][1])->setTplClassVariable($_SESSION['userError']['message'][2]);
+        unset($_SESSION['userError']['message']);
+        echo $mes;
+} ?>
+
     </div>
 </header>
 <section class="container">

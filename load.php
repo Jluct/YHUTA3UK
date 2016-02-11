@@ -8,22 +8,25 @@
 
 
 require_once (__DIR__ . '/autoload.php');
+require_once(__DIR__ . '/application/core/connect/db_connect.php');
 
 //try {
     if(!isset($_GET['ctrl'])){
         $ctrl = "defaultController";
         $action = "actionDefault";
     }else {
-        $ctrl = $_GET['ctrl'];
+       $controller = $ctrl = $_GET['ctrl'];
         $ctrl .= 'Controller';
 
         $action = 'action';
         $action .= $_GET['action'];
     }
 
-    $controller = new $ctrl();
-    $controller->$action();
+    spl_autoload_register('myAutoload');
 
+$view = new View();
+$controller = new $ctrl();
+$controller->$action($view);
 
 //    $view = new View();
 //    $view->abc = 123;

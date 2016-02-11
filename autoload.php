@@ -3,7 +3,8 @@
 
 function myAutoload($class_name)
 {
-    require_once(__DIR__ . '/application/core/connect/db_connect.php');
+
+
 
     if($class_name=='R')
         return;
@@ -16,11 +17,10 @@ function myAutoload($class_name)
         require_once __DIR__ . '/application/views/' . $class_name . '.php';
     } else {
 
-            throw new Exception('Не удалось обнаружить класс - "' . $class_name.'"');
+//            throw new Exception('Не удалось обнаружить класс - "' . $class_name.'"');
 
     }
 }
 
 
 
-spl_autoload_register('myAutoload');

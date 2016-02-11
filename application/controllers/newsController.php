@@ -14,22 +14,20 @@
 class newsController
 {
 
-    public function actionNews(){
+    public function actionNews($view){
         $page = $_GET['page'];
 
-        $view = new View();
 
         $view->page = (int)$page;
         $view->news = news::getDataNews($page);
         echo $view->render('news.php');
     }
 
-    public function actionGetArticle(){
+    public function actionGetArticle($view){
         $article_id=(int)$_GET['article'];
 
         $article = news::getArticle($article_id);
 
-        $view = new View();
 
         $view->article=$article;
         echo $view->render('article.php');

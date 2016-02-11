@@ -73,35 +73,35 @@
                 <div class="col-sm-6 col-md-6">
                     <div class="actual_news">
                         <div>
-                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[0]->news_id . "\">" . $news[0]->news_header . "</a>" ?>
-                            <? echo $news[0]->news_date ?>
+                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[0]['id'] . "\">" . $news[0]['news_header'] . "</a>" ?>
+                            <? echo $news[0]['news_date'] ?>
                         </div>
-                        <img src="/../../images/<? echo $news[0]->news_img ?>"/>
+                        <img src="/../../images/<? echo $news[0]['news_img'] ?>"/>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 small_news">
                     <div class="row">
                         <div class="col-xs-6">
-                            <img src="/../../images/<? echo $news[1]->news_img ?>">
-                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[1]->news_id . "\">" . $news[1]->news_header . "</a>" ?>
-                            <? echo $news[1]->news_date ?>
+                            <img src="/../../images/<? echo $news[1]['news_img'] ?>">
+                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[1]['id'] . "\">" . $news[1]['news_header'] . "</a>" ?>
+                            <? echo $news[1]['news_date'] ?>
                         </div>
                         <div class="col-xs-6">
-                            <img src="/../../images/<? echo $news[2]->news_img ?>">
-                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[2]->news_id . "\">" . $news[2]->news_header . "</a>" ?>
-                            <? echo $news[2]->news_date ?>
+                            <img src="/../../images/<? echo $news[2]['news_img'] ?>">
+                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[2]['id'] . "\">" . $news[2]['news_header'] . "</a>" ?>
+                            <? echo $news[2]['news_date'] ?>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-6">
-                            <img src="/../../images/<? echo $news[3]->news_img ?>">
-                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[3]->news_id . "\">" . $news[3]->news_header . "</a>" ?>
-                            <? echo $news[3]->news_date ?>
+                            <img src="/../../images/<? echo $news[3]['news_img'] ?>">
+                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[3]['id']. "\">" . $news[3]['news_header'] . "</a>" ?>
+                            <? echo $news[3]['news_date'] ?>
                         </div>
                         <div class="col-xs-6">
-                            <img src="/../../images/<? echo $news[4]->news_img ?>">
-                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[4]->news_id . "\">" . $news[4]->news_header . "</a>" ?>
-                            <? echo $news[4]->news_date ?>
+                            <img src="/../../images/<? echo $news[4]['news_img'] ?>">
+                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[4]['id'] . "\">" . $news[4]['news_header'] . "</a>" ?>
+                            <? echo $news[4]['news_date'] ?>
                         </div>
                     </div>
                 </div>

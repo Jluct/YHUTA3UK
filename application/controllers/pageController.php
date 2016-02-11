@@ -14,6 +14,7 @@ class pageController
         $view = new View();
         $view->page = page::getPageById($id);
 
+
         echo $view->render('page.php');
     }
 }

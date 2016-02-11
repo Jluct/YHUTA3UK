@@ -5,12 +5,12 @@
  * Date: 04.01.2016
  * Time: 8:31
  */
-
+$flag = 'in';
 ?>
 <a href="#" data-toggle="modal" data-target="#myModal">Авторизуйтесь</a>
 или <a href="?ctrl=registration&action=Registration">Зарегистрируйтесь</a>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade <? echo $flag ?> " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

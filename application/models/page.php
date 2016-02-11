@@ -17,7 +17,6 @@ class page
         db_connect::connect();
 
         $result = R::load('page',$id);
-
         return $result;
     }
 }
