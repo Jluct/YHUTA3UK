@@ -8,15 +8,13 @@
  */
 class wisdomController
 {
-    public function actionWisdomType()
+    public function actionWisdomType($view)
     {
-        $type=$_GET['type'];  //высшее
-        $subtype=$_GET['subtype']; //переподготовка
-        $category=$_GET['category']; //Программирование
+        $wisdomData[]=$_GET['type'];
+        $wisdomData[]=$_GET['subtype'];
+//        print_r($wisdomData);die();
 
-        $view = new View();
-
-        $view->wisdom = wisdom::getWisdom($type,$subtype,$category);
-        echo $view->render("wisdom1.php");
+        $view->wisdom = wisdom::getWisdomByType($wisdomData);
+        echo $view->render('wisdom.php');
     }
 }

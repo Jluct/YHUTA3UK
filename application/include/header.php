@@ -61,10 +61,9 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
 
 <?// print_r($messageData);?>
 
-<? if(isset($_SESSION['userError']['message'])){
-        $mes = new messager($_SESSION['userError']['message'][0]);
-        $mes->setMessageControl(true)->setHeader($_SESSION['userError']['message'][1])->setTplClassVariable($_SESSION['userError']['message'][2]);
-        unset($_SESSION['userError']['message']);
+<? if(!empty($message)){
+        $mes = new messager($message[0]);
+        $mes->setMessageControl(true)->setHeader($message[1])->setTplClassVariable($message[2]);
         echo $mes;
 } ?>
 

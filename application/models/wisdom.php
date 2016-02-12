@@ -3,43 +3,35 @@
 /**
  * Created by PhpStorm.
  * User: Listopadov
- * Date: 27.01.2016
- * Time: 11:09
+ * Date: 12.02.2016
+ * Time: 13:38
  */
-
-require_once(__DIR__."/../core/core/data/get/get.php");
-require_once(__DIR__."/../core/core/services/check.php");
-
-class wisdom extends getDataBase
+class wisdom
 {
 
-    public function getWisdom($type,$subtype=0,$category=0){
+    function getWisdomByType($array) //Вопрос о получении $wisdomData стаётся открытым. Пока костыль
+    {
+        $wisdomType = [1=>'education',2=>'course',3=>'seminar'];
 
-        $wisdomType = array(1=>"education",2=>"course",3=>"seminar");
-        $data = self::getData("SELECT * FROM wisdom
-                              LEFT JOIN ".$wisdomType[$type]." ON wisdom.wisdom_id =".$wisdomType[$type].".wisdom_id
-");
-        print_r($data);
+        if(count($wisdomType)<$array[0])
+            die($array[0]." - ".count($wisdomType));
 
+        $data = R::getAll("SELECT * FROM wisdom_type
+        LEFT JOIN wisdom_subtype ON wisdom_subtype.wisdom_type_id = wisdom_type.id
+        LEFT JOIN wisdom ON wisdom.wisdom_subtype_id = wisdom_subtype.id
+        LEFT JOIN education ON  wisdom.id= education.wisdom_id
+        WHERE wisdom_type.id = 1
+        order by wisdom_subtype.id
+        LIMIT 0,30"
+            );
+        $wisdom = R::convertToBeans('wisdom',$data);
+
+        $out;
+
+        foreach($wisdom as $w){
+            $out[$w->wisdom_type_id].=$w;
+        }
+
+        print_r($out);
     }
-
 }
-
-
-/*
- Конкретная высшка
-SELECT * FROM education
-left join wisdom on wisdom.wisdom_id = education.wisdom_id
-left join wisdom_subcategory on wisdom_subcategory.wisdom_subcategory_id = wisdom.wisdom_subcategory_id
-left join wisdom_category on wisdom_category.wisdom_category_id = wisdom_subcategory.wisdom_subcategory_id
-where education.wisdom_id = 1
- */
-
-/*
-Array(
-[0] => Array([wisdom_category_id] => 1 [wisdom_category_name] => Программирование [wisdom_subcategory_id] => 1 [wisdom_subcategory_name] => PHP )
-[1] => Array([wisdom_category_id] => 1 [wisdom_category_name] => Программирование [wisdom_subcategory_id] => 2 [wisdom_subcategory_name] => C# )
-[2] => Array ( [wisdom_category_id] => 2 [wisdom_category_name] => Дизайн [wisdom_subcategory_id] => 3 [wisdom_subcategory_name] => Web-дизайн )
-[3] => Array ( [wisdom_category_id] => [wisdom_category_name] => Кройка и шитьё [wisdom_subcategory_id] => [wisdom_subcategory_name] => )
-)
-*/

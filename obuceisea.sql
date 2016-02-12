@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 10 2016 г., 18:13
+-- Время создания: Фев 12 2016 г., 17:06
 -- Версия сервера: 5.1.67-community-log
 -- Версия PHP: 5.4.11
 
@@ -27,9 +27,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `courses` (
-  `courses_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `wisdom_id` int(11) NOT NULL,
-  PRIMARY KEY (`courses_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -51,16 +51,16 @@ CREATE TABLE IF NOT EXISTS `discipline` (
 --
 
 CREATE TABLE IF NOT EXISTS `education` (
-  `education_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `wisdom_id` int(11) NOT NULL,
-  PRIMARY KEY (`education_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `education`
 --
 
-INSERT INTO `education` (`education_id`, `wisdom_id`) VALUES
+INSERT INTO `education` (`id`, `wisdom_id`) VALUES
 (1, 1),
 (2, 2);
 
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `menu_item` (
   `menu_item_parent` int(11) NOT NULL DEFAULT '0',
   `menu_item_activ` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`menu_item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Дамп данных таблицы `menu_item`
@@ -145,7 +145,8 @@ INSERT INTO `menu_item` (`menu_item_id`, `menu_id`, `menu_item_name`, `menu_item
 (11, 2, 'Семинары', '?ctrl=wisdom&action=WisdomType&type=3', 0, 1),
 (12, 2, 'Мастер-классы', '?ctrl=wisdom&action=WisdomType&type=3&subtype=1', 11, 1),
 (13, 2, 'Доклады', '?ctrl=wisdom&action=WisdomType&type=3&subtype=2', 11, 1),
-(14, 2, 'Библиотека', '#', 0, 1);
+(14, 2, 'Библиотека', '#', 0, 1),
+(15, 2, 'Статьи', '?ctrl=wisdom&action=WisdomType&type=3&subtype=3', 11, 1);
 
 -- --------------------------------------------------------
 
@@ -204,9 +205,9 @@ INSERT INTO `page` (`id`, `title`, `body`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `seminar` (
-  `seminar_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `wisdom_id` int(11) NOT NULL,
-  PRIMARY KEY (`seminar_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -216,19 +217,19 @@ CREATE TABLE IF NOT EXISTS `seminar` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_login` char(40) NOT NULL,
   `user_password` char(40) NOT NULL,
   `user_status` char(40) NOT NULL,
   `user_block` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_login`, `user_password`, `user_status`, `user_block`) VALUES
+INSERT INTO `user` (`id`, `user_login`, `user_password`, `user_status`, `user_block`) VALUES
 (1, 'admin', '123', 'admin', 0),
 (2, 'vasea', '123', 'student', 0),
 (3, 'alla', '123', 'teacher', 0);
@@ -242,7 +243,7 @@ INSERT INTO `user` (`user_id`, `user_login`, `user_password`, `user_status`, `us
 CREATE TABLE IF NOT EXISTS `user_data` (
   `user_data_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_data_name` char(40) NOT NULL,
-  `user_data_family` char(40) NOT NULL,
+  `user_data_andername` char(40) NOT NULL,
   `user_data_surname` char(40) NOT NULL,
   `user_data_email` char(80) NOT NULL,
   `user_data_land` char(40) NOT NULL,
@@ -250,7 +251,14 @@ CREATE TABLE IF NOT EXISTS `user_data` (
   `user_data_phone` int(20) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`user_data_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `user_data`
+--
+
+INSERT INTO `user_data` (`user_data_id`, `user_data_name`, `user_data_andername`, `user_data_surname`, `user_data_email`, `user_data_land`, `user_data_sity`, `user_data_phone`, `user_id`) VALUES
+(1, 'Василий', 'Васильевич', 'Василевский', 'vasea@mail.ru', 'Беларусь', 'Минск', 222, 2);
 
 -- --------------------------------------------------------
 
@@ -272,20 +280,89 @@ CREATE TABLE IF NOT EXISTS `user_wisdom` (
 --
 
 CREATE TABLE IF NOT EXISTS `wisdom` (
-  `wisdom_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `wisdom_name` char(80) NOT NULL,
   `wisdom_student_count` int(11) NOT NULL,
-  `wisdom_type` char(40) NOT NULL,
-  PRIMARY KEY (`wisdom_id`)
+  `wisdom_subtype_id` int(11) NOT NULL,
+  `wisdom_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Тип образования (Высшее,курс,лекция)' AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `wisdom`
 --
 
-INSERT INTO `wisdom` (`wisdom_id`, `wisdom_name`, `wisdom_student_count`, `wisdom_type`) VALUES
-(1, 'Вёрстка и js', 1, 'education'),
-(2, 'Серверное программирование', 5, 'education');
+INSERT INTO `wisdom` (`id`, `wisdom_name`, `wisdom_student_count`, `wisdom_subtype_id`, `wisdom_category_id`) VALUES
+(1, 'Вёрстка и js', 1, 1, 0),
+(2, 'Серверное программирование', 5, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wisdom_category`
+--
+
+CREATE TABLE IF NOT EXISTS `wisdom_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wisdom_category_name` char(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `wisdom_category`
+--
+
+INSERT INTO `wisdom_category` (`id`, `wisdom_category_name`) VALUES
+(1, 'Программирование'),
+(2, 'Дизайн');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wisdom_subtype`
+--
+
+CREATE TABLE IF NOT EXISTS `wisdom_subtype` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wisdom_type_id` int(11) NOT NULL,
+  `wisdom_subtype_name` char(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Дамп данных таблицы `wisdom_subtype`
+--
+
+INSERT INTO `wisdom_subtype` (`id`, `wisdom_type_id`, `wisdom_subtype_name`) VALUES
+(1, 1, 'Первое высшее образование'),
+(2, 1, 'Переподготовка'),
+(3, 1, 'Сокращённое обучение'),
+(4, 2, 'Сертифицированные'),
+(5, 2, 'Не сертифицированные'),
+(6, 3, 'Мастер-классы'),
+(7, 3, 'Доклады'),
+(8, 3, 'Статьи');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wisdom_type`
+--
+
+CREATE TABLE IF NOT EXISTS `wisdom_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `wisdom_type_name` char(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `wisdom_type`
+--
+
+INSERT INTO `wisdom_type` (`id`, `wisdom_type_name`) VALUES
+(1, 'Высшее образование'),
+(2, 'Курсы'),
+(3, 'Семинары');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

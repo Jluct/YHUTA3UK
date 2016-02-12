@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 /**
  * Created by PhpStorm.
  * User: Listopadov
@@ -8,28 +9,36 @@ session_start();
  */
 class cabinetController
 {
-    function actionGetCabinet($view){
+    function actionGetCabinet($view)
+    {
 
 
-        if(!isset($_SESSION['user'])){
+        if (!isset($_SESSION['user'])) {
             return false;
         }
 
         echo $view->render('cabinet.php');
     }
 
-    function actionAuthorisation($view){
+    function actionAuthorisation($view)
+    {
 
-        if(!isset($_POST['login']) || !isset($_POST['password']))
-
-        $userDataArray = array();
-        $userDataArray['login']=$_POST['login'];
-        $userDataArray['password']=$_POST['password'];
-        if(!cabinet::authorisation($userDataArray)) {
-            $_SESSION['userError']['message'] = ["Неверный логин или пароль", "Внимание", 4];
+        if (empty($_POST['login']) || empty($_POST['password'])) {
+            $view->message = ["Не введён логин или пароль", "Внимание", 4];
+            echo $view->render('authorisation.php');
+            return;
         }
 
-            header("Location: /?");
+        $userDataArray = array();
+        $userDataArray['login'] = $_POST['login'];
+        $userDataArray['password'] = $_POST['password'];
+        if (!cabinet::authorisation($userDataArray)) {
+            $view->message = ["Неверный логин или пароль", "Внимание", 4];
+            echo $view->render('authorisation.php');
+            return;
+        }
+
+        header("Location: /?");
 
 //        header("Location: /?ctrl=cabinet&action=GetCabinet");
     }

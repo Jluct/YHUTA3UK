@@ -14,7 +14,7 @@ class messager
     private $message;
 
     private $tpl = "
-                        <div class=\"panel panel-%s alert alert-%s alert-dismissible\" role=\"alert\">
+                        <div class=\"panel panel-%s alert alert-dismissible\" role=\"alert\">
                             <div class=\"panel-heading\"><h3>%s<small>%s</small></h3></div>
                             <div class=\"panel-body\">
                                 <h4 style='color:black;'>%s</h4>
@@ -47,7 +47,7 @@ class messager
 
 
         $data = sprintf($this->tpl, $this->tpl_class[$this->tpl_class_variable],
-            $this->tpl_class[$this->tpl_class_variable], $this->header, $this->tpl_control, $this->message);
+             $this->header, $this->tpl_control, $this->message);
 
         return $data;
     }
