@@ -6,9 +6,6 @@
  * Date: 03.02.2016
  * Time: 10:55
  */
-
-
-
 class pagination
 {
     private $table, $number, $element_out, $out;
@@ -53,7 +50,7 @@ class pagination
             return false;
 
 
-        if($page_number==0) {
+        if ($page_number == 0) {
             $this->tpl_previous = "";
             $this->tpl_next = "";
         }
@@ -95,7 +92,7 @@ class pagination
      */
     public function setTplPrevious($tpl_previous)
     {
-        $this->page_number?$this->tpl_previous = $tpl_previous:'';
+        $this->page_number ? $this->tpl_previous = $tpl_previous : '';
         return $this;
     }
 
@@ -105,7 +102,7 @@ class pagination
      */
     public function setTplNext($tpl_next)
     {
-        $this->page_number?$this->tpl_next = $tpl_next:'';
+        $this->page_number ? $this->tpl_next = $tpl_next : '';
         return $this;
     }
 
@@ -146,16 +143,16 @@ class pagination
     private function getPaginationNumber()
     {
 
-        $table = new db_connect();
-        $data = $table->getDb()->query("SELECT COUNT( " . $this->table . "_activ ) FROM  " . $this->table . "")->fetch();
-        $count_table = $data[0];
+        db_connect::connect();
+        $count_table = R::count($this->table, " WHERE ". $this->table."_activ = 1");
+
 
         $number = (int)ceil($count_table / $this->number);
 
-        if($this->page_number>=$number || $number===1){
+        if ($this->page_number >= $number || $number === 1) {
             $this->tpl_next = '';
         }
-        if(($this->page_number-1)<=0 || $number===1){
+        if (($this->page_number - 1) <= 0 || $number === 1) {
             $this->tpl_previous = '';
         }
 
@@ -171,11 +168,11 @@ class pagination
     private function element($count = 0)
     {
         $number = $count ? $number = $count : $this->getPaginationNumber();
-        $this->pagination_control ? $this->element_out .= sprintf($this->tpl_previous,$this->page_number-1): '';
+        $this->pagination_control ? $this->element_out .= sprintf($this->tpl_previous, $this->page_number - 1) : '';
         for ($i = 0; $i < $number; $i++) {
             $this->element_out .= sprintf($this->tpl_element, $i + 1, $i + 1);
         }
-        $this->pagination_control ? $this->element_out .= sprintf($this->tpl_next,$this->page_number+1 ): '';
+        $this->pagination_control ? $this->element_out .= sprintf($this->tpl_next, $this->page_number + 1) : '';
 
     }
 
@@ -194,7 +191,7 @@ class pagination
         $min_visible_elem = ceil($this->page_number - $this->count_element / 2);
         $max_visible_elem = floor($this->page_number + $this->count_element / 2);
 
-        $this->element_out .= sprintf($this->tpl_previous,$this->page_number-1);
+        $this->element_out .= sprintf($this->tpl_previous, $this->page_number - 1);
         $flags = true;
         for ($i = 1; $i < $number + 1; $i++) {
 
@@ -205,22 +202,24 @@ class pagination
                 $this->element_out .= sprintf($this->tpl_element, $i, $i);
                 $flags = true;
             } else {
-                if($flags){
+                if ($flags) {
                     $flags = false;
-                }else{continue;}
+                } else {
+                    continue;
+                }
                 $this->element_out .= sprintf($this->hidden_element, $i, $i);
 
             }
 
         }
 
-        $this->element_out .= sprintf($this->tpl_next,$this->page_number+1 );
+        $this->element_out .= sprintf($this->tpl_next, $this->page_number + 1);
     }
 
 
     function __toString()
     {
-        $this->count_element?$this->chantingNumberElement():$this->element();
+        $this->count_element ? $this->chantingNumberElement() : $this->element();
         return sprintf($this->tpl_parent, $this->element_out);
     }
 

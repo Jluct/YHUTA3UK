@@ -20,7 +20,7 @@
         <span aria-hidden=\"true\">&raquo;</span>
       </a>
     </li>");
-                $page->responsePagination(3);
+                $page->responsePagination(3,'news');
                 echo $page;
 
                 ?>
