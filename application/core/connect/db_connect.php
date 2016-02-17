@@ -2,7 +2,7 @@
 
 
 require_once(__DIR__ . "/../vendor/rb.php");
-
+define( 'REDBEAN_MODEL_PREFIX', '' );
 class db_connect
 {
 

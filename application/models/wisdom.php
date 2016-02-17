@@ -16,39 +16,52 @@ class wisdom
             return false;
         }
 
+
         $data = R::findOne('wtype', "WHERE wtype.id = :id", ['id' => $wisdomTypeArray[$array[0]]]);
 
         $out = "<h2>" . $data->name . "</h2>";
         $queryArrayString = array();
         $queryArray = array();
         foreach ($data->ownWsubtypeList as $value) {
-            $queryArrayString[] = "(
-SELECT * ,
-wtype.name AS type_name,
-wsubtype.name AS subtype_name,
-wisdom.name AS wisdom_name
-FROM wtype
-left join wsubtype on wsubtype.wtype_id = wtype.id
-left join wisdom on wisdom.wsubtype_id = wsubtype.id
-LEFT JOIN wcategories ON wcategories.id = wisdom.wcategories_id
-where wtype.id = ? and wsubtype.id = ?
-limit 0,10)";
+            $queryArrayString[] = "( SELECT
+                wtype.name AS type_name,
+                wsubtype.name AS subtype_name,
+                wisdom.name AS wisdom_name,
+                wisdom.id AS wisdom_id,
+                wcategory.name AS categor_name,
+                wsubcategory.name AS subcaterog_name
+                FROM `wtype`
+                left join wsubtype on wsubtype.wtype_id = wtype.id
+                LEFT JOIN wcategory ON wcategory.wsubtype_id = wsubtype.id
+                LEFT JOIN wsubcategory ON wsubcategory.wcategory_id = wcategory.id
+                LEFT JOIN wisdom ON wisdom.wsubcategory_id = wsubcategory.id
+                where wtype.id = ? and wsubtype.id = ?
+                limit 0,10)";
             $queryArray[] = $data->id;
             $queryArray[] = $value->id;
         }
 
-        $query = implode("UNION",$queryArrayString);
+        $query = implode("UNION", $queryArrayString);
 
         $wisdom = R::getAll($query, $queryArray);
 //        print_r($wisdom);die();
-        $out .= "<table class='table table-striped'>";
+        $out .= "<table class='table table-striped'>
+                    <tr>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Субкатегория</th>
+                        <th>Раздел</th>
+                    </tr>
+                ";
 
-        foreach($wisdom as $value)
-        {
+        foreach ($wisdom as $value) {
+            if(!$value['wisdom_id'])
+                continue;
             $out .= "<tr>
-                        <td>".$value['wisdom_name']."</td>
-                        <td>".$value['name']."</td>
-                        <td>".$value['subtype_name']."</td>
+                        <td><a href='?wisdom/" . $value['wisdom_id'] . "'>" . $value['wisdom_name'] . "</a></td>
+                        <td>" . $value['categor_name'] . "</td>
+                        <td>" . $value['subcaterog_name'] . "</td>
+                        <td>" . $value['subtype_name'] . "</td>
                     </tr>";
         }
 
