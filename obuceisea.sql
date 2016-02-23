@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 16 2016 г., 12:15
+-- Время создания: Фев 23 2016 г., 18:57
 -- Версия сервера: 5.1.67-community-log
 -- Версия PHP: 5.4.11
 
@@ -19,6 +19,36 @@ SET time_zone = "+00:00";
 --
 -- База данных: `obuceisea`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) unsigned DEFAULT NULL,
+  `type_id` int(11) unsigned DEFAULT NULL,
+  `name` char(80) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_foreignkey_category_category` (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id`, `category_id`, `type_id`, `name`) VALUES
+(1, NULL, 2, 'Программирование'),
+(2, 1, NULL, 'Серверное программирование'),
+(4, 1, NULL, 'Клиентское программирование'),
+(5, 1, NULL, 'Desktop'),
+(6, NULL, 2, 'Дизайн'),
+(7, NULL, 3, 'Медицина'),
+(8, 6, NULL, 'Веб-дизайн'),
+(9, 6, NULL, 'Векторная графика'),
+(10, 7, NULL, 'Фармацептика');
 
 -- --------------------------------------------------------
 
@@ -201,6 +231,43 @@ INSERT INTO `page` (`id`, `title`, `body`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `type`
+--
+
+CREATE TABLE IF NOT EXISTS `type` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` char(80) COLLATE utf8_unicode_ci NOT NULL,
+  `type_id` int(11) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_foreignkey_type_type` (`type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+
+--
+-- Дамп данных таблицы `type`
+--
+
+INSERT INTO `type` (`id`, `name`, `type_id`) VALUES
+(1, 'Высшее образование', NULL),
+(2, 'Первое высшее', 1),
+(3, 'Переподготовка', 1),
+(4, 'Высшее образование', 1),
+(5, 'Курсы', NULL),
+(6, 'Семинары', NULL),
+(7, 'Сертифицированные', 5),
+(8, 'Не сертифицированные', 5),
+(9, 'Мастер-классы', 6),
+(10, 'Доклады', 6),
+(11, 'Статьи', 6),
+(12, 'Программирование', 2),
+(13, 'Дизайн', 2),
+(14, 'Архитектура', 3),
+(15, 'Медицина', 3),
+(16, 'Электроника', 4),
+(17, 'Агрономия', 4);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `user`
 --
 
@@ -264,35 +331,27 @@ CREATE TABLE IF NOT EXISTS `user_wisdom` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `wcategories`
+-- Структура таблицы `wcategory`
 --
 
-CREATE TABLE IF NOT EXISTS `wcategories` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `parent` int(11) unsigned NOT NULL,
+CREATE TABLE IF NOT EXISTS `wcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` char(80) NOT NULL,
+  `wsubtype_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `wcategories`
+-- Дамп данных таблицы `wcategory`
 --
 
-INSERT INTO `wcategories` (`id`, `name`, `parent`) VALUES
-(1, 'Программирование', 0),
-(2, 'Дизайн', 0),
-(3, 'Бухгалтерия', 0),
-(4, 'Lorem', 0),
-(5, 'Ipsum', 0),
-(6, 'Серверное программирование', 1),
-(7, '1С', 3),
-(8, 'Вёрстка', 2),
-(9, 'Колористика', 2),
-(10, 'C#', 4),
-(11, 'ASP.NET', 4),
-(12, 'Dolorum', 5),
-(13, 'Stigma', 5),
-(14, 'Клиентское программирование', 1);
+INSERT INTO `wcategory` (`id`, `name`, `wsubtype_id`) VALUES
+(1, 'Дизайн', 1),
+(2, 'Программирование', 2),
+(3, 'Бухгалтерия', 4),
+(4, 'Программирование', 4),
+(5, 'Дизайн', 5),
+(6, 'Программирование', 7);
 
 -- --------------------------------------------------------
 
@@ -303,31 +362,59 @@ INSERT INTO `wcategories` (`id`, `name`, `parent`) VALUES
 CREATE TABLE IF NOT EXISTS `wisdom` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `wsubtype_id` int(11) unsigned DEFAULT NULL,
-  `wcategories_id` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_foreignkey_wisdom_wsubtype` (`wsubtype_id`)
+  `wsubcategory_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
 
 --
 -- Дамп данных таблицы `wisdom`
 --
 
-INSERT INTO `wisdom` (`id`, `name`, `wsubtype_id`, `wcategories_id`) VALUES
-(1, 'Вёрстка', 1, 1),
-(2, 'JS для начинающих', 4, 1),
-(3, 'Инженер', 2, 1),
-(4, 'Дизайн', 2, 2),
-(5, 'Безопастность', 5, 1),
-(6, 'Серверное программирование', 3, 1),
-(7, 'Как писать на PHP и не сойти с ума', 8, 1),
-(8, 'Задачи 1С', 7, 3),
-(9, 'Ангулар', 4, 1),
-(10, 'Sed ultricies tortor', 3, 4),
-(11, 'blandit suscipit sed vitae eros.', 3, 5),
-(12, 'Mauris semper', 4, 3),
-(13, 'Donec nec nibh nec', 7, 4),
-(14, 'RedBean как средство для суицида', 6, 1);
+INSERT INTO `wisdom` (`id`, `name`, `wsubcategory_id`) VALUES
+(1, 'Вёрстка', 1),
+(2, 'JS для начинающих', 5),
+(3, 'Инженер', 7),
+(4, 'Дизайн', 4),
+(5, 'Безопастность', 9),
+(6, 'Серверное программирование', 3),
+(7, 'Как писать на PHP и не сойти с ума', 5),
+(8, 'Задачи 1С', 2),
+(9, 'Ангулар', 10),
+(10, 'Sed ultricies tortor', 8),
+(11, 'blandit suscipit sed vitae eros.', 2),
+(12, 'Mauris semper', 10),
+(13, 'Donec nec nibh nec', 1),
+(14, 'RedBean как средство для суицида', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wsubcategory`
+--
+
+CREATE TABLE IF NOT EXISTS `wsubcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` char(80) NOT NULL,
+  `wcategory_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- Дамп данных таблицы `wsubcategory`
+--
+
+INSERT INTO `wsubcategory` (`id`, `name`, `wcategory_id`) VALUES
+(1, 'Вёрстка', 1),
+(2, 'Колористика', 5),
+(3, 'Серверное программирование', 2),
+(4, 'Инженер', 4),
+(5, '1С', 4),
+(6, 'Торговый баланс', 5),
+(7, 'JS для начинающих', 2),
+(8, 'Ангулар', 5),
+(9, 'Юзабилити', 2),
+(10, 'Веб-вёрстка', 3),
+(11, 'RedBean как средство для суицида', 3);
 
 -- --------------------------------------------------------
 
@@ -383,10 +470,16 @@ INSERT INTO `wtype` (`id`, `name`) VALUES
 --
 
 --
--- Ограничения внешнего ключа таблицы `wisdom`
+-- Ограничения внешнего ключа таблицы `category`
 --
-ALTER TABLE `wisdom`
-  ADD CONSTRAINT `c_fk_wisdom_wsubtype_id` FOREIGN KEY (`wsubtype_id`) REFERENCES `wsubtype` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+ALTER TABLE `category`
+  ADD CONSTRAINT `c_fk_category_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Ограничения внешнего ключа таблицы `type`
+--
+ALTER TABLE `type`
+  ADD CONSTRAINT `c_fk_type_type_id` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Ограничения внешнего ключа таблицы `wsubtype`
