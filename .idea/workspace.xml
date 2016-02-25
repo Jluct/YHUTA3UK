@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59b846fa-468e-45fa-a4a4-3414913fb32f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/WisdomController.php" afterPath="$PROJECT_DIR$/application/controllers/WisdomController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/connect/db_connect.php" afterPath="$PROJECT_DIR$/application/core/connect/db_connect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/include/header.php" afterPath="$PROJECT_DIR$/application/include/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/categoryList.php" afterPath="$PROJECT_DIR$/application/models/categoryList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/menu.php" afterPath="$PROJECT_DIR$/application/models/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/wisdom.php" afterPath="$PROJECT_DIR$/application/models/wisdom.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/wisdom.php" afterPath="$PROJECT_DIR$/application/views/wisdom.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,23 +35,9 @@
       <file leaf-file-name="WisdomController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-              <folding>
-                <marker date="1456151035323" expanded="true" signature="1621:1860" placeholder="..." />
-                <marker date="1456151035323" expanded="true" signature="1646:1843" placeholder="..." />
-                <marker date="1456151035323" expanded="true" signature="1990:2324" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -54,10 +45,38 @@
       <file leaf-file-name="categoryList.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42885974">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.62222224">
+              <caret line="53" column="166" selection-start-line="53" selection-start-column="166" selection-end-line="53" selection-end-column="166" />
               <folding>
-                <marker date="1456234670566" expanded="true" signature="1054:1515" placeholder="SELECT wtype..wtype..." />
+                <marker date="1456400985084" expanded="true" signature="1133:1527" placeholder="..." />
+                <marker date="1456400985084" expanded="true" signature="1258:1392" placeholder="..." />
+                <marker date="1456400985084" expanded="true" signature="1258:1393" placeholder="..." />
+                <marker date="1456400985084" expanded="true" signature="1258:1462" placeholder="..." />
+                <marker date="1456400985084" expanded="true" signature="1527:1652" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.884615">
+              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+              <folding>
+                <marker date="1456400288910" expanded="true" signature="558:780" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="583:780" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="921:1083" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1354" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1355" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1362" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1363" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1443" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1498" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1574" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="1321:1638" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="10219:10416" placeholder="..." />
+                <marker date="1456400288910" expanded="true" signature="10563:10600" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -67,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,7 +105,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/application/models/menu.php" />
+        <option value="$PROJECT_DIR$/application/include/header.php" />
+        <option value="$PROJECT_DIR$/application/views/wisdom.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/application/core/connect/db_connect.php" />
+        <option value="$PROJECT_DIR$/application/controllers/WisdomController.php" />
+        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
         <option value="$PROJECT_DIR$/application/models/categoryList.php" />
       </list>
     </option>
@@ -134,7 +159,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -150,6 +174,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -200,6 +252,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -263,6 +319,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -308,6 +365,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -323,10 +386,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19402985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -378,31 +441,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/cabinet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="111" selection-start-line="20" selection-start-column="111" selection-end-line="20" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/cabinet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/news.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -498,13 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46215943">
-          <caret line="221" column="7" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -669,31 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/wisdom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538">
           <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.460481">
-          <caret line="65" column="96" selection-start-line="65" selection-start-column="96" selection-end-line="65" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9347079">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -704,30 +720,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+    <entry file="file://$PROJECT_DIR$/application/models/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-          <folding>
-            <marker date="1456151035323" expanded="true" signature="1621:1860" placeholder="..." />
-            <marker date="1456151035323" expanded="true" signature="1646:1843" placeholder="..." />
-            <marker date="1456151035323" expanded="true" signature="1990:2324" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.617558">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
+    <entry file="file://$PROJECT_DIR$/application/include/userMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20585267">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
+          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="115" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7079647">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/core/vendor/rb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="10728" column="27" selection-start-line="10728" selection-start-column="27" selection-end-line="10728" selection-end-column="27" />
+        <state vertical-scroll-proportion="-0.09586277">
+          <caret line="1226" column="7" selection-start-line="1226" selection-start-column="7" selection-end-line="1226" selection-end-column="7" />
           <folding>
             <marker date="1456151035317" expanded="true" signature="129145:129272" placeholder="INSERT INTO ${$table}..." />
             <marker date="1456151035317" expanded="true" signature="129542:129583" placeholder="INSERT INTO ${$table}..." />
@@ -778,20 +802,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34141415">
+          <caret line="214" column="9" selection-start-line="214" selection-start-column="9" selection-end-line="214" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/wisdom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/include/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.538462">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.884615">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <marker date="1456400288910" expanded="true" signature="558:780" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="583:780" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="921:1083" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1354" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1355" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1362" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1363" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1443" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1498" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1574" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="1321:1638" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="10219:10416" placeholder="..." />
+            <marker date="1456400288910" expanded="true" signature="10563:10600" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42885974">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.62222224">
+          <caret line="53" column="166" selection-start-line="53" selection-start-column="166" selection-end-line="53" selection-end-column="166" />
           <folding>
-            <marker date="1456234670566" expanded="true" signature="1054:1515" placeholder="SELECT wtype..wtype..." />
+            <marker date="1456400985084" expanded="true" signature="1133:1527" placeholder="..." />
+            <marker date="1456400985084" expanded="true" signature="1258:1392" placeholder="..." />
+            <marker date="1456400985084" expanded="true" signature="1258:1393" placeholder="..." />
+            <marker date="1456400985084" expanded="true" signature="1258:1462" placeholder="..." />
+            <marker date="1456400985084" expanded="true" signature="1527:1652" placeholder="..." />
           </folding>
         </state>
       </provider>

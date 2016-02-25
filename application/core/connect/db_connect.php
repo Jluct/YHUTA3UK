@@ -19,3 +19,4 @@ R::setup('mysql:host=localhost;dbname=obuceisea', 'root', '');
 R::setAutoResolve(TRUE);
 //R::freeze( TRUE );
 //R::debug(true);
+

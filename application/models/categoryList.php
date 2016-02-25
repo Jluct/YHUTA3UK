@@ -9,93 +9,68 @@
 class categoryList
 {
 
-    static function categorMenu($type, $subtype='', $cat='')
+    static public $wisdomArray = [];
+
+    static function categorMenu($array)
     {
+
+//        if(!$array[0] || !is_int($array[0]))
+//            return false;
+
         db_connect::connect();
 
-        $data = R::load('type',$type);
-        $item = $data->ownType;
-//        print_r($item);
+        $data = R::load('type', $array[0]);
+        $item = '';
 
-
-        foreach($item as $i){
-//            print_r($i);
-            foreach($i->ownCategoryList as $v){
-                $v_cpunt=0;
-                foreach($v->ownCategory as $o){
-                    if($o && !$v_cpunt){
-                        $v_cpunt=1;
-                        print_r((string)$v->name."<br>");
-                    }
-                    print_r(" - ".(string)$o->name."<br>");
-                }
-
-            }
+        if (!$array[1]) {
+            $item = $data->ownType;
+        } else {
+            $item = $data->withCondition('id = :id', ["id" => $array[1]])->ownType;
         }
 
+        $out = "";
 
 
-//        $type = R::dispense('type',10);
-//        print_r($type);
-//        $type->name = "Высшее образование";
-//        $type1 = R::dispense('type');
-//        $type1->name = "Первое высшее";
-//        $type[1]->ownType = [$type[2]];
-//        $id = R::store($type[1]);
+        foreach ($item as $i) {
 
 
-//        $query = "SELECT
-//	      wtype.id AS type_id,
-//        wsubtype.id AS wsubtype_id,
-//        wcategory.id AS category_id,
-//        wcategory.name AS category_name,
-//        wsubcategory.id AS subcategory_id
-//        FROM wtype
-//        LEFT JOIN wsubtype ON wsubtype.wtype_id = wtype.id
-//        LEFT JOIN wcategory ON wcategory.wsubtype_id = wsubtype.id
-//        LEFT JOIN wsubcategory ON wsubcategory.wcategory_id = wcategory.id
-//        WHERE wtype.id = :type".$subtype.$cat;
-//        $bindings=['type' => $type];
-//
-//        if($subtype){
-//            $subtype =" AND wsubtype.id = :subtype";
-//            $bindings[]=['subtype'=>$subtype];
-//            if($cat){
-//                $cat =" AND wcategory.id = :cat";
-//                $bindings[]=['cat'=>$cat];
-//            }
-//        }
-//
-//
-//
-//        $data = R::getAll($query,$bindings);
-//
-//        print_r($data);
+            if (!$array[2]) {
+                $j = $i->ownCategoryList;
+//                print_r($i);
+            } else {
+                $j = $i->withCondition('category.id = ?', [$array[2]])->ownCategoryList;
 
-//        return $out;
+            }
+            foreach ($j as $v) {
+//                print_r($v->name."<br>");
+                $v_count = 0;
+                foreach ($v->ownCategory as $o) {
+                    if (!$v_count && $o->name) {
+
+
+                        $v_count = 1;
+                        $out .= "<div class=\"dropdown\">
+  <button class=\"btn btn-default btn-block dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\"
+  aria-haspopup=\"true\" aria-expanded=\"true\"><a href='http://obuceisea.my/?ctrl=wisdom&action=WisdomType&type=1&subtype=2&category=".$v->id."'>" . $v->name . "</a><span class=\"caret\"></span></button>
+  <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">";
+                    }
+                    if ($o->name) {
+
+                        self::$wisdomArray[$i->name][$o->name]['subtype_name'] = $i->name;
+                        self::$wisdomArray[$i->name][$o->name]['category_name'] = $v->name;
+                        self::$wisdomArray[$i->name][$o->name]['subcategory_id'] = $o->id;
+                        $out .= "<li><a href=\"#\">" . $o->name . "</a></li>";
+
+//                        print_r(" - ".$o->name."<br>");
+                    }
+                }
+                $out .= "</ul></div>";
+            }
+
+        }
+        return $out;
 
     }
+
+
 }
-
-
-
-/*Связь внутри таблицы
-
-        $category = R::dispense('category',10);
-        $category[1]->ownCategory = [$category[2]];
-        $id = R::store($category[1]);
-
-/*
- * SELECT
-	    wtype.id AS type_id,
-        wsubtype.id AS wsubtype_id,
-        wcategory.id AS category_id,
-        wcategory.name AS category_name,
-        wsubcategory.id AS subcategory_id,
-        wsubcategory.name AS subcategory_name
-        FROM wtype
-        LEFT JOIN wsubtype ON wsubtype.wtype_id = wtype.id
-        LEFT JOIN wcategory ON wcategory.wsubtype_id = wsubtype.id
-        LEFT JOIN wsubcategory ON wsubcategory.wcategory_id = wcategory.id
-        WHERE wtype.id = :id
- */

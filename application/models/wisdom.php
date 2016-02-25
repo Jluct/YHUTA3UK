@@ -9,9 +9,365 @@
 class wisdom
 {
 
-    function getWisdomByType($array) //Вопрос о получении $wisdomData стаётся открытым. Пока костыль
+    function getWisdomByType($array, $wisdomArray) //Вопрос о получении $wisdomData стаётся открытым. Пока костыль
     {
         $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
+        if (!(int)$array[0]) {
+            return false;
+        }
+//      print_r($wisdomArray);
+
+
+
+        $out;
+        db_connect::connect();
+
+        foreach ($wisdomArray as $key => $value) {
+            $out .= "<h2>" . $key . "</h2><table class='table table-striped'>
+                    <tr>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Субкатегория</th>
+                        <th>Раздел</th>
+                    </tr>";
+            foreach ($value as $smallKey => $subValue) {
+                $category = R::load('category', $subValue['subcategory_id']);
+//                $gavno = R::dispense('information',1);
+//                $gavno->name="Инженер-программист";
+//                $category->ownGavnoList[] = $gavno;
+//                R::store($category);
+//                print_r('ok');die();
+                foreach ($category->ownInformationList as $item) {
+//                                    print_r($item);die();
+                    $out .= "<tr>
+                            <td><a href='" . $item->id . "'>" . $item->name . "</a></td>
+                            <td>" . $smallKey . "</td>
+                            <td>" . $subValue['category_name'] . "</td>
+                            <td>" . $subValue['subtype_name'] . "</td>
+                        </tr>";
+                }
+            }
+            $out .= "</table>";
+        }
+        return $out;
+
+    }
+}
+
+
+
+/*
+ * Array
+(
+    [Первое высшее] => Array
+        (
+            [Серверное программирование] => Array
+                (
+                    [subtype_name] => Первое высшее
+                    [category_name] => Программирование
+                    [subcategory_id] => 2
+                )
+
+            [Клиентское программирование] => Array
+                (
+                    [subtype_name] => Первое высшее
+                    [category_name] => Программирование
+                    [subcategory_name] => Клиентское программирование
+                )
+
+            [Desktop] => Array
+                (
+                    [subtype_name] => Первое высшее
+                    [category_name] => Программирование
+                    [subcategory_name] => Desktop
+                )
+
+        )
+
+    [Переподготовка] => Array
+        (
+            [Фармацептика] => Array
+                (
+                    [subtype_name] => Переподготовка
+                    [category_name] => Медицина
+                    [subcategory_name] => Фармацептика
+                )
+
+        )
+
+    [Сокращённое обучение] => Array
+        (
+            [Веб-дизайн] => Array
+                (
+                    [subtype_name] => Сокращённое обучение
+                    [category_name] => Дизайн
+                    [subcategory_name] => Веб-дизайн
+                )
+
+            [Векторная графика] => Array
+                (
+                    [subtype_name] => Сокращённое обучение
+                    [category_name] => Дизайн
+                    [subcategory_name] => Векторная графика
+                )
+
+        )
+
+)
+ */
+
+
+/*
+ * RedBeanPHP\OODBBean Object
+(
+    [properties:protected] => Array
+        (
+            [id] => 2
+            [category_id] => 1
+            [type_id] =>
+            [name] => Серверное программирование
+        )
+
+    [__info:protected] => Array
+        (
+            [type] => category
+            [sys.id] => id
+            [sys.orig] => Array
+                (
+                    [id] => 2
+                    [category_id] => 1
+                    [type_id] =>
+                    [name] => Серверное программирование
+                )
+
+            [tainted] =>
+            [changed] =>
+        )
+
+    [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+        (
+        )
+
+    [fetchType:protected] =>
+    [withSql:protected] =>
+    [withParams:protected] => Array
+        (
+        )
+
+    [aliasName:protected] =>
+    [via:protected] =>
+    [noLoad:protected] =>
+    [all:protected] =>
+)
+RedBeanPHP\OODBBean Object
+(
+    [properties:protected] => Array
+        (
+            [id] => 4
+            [category_id] => 1
+            [type_id] =>
+            [name] => Клиентское программирование
+        )
+
+    [__info:protected] => Array
+        (
+            [type] => category
+            [sys.id] => id
+            [sys.orig] => Array
+                (
+                    [id] => 4
+                    [category_id] => 1
+                    [type_id] =>
+                    [name] => Клиентское программирование
+                )
+
+            [tainted] =>
+            [changed] =>
+        )
+
+    [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+        (
+        )
+
+    [fetchType:protected] =>
+    [withSql:protected] =>
+    [withParams:protected] => Array
+        (
+        )
+
+    [aliasName:protected] =>
+    [via:protected] =>
+    [noLoad:protected] =>
+    [all:protected] =>
+)
+RedBeanPHP\OODBBean Object
+(
+    [properties:protected] => Array
+        (
+            [id] => 5
+            [category_id] => 1
+            [type_id] =>
+            [name] => Desktop
+        )
+
+    [__info:protected] => Array
+        (
+            [type] => category
+            [sys.id] => id
+            [sys.orig] => Array
+                (
+                    [id] => 5
+                    [category_id] => 1
+                    [type_id] =>
+                    [name] => Desktop
+                )
+
+            [tainted] =>
+            [changed] =>
+        )
+
+    [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+        (
+        )
+
+    [fetchType:protected] =>
+    [withSql:protected] =>
+    [withParams:protected] => Array
+        (
+        )
+
+    [aliasName:protected] =>
+    [via:protected] =>
+    [noLoad:protected] =>
+    [all:protected] =>
+)
+RedBeanPHP\OODBBean Object
+(
+    [properties:protected] => Array
+        (
+            [id] => 10
+            [category_id] => 7
+            [type_id] =>
+            [name] => Фармацептика
+        )
+
+    [__info:protected] => Array
+        (
+            [type] => category
+            [sys.id] => id
+            [sys.orig] => Array
+                (
+                    [id] => 10
+                    [category_id] => 7
+                    [type_id] =>
+                    [name] => Фармацептика
+                )
+
+            [tainted] =>
+            [changed] =>
+        )
+
+    [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+        (
+        )
+
+    [fetchType:protected] =>
+    [withSql:protected] =>
+    [withParams:protected] => Array
+        (
+        )
+
+    [aliasName:protected] =>
+    [via:protected] =>
+    [noLoad:protected] =>
+    [all:protected] =>
+)
+RedBeanPHP\OODBBean Object
+(
+    [properties:protected] => Array
+        (
+            [id] => 8
+            [category_id] => 6
+            [type_id] =>
+            [name] => Веб-дизайн
+        )
+
+    [__info:protected] => Array
+        (
+            [type] => category
+            [sys.id] => id
+            [sys.orig] => Array
+                (
+                    [id] => 8
+                    [category_id] => 6
+                    [type_id] =>
+                    [name] => Веб-дизайн
+                )
+
+            [tainted] =>
+            [changed] =>
+        )
+
+    [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+        (
+        )
+
+    [fetchType:protected] =>
+    [withSql:protected] =>
+    [withParams:protected] => Array
+        (
+        )
+
+    [aliasName:protected] =>
+    [via:protected] =>
+    [noLoad:protected] =>
+    [all:protected] =>
+)
+RedBeanPHP\OODBBean Object
+(
+    [properties:protected] => Array
+        (
+            [id] => 9
+            [category_id] => 6
+            [type_id] =>
+            [name] => Векторная графика
+        )
+
+    [__info:protected] => Array
+        (
+            [type] => category
+            [sys.id] => id
+            [sys.orig] => Array
+                (
+                    [id] => 9
+                    [category_id] => 6
+                    [type_id] =>
+                    [name] => Векторная графика
+                )
+
+            [tainted] =>
+            [changed] =>
+        )
+
+    [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+        (
+        )
+
+    [fetchType:protected] =>
+    [withSql:protected] =>
+    [withParams:protected] => Array
+        (
+        )
+
+    [aliasName:protected] =>
+    [via:protected] =>
+    [noLoad:protected] =>
+    [all:protected] =>
+)
+ */
+
+/*
+ *         $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
         if (!(int)$array[0]) {
             return false;
         }
@@ -70,77 +426,4 @@ class wisdom
 //        die();
 
         return $out;
-
-    }
-}
-
-
-
-
-/*
- * SELECT * FROM wisdom_type
-        LEFT JOIN wisdom_subtype ON wisdom_subtype.wisdom_type_id = wisdom_type.id
-        LEFT JOIN wisdom ON wisdom.wisdom_subtype_id = wisdom_subtype.id
-        LEFT JOIN education ON  wisdom.id= education.wisdom_id
-        WHERE wisdom_type.id = 1
-        order by wisdom_subtype.id
-        LIMIT 0,30
- */
-
-
-// создание и связь таблиц
-//        $wisdomType1 = R::dispense('type');
-//        $wisdomType1->name = 'Высшее образование';
-//
-//        $wisdomSubtype1 = R::dispense('subtype');
-//        $wisdomSubtype1->name = "Первое высшее";
-//
-//        $wisdom = R::dispense('wisdom');
-//        $wisdom->name = "Вёрстка";
-
-//        $wisdomSubtype1->ownWisdomList[] = $wisdom;
-//        $wisdomSubtype2->ownTab3List[] = $wisdom1;
-//
-//        $wisdomType1->ownSubtypeList[] = $wisdomSubtype1;
-//        $wisdomType1->ownTab2List[] = $wisdomSubtype2;
-//        $wisdomType2->ownTab2List[] = $wisdomSubtype3;
-
-//        R::storeAll([$wisdomType1,$wisdomSubtype1,$wisdom]);
-
-
-/*
- * (SELECT * FROM `wtype`
-left join wsubtype on wsubtype.wtype_id = wtype.id
-left join wisdom on wisdom.wsubtype_id = wsubtype.id
-where wtype.id = 1 and wsubtype.id = 1
-limit 0,1)
-UNION
-(SELECT * FROM `wtype`
-left join wsubtype on wsubtype.wtype_id = wtype.id
-left join wisdom on wisdom.wsubtype_id = wsubtype.id
-where wtype.id = 1 and wsubtype.id = 2
-limit 0,1)
-UNION
-((SELECT * FROM `wtype`
-left join wsubtype on wsubtype.wtype_id = wtype.id
-left join wisdom on wisdom.wsubtype_id = wsubtype.id
-where wtype.id = 1 and wsubtype.id = 3
-limit 0,1))
- */
-
-
-/*
- *         foreach ($data->ownWsubtypeList  as $punct) {
-            $out .= "<table class='table table-striped'><caption><h4>" . $punct->name . "</h4></caption>";
-            foreach ($punct->ownWisdomList= R::findAll('wisdom',"where wisdom.wsubtype_id = :id",['id'=>$data->id]) as $item) {
-
-                if(!$item->name){
-                    $out .= "<tr><td>Нет записей</td></tr>";
-                    continue;
-                }else{
-                    $out .= "<tr><td>" . $item->name . "</td><td>".$item->cat = R::getCell('SELECT name FROM wcategories WHERE id = :id',['id'=>$item->wcategories_id])."</td></tr>";
-                }
-            }
-            $out .= "</table>";
-        }
  */

@@ -10,10 +10,10 @@ require_once(__DIR__."/../include/header.php"); ?>
     <section class="container">
         <div class="row">
             <div class="col-sm-3">
-                <? echo categoryList::categorMenu($type); ?>
+                <? echo $categoryList; ?>
             </div>
             <div class="col-sm-9">
-                <? echo $wisdom ?>
+                <? echo $wisdom; ?>
             </div>
         </div>
     </section>

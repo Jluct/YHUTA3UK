@@ -10,12 +10,14 @@ class wisdomController
 {
     public function actionWisdomType($view)
     {
-        if(!isset($_GET['type']) || !isset($_GET['subtype']))
+//        if(!isset($_GET['type']))
         $wisdomData[]=$_GET['type'];
         $wisdomData[]=$_GET['subtype'];
+        $wisdomData[]=$_GET['category'];
 //        print_r($wisdomData);die();
         $view->type = $_GET['type'];
-        $view->wisdom = wisdom::getWisdomByType($wisdomData);
+        $view->categoryList = categoryList::categorMenu($wisdomData);
+        $view->wisdom = wisdom::getWisdomByType($wisdomData,categoryList::$wisdomArray);
         echo $view->render('wisdom.php');
     }
 }
