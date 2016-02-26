@@ -11,7 +11,7 @@ class categoryList
 
     static public $wisdomArray = [];
 
-    static function categorMenu($array)
+    static function categorMenu($array,$page=1)
     {
         $open = '';
 //        if(!$array[0] || !is_int($array[0]))
@@ -59,15 +59,16 @@ class categoryList
                         $out .= "<div class=\"dropdown $open\">
   <button class=\"btn btn-default btn-block dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"tooltip\"
   aria-haspopup=\"true\" aria-expanded=\"true\">
-  <a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "'>" . $v->name . "<span class=\"caret\"></span></a></button>
+  <a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "&page=".$page."'>" . $v->name . "<span class=\"caret\"></span></a></button>
   <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">";
                     }
                     if ($o->name) {
 
+                        self::$wisdomArray[$i->name][$o->name]['type_id'] = $data->id;
                         self::$wisdomArray[$i->name][$o->name]['subtype_name'] = $i->name;
                         self::$wisdomArray[$i->name][$o->name]['category_name'] = $v->name;
                         self::$wisdomArray[$i->name][$o->name]['subcategory_id'] = $o->id;
-                        $out .= "<li><a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "&subcategory=".$o->id."'>" . $o->name . "</a></li>";
+                        $out .= "<li><a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "&subcategory=".$o->id."&page=".$page."'>" . $o->name . "</a></li>";
 
 //                        print_r(" - ".$o->name."<br>");
                     }

@@ -15,16 +15,19 @@ class wisdomController
         $wisdomData[]=$_GET['subtype'];
         $wisdomData[]=$_GET['category'];
         $wisdomData[]=$_GET['subcategory'];
-//        print_r($wisdomData);die();
+
         $view->type = $_GET['type'];
-        $view->categoryList = categoryList::categorMenu($wisdomData);
-        $view->wisdom = wisdom::getWisdomByType($wisdomData,categoryList::$wisdomArray);
+//        $view->table = $_GET['type'];
+        $view->page = (int)$_GET['page'];
+        $view->categoryList = categoryList::categorMenu($wisdomData,$view->page);
+        $view->wisdom = wisdom::getWisdomByType($wisdomData,categoryList::$wisdomArray,$view->page);
         echo $view->render('wisdom.php');
     }
 
     public function actionGetWisdomById($view){
+        $type=$_GET['typeId'];
         $id=$_GET['id'];
-
+        $view->data = wisdom::getWisdom($type,$id);
         echo $view->render('wisdomId.php');
     }
 }

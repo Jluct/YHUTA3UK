@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59b846fa-468e-45fa-a4a4-3414913fb32f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/wisdomId.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/WisdomController.php" afterPath="$PROJECT_DIR$/application/controllers/WisdomController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/categoryList.php" afterPath="$PROJECT_DIR$/application/models/categoryList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/pagination.php" afterPath="$PROJECT_DIR$/application/models/pagination.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/wisdom.php" afterPath="$PROJECT_DIR$/application/models/wisdom.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/wisdom.php" afterPath="$PROJECT_DIR$/application/views/wisdom.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,38 +32,9 @@
       <file leaf-file-name="WisdomController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="22" column="100" selection-start-line="22" selection-start-column="100" selection-end-line="22" selection-end-column="100" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wisdomId.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/wisdomId.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18888889">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categoryList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.5">
-              <caret line="61" column="103" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
-              <folding>
-                <marker date="1456476159540" expanded="true" signature="1434:1835" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1558:1654" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1558:1655" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1558:1676" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1558:1677" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1558:1711" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1558:1770" placeholder="..." />
-                <marker date="1456476159540" expanded="true" signature="1835:1960" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -68,43 +42,47 @@
       <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-38.576923">
-              <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="74" />
+            <state vertical-scroll-proportion="-24.846153">
+              <caret line="56" column="124" selection-start-line="56" selection-start-column="124" selection-end-line="56" selection-end-column="124" />
               <folding>
-                <marker date="1456475901526" expanded="true" signature="717:939" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="742:939" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1080:1242" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2015" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2016" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2023" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2024" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2141" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2196" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2272" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="1982:2336" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="10917:11114" placeholder="..." />
-                <marker date="1456475901526" expanded="true" signature="11261:11298" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="733:955" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="758:955" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="1096:1258" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2411" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2412" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2419" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2420" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2463" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2464" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2518" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2590" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2645" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2721" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="2378:2785" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="3912:4132" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="12617:12814" placeholder="..." />
+                <marker date="1456492740718" expanded="true" signature="12961:12998" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/wisdom.php">
+      <file leaf-file-name="categoryList.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="18" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.653847">
-              <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="23" />
-              <folding />
+            <state vertical-scroll-proportion="0.22323233">
+              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+              <folding>
+                <marker date="1456492347812" expanded="true" signature="1442:1858" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1662" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1663" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1684" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1685" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1719" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1727" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1566:1793" placeholder="..." />
+                <marker date="1456492347812" expanded="true" signature="1858:1983" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,9 +90,81 @@
       <file leaf-file-name="db_connect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/wisdom.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding>
+                <marker date="1456490969093" expanded="true" signature="591:736" placeholder="..." />
+                <marker date="1456490969093" expanded="true" signature="665:726" placeholder="..." />
+                <marker date="1456490969093" expanded="true" signature="779:920" placeholder="..." />
+                <marker date="1456490969093" expanded="true" signature="849:910" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pagination.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/pagination.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-25.115385">
+              <caret line="146" column="76" selection-start-line="146" selection-start-column="76" selection-end-line="146" selection-end-column="76" />
+              <folding>
+                <marker date="1456491071605" expanded="true" signature="331:454" placeholder="..." />
+                <marker date="1456491071605" expanded="true" signature="383:444" placeholder="..." />
+                <marker date="1456491071605" expanded="true" signature="487:606" placeholder="..." />
+                <marker date="1456491071605" expanded="true" signature="535:596" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/news.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.0">
+              <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+              <folding>
+                <marker date="1456151035322" expanded="true" signature="228:286" placeholder="SELECT * FRO..news..." />
+                <marker date="1456151035322" expanded="true" signature="628:1170" placeholder="..." />
+                <marker date="1456151035322" expanded="true" signature="677:794" placeholder="..." />
+                <marker date="1456151035322" expanded="true" signature="843:1143" placeholder="..." />
+                <marker date="1456151035322" expanded="true" signature="876:1112" placeholder="..." />
+                <marker date="1456151035322" expanded="true" signature="1344:1373" placeholder="SELECT * FRO..news..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/newsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/news.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="25" column="18" selection-start-line="10" selection-start-column="16" selection-end-line="25" selection-end-column="18" />
+              <folding>
+                <marker date="1456151035325" expanded="true" signature="467:612" placeholder="..." />
+                <marker date="1456151035325" expanded="true" signature="541:602" placeholder="..." />
+                <marker date="1456151035325" expanded="true" signature="655:796" placeholder="..." />
+                <marker date="1456151035325" expanded="true" signature="725:786" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,13 +184,14 @@
       <list>
         <option value="$PROJECT_DIR$/application/models/menu.php" />
         <option value="$PROJECT_DIR$/application/include/header.php" />
-        <option value="$PROJECT_DIR$/application/core/connect/db_connect.php" />
-        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
-        <option value="$PROJECT_DIR$/application/models/categoryList.php" />
-        <option value="$PROJECT_DIR$/application/views/wisdom.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/application/controllers/WisdomController.php" />
         <option value="$PROJECT_DIR$/application/views/wisdomId.php" />
+        <option value="$PROJECT_DIR$/application/views/wisdom.php" />
+        <option value="$PROJECT_DIR$/application/models/pagination.php" />
+        <option value="$PROJECT_DIR$/application/controllers/WisdomController.php" />
+        <option value="$PROJECT_DIR$/application/models/categoryList.php" />
+        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
+        <option value="$PROJECT_DIR$/application/core/connect/db_connect.php" />
       </list>
     </option>
   </component>
@@ -306,6 +357,10 @@
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -417,7 +472,7 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19616205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19616205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -573,13 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74242425">
-          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3090909">
@@ -626,13 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17171717">
           <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/newsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4121212">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -699,20 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5151515">
-          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../userdata/profiles/Default.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -762,10 +789,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34141415">
+          <caret line="214" column="9" selection-start-line="214" selection-start-column="9" selection-end-line="214" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/include/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.538462">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.653847">
+          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/core/vendor/rb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09586277">
-          <caret line="1226" column="7" selection-start-line="1226" selection-start-column="7" selection-end-line="1226" selection-end-column="7" />
+        <state vertical-scroll-proportion="-15.307693">
+          <caret line="2768" column="43" selection-start-line="2765" selection-start-column="7" selection-end-line="2769" selection-end-column="65" />
           <folding>
             <marker date="1456151035317" expanded="true" signature="129145:129272" placeholder="INSERT INTO ${$table}..." />
             <marker date="1456151035317" expanded="true" signature="129542:129583" placeholder="INSERT INTO ${$table}..." />
@@ -816,97 +866,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
+    <entry file="file://$PROJECT_DIR$/application/views/wisdomId.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34141415">
-          <caret line="214" column="9" selection-start-line="214" selection-start-column="9" selection-end-line="214" selection-end-column="9" />
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/include/header.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/newsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.538462">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/application/models/pagination.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.653847">
-          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-38.576923">
-          <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="74" />
+        <state vertical-scroll-proportion="-25.115385">
+          <caret line="146" column="76" selection-start-line="146" selection-start-column="76" selection-end-line="146" selection-end-column="76" />
           <folding>
-            <marker date="1456475901526" expanded="true" signature="717:939" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="742:939" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1080:1242" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2015" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2016" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2023" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2024" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2141" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2196" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2272" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="1982:2336" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="10917:11114" placeholder="..." />
-            <marker date="1456475901526" expanded="true" signature="11261:11298" placeholder="..." />
+            <marker date="1456491071605" expanded="true" signature="331:454" placeholder="..." />
+            <marker date="1456491071605" expanded="true" signature="383:444" placeholder="..." />
+            <marker date="1456491071605" expanded="true" signature="487:606" placeholder="..." />
+            <marker date="1456491071605" expanded="true" signature="535:596" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/wisdom.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="18" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <marker date="1456490969093" expanded="true" signature="591:736" placeholder="..." />
+            <marker date="1456490969093" expanded="true" signature="665:726" placeholder="..." />
+            <marker date="1456490969093" expanded="true" signature="779:920" placeholder="..." />
+            <marker date="1456490969093" expanded="true" signature="849:910" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/WisdomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="22" column="100" selection-start-line="22" selection-start-column="100" selection-end-line="22" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.846153">
+          <caret line="56" column="124" selection-start-line="56" selection-start-column="124" selection-end-line="56" selection-end-column="124" />
+          <folding>
+            <marker date="1456492740718" expanded="true" signature="733:955" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="758:955" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="1096:1258" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2411" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2412" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2419" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2420" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2463" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2464" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2518" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2590" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2645" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2721" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="2378:2785" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="3912:4132" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="12617:12814" placeholder="..." />
+            <marker date="1456492740718" expanded="true" signature="12961:12998" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="25" column="18" selection-start-line="10" selection-start-column="16" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <marker date="1456151035325" expanded="true" signature="467:612" placeholder="..." />
+            <marker date="1456151035325" expanded="true" signature="541:602" placeholder="..." />
+            <marker date="1456151035325" expanded="true" signature="655:796" placeholder="..." />
+            <marker date="1456151035325" expanded="true" signature="725:786" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.0">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+          <folding>
+            <marker date="1456151035322" expanded="true" signature="228:286" placeholder="SELECT * FRO..news..." />
+            <marker date="1456151035322" expanded="true" signature="628:1170" placeholder="..." />
+            <marker date="1456151035322" expanded="true" signature="677:794" placeholder="..." />
+            <marker date="1456151035322" expanded="true" signature="843:1143" placeholder="..." />
+            <marker date="1456151035322" expanded="true" signature="876:1112" placeholder="..." />
+            <marker date="1456151035322" expanded="true" signature="1344:1373" placeholder="SELECT * FRO..news..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/connect/db_connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.5">
-          <caret line="61" column="103" selection-start-line="61" selection-start-column="103" selection-end-line="61" selection-end-column="103" />
+        <state vertical-scroll-proportion="0.22323233">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
           <folding>
-            <marker date="1456476159540" expanded="true" signature="1434:1835" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1558:1654" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1558:1655" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1558:1676" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1558:1677" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1558:1711" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1558:1770" placeholder="..." />
-            <marker date="1456476159540" expanded="true" signature="1835:1960" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1442:1858" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1662" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1663" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1684" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1685" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1719" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1727" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1566:1793" placeholder="..." />
+            <marker date="1456492347812" expanded="true" signature="1858:1983" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/wisdomId.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18888889">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
