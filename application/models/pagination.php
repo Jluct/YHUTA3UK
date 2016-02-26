@@ -41,8 +41,8 @@ class pagination
      * @param $table имя таблицы, строки которой будет подсчитывать метод getPaginationNumber.
      * По умолчанию подсчёт ведётся по полю имя_таблицы+"_id"
      * @param $number число элементов, которое будет на странице
-     * @param $page_number  текущая страница, не обязательный параметр,
-     * если отсутствует необъходимость в элементах управления
+     * @param $page_number  страница текущая , не обязательный параметр,
+     * если отсутствует необходимость в элементах управления
      */
     function __construct($table, $number, $page_number = 0)
     {
@@ -144,7 +144,7 @@ class pagination
     {
 
         db_connect::connect();
-        $count_table = R::count($this->table, " WHERE ". $this->table."activ = 1");
+        $count_table = R::count($this->table, " WHERE ". $this->table.".activ = 1");
 
 
         $number = (int)ceil($count_table / $this->number);
