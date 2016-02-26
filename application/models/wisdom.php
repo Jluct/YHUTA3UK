@@ -18,11 +18,16 @@ class wisdom
 //      print_r($wisdomArray);
 
 
-
         $out;
         db_connect::connect();
 
+//        print_r($wisdomArray);die();
+        if (empty($wisdomArray)) {
+            $out .= "<h2>Ничего не найдено</h2>";
+            return $out;
+        }
         foreach ($wisdomArray as $key => $value) {
+
             $out .= "<h2>" . $key . "</h2><table class='table table-striped'>
                     <tr>
                         <th>Название</th>
@@ -37,10 +42,22 @@ class wisdom
 //                $category->ownGavnoList[] = $gavno;
 //                R::store($category);
 //                print_r('ok');die();
-                foreach ($category->ownInformationList as $item) {
-//                                    print_r($item);die();
+                if ($array[3] && $array[2]) {
+
+
+                    $data = $category->withCondition('information.category_id = ? LIMIT 0,20', [$array[3]])->ownInformationList;
+                } else {
+                    $data = $array[1] ? $category->with('LIMIT 0,20')->ownInformationList : $category->with('LIMIT 0,5')->ownInformationList;
+
+                }
+
+                foreach ($data as $item) {
+                    if (!$item && $array[2]) {
+                        $out .= "<tr><td colspan='4'><h4 class='text-center'><b>Ничего не найдено</b></h4></td></tr>";
+                        continue;
+                    }
                     $out .= "<tr>
-                            <td><a href='" . $item->id . "'>" . $item->name . "</a></td>
+                            <td><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></td>
                             <td>" . $smallKey . "</td>
                             <td>" . $subValue['category_name'] . "</td>
                             <td>" . $subValue['subtype_name'] . "</td>

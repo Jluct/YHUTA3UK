@@ -309,11 +309,9 @@ body{
 Специальности
 */
 
-.specialty{
-    height:230px;
-    width: 48%;
-    float: left;
-    margin:1px;
+.category .dropdown:hover ul{
+    display: block;
+    z-index: 100;
 }
 
 .categor_menu{

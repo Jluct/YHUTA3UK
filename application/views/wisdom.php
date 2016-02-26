@@ -9,7 +9,7 @@ require_once(__DIR__."/../include/header.php"); ?>
 
     <section class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-3 category">
                 <? echo $categoryList; ?>
             </div>
             <div class="col-sm-9">

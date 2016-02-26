@@ -13,7 +13,7 @@ class categoryList
 
     static function categorMenu($array)
     {
-
+        $open = '';
 //        if(!$array[0] || !is_int($array[0]))
 //            return false;
 
@@ -33,15 +33,16 @@ class categoryList
 
         foreach ($item as $i) {
 
-
+            $i_count = 0;
             if (!$array[2]) {
                 $j = $i->ownCategoryList;
 //                print_r($i);
             } else {
-                $j = $i->withCondition('category.id = ?', [$array[2]])->ownCategoryList;
+                $j = $i->withCondition('category.id = ? LIMIT 0,3', [$array[2]])->ownCategoryList;
 
             }
             foreach ($j as $v) {
+
 //                print_r($v->name."<br>");
                 $v_count = 0;
                 foreach ($v->ownCategory as $o) {
@@ -49,9 +50,16 @@ class categoryList
 
 
                         $v_count = 1;
-                        $out .= "<div class=\"dropdown\">
-  <button class=\"btn btn-default btn-block dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\"
-  aria-haspopup=\"true\" aria-expanded=\"true\"><a href='http://obuceisea.my/?ctrl=wisdom&action=WisdomType&type=1&subtype=2&category=".$v->id."'>" . $v->name . "</a><span class=\"caret\"></span></button>
+
+                        if ($v->id == $array[2]) $open = "open";
+                        if (!$i_count) {
+                            $i_count = 1;
+                            $out .= "<h3>" . $i->name . "</h3>";
+                        }
+                        $out .= "<div class=\"dropdown $open\">
+  <button class=\"btn btn-default btn-block dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"tooltip\"
+  aria-haspopup=\"true\" aria-expanded=\"true\">
+  <a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "'>" . $v->name . "<span class=\"caret\"></span></a></button>
   <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">";
                     }
                     if ($o->name) {
@@ -59,7 +67,7 @@ class categoryList
                         self::$wisdomArray[$i->name][$o->name]['subtype_name'] = $i->name;
                         self::$wisdomArray[$i->name][$o->name]['category_name'] = $v->name;
                         self::$wisdomArray[$i->name][$o->name]['subcategory_id'] = $o->id;
-                        $out .= "<li><a href=\"#\">" . $o->name . "</a></li>";
+                        $out .= "<li><a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "&subcategory=".$o->id."'>" . $o->name . "</a></li>";
 
 //                        print_r(" - ".$o->name."<br>");
                     }
