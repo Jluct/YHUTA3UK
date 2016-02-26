@@ -22,7 +22,9 @@ class wisdomController
         echo $view->render('wisdom.php');
     }
 
-    public function actionGetWisdomById(){
+    public function actionGetWisdomById($view){
+        $id=$_GET['id'];
 
+        echo $view->render('wisdomId.php');
     }
 }

@@ -314,6 +314,19 @@ body{
     z-index: 100;
 }
 
+.category .dropdown ul{
+    text-align: center;
+    min-width: 100%;
+    width: auto;
+    font-size:12pt;
+
+}
+
+.category .dropdown ul li{
+    min-width: 100%;
+    width: auto;
+}
+
 .categor_menu{
 
 }
