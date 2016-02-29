@@ -22,8 +22,12 @@ class wisdomController
         $view->type = $_GET['type'];
         $view->table = $this->table;
         $view->page = (int)$_GET['page'];
+
         $view->categoryList = categoryList::categorMenu($wisdomData,$view->page);
-        $view->wisdom = wisdom::getWisdomByType($wisdomData,categoryList::$wisdomArray,$view->page);
+//        $view->count_information = categoryList::$information_count;
+
+        $view->wisdom = wisdom::getWisdomByType($wisdomData,categoryList::$wisdomArray,$view->page,$view->count_information);
+        $view->count_data = wisdom::$count_data;
         echo $view->render('wisdom.php');
     }
 
