@@ -92,50 +92,11 @@ class wisdom
         $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
         $out = '';
 
-        if ($type !== 3)
+        $information = R::load('information', $id);
+        $out = "<h2>".$information->name."</h2>";
+        $out .= "<div>".$information->description."</div>";
+        if ($type!==2 || $type !== 3)
 
-            $data = R::load('information', $id);
-        $subData = $data->ownEducationList;
-        $subData = reset(array_diff($subData, array('')));
-        $teacher = reset(array_diff($data->sharedUserList, array('')));
-        $teacherData = reset(array_diff($teacher->ownDossier, array('')));
-//        print_r($subData);
-        $count_modul = $subData->countOwn('education');
-//        $count_modul = $data->countOwn('education') ? $data->countOwn('education') : $data->countOwn('lesson');
-
-        $out = "<h2>" . $data->name . "</h2>
-            <div>" . $subData->description . "</div>
-            <div class=\"list-group\">
-  <a href=\"#\" class=\"list-group-item active\">
-    Дополнительная информация
-  </a>
-  <a href=\"#\" class=\"list-group-item\">Преподаватель: " . $teacher->login . " | " . $teacherData->surname . " " . $teacherData->name . " " . $teacherData->andername . "</a>
-  <a href=\"#\" class=\"list-group-item\">Кол-во модулей: " .$count_modul. "</a>
-</div>
-<ul class=\"list-group\">
-  <li class=\"list-group-item active\">Название модулей:</li>
-";
-        foreach ($subData->ownEducation as $item) {
-            $out .= "<ol class=\"list-group-item\">" . $item->name . "</ol>";
-        }
-        $out .= "</ul>";
-
-        $out .= "<ul class=\"list-group\">
-  <li class=\"list-group-item active\">Требования:</li>";
-
-        $requirement = R::findAll('requirements', "WHERE requirements.education_id = ?", [$id]);
-        foreach($requirement->withCondition()->own){
-
-        }
-//        $requirement_eduation = R::findAll('education',"WHERE education.id = ?",[$requirement->requirements]);
-
-        foreach($requirement_eduation->ownInformationList as $item){
-            $out .= "<ol class=\"list-group-item\">" . $item->name . " | ".$requirement_eduation->name."</ol>";
-        }
-
-
-        $out .= '</ul>';
-//        $data = R::load('information', $id);
 
 
         return $out;

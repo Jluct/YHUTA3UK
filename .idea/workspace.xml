@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59b846fa-468e-45fa-a4a4-3414913fb32f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/subscriptionController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/subscription.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/WisdomController.php" afterPath="$PROJECT_DIR$/application/controllers/WisdomController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/connect/db_connect.php" afterPath="$PROJECT_DIR$/application/core/connect/db_connect.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/wisdom.php" afterPath="$PROJECT_DIR$/application/models/wisdom.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/wisdom.php" afterPath="$PROJECT_DIR$/application/views/wisdom.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/wisdomId.php" afterPath="$PROJECT_DIR$/application/views/wisdomId.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,39 +34,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wisdom.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="50" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.7767677">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
-                <marker date="1456757630183" expanded="true" signature="785:1007" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="810:1007" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:2977" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:2978" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:2985" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:2986" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3029" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3030" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3079" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3141" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3196" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3272" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="2944:3336" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4484" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4485" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4510" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4511" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4544" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4568" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4599" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4661" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4662" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4665" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4339:4690" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4389:4426" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4716:4779" placeholder="..." />
-                <marker date="1456757630183" expanded="true" signature="4990:5046" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="785:1007" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="810:1007" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:2977" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:2978" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:2985" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:2986" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3029" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3030" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3079" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3141" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3196" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3272" placeholder="..." />
+                <marker date="1456841354352" expanded="true" signature="2944:3336" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -83,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.65384614">
-              <caret line="6" column="14" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
+              <caret line="2" column="3" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
               <folding>
                 <marker date="1456732369691" expanded="true" signature="1478:1886" placeholder="..." />
                 <marker date="1456732369691" expanded="true" signature="1602:1698" placeholder="..." />
@@ -93,16 +72,6 @@
                 <marker date="1456732369691" expanded="true" signature="1602:1755" placeholder="..." />
                 <marker date="1456732369691" expanded="true" signature="1602:1821" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../moodle.my/version.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -171,8 +140,8 @@
         <option value="$PROJECT_DIR$/application/views/wisdomId.php" />
         <option value="$PROJECT_DIR$/application/controllers/subscriptionController.php" />
         <option value="$PROJECT_DIR$/application/models/subscription.php" />
-        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
         <option value="$PROJECT_DIR$/../../moodle.my/config.php" />
+        <option value="$PROJECT_DIR$/application/models/wisdom.php" />
       </list>
     </option>
   </component>
@@ -219,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -384,7 +354,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,9 +420,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20042644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20255864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -885,43 +854,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
+    <entry file="file://$PROJECT_DIR$/../../moodle.my/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="50" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
-          <folding>
-            <marker date="1456757630183" expanded="true" signature="785:1007" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="810:1007" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:2977" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:2978" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:2985" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:2986" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3029" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3030" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3079" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3141" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3196" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3272" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="2944:3336" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4484" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4485" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4510" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4511" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4544" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4568" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4599" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4661" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4662" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4665" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4339:4690" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4389:4426" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4716:4779" placeholder="..." />
-            <marker date="1456757630183" expanded="true" signature="4990:5046" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-3.5801377">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../moodle.my/config.php">
+    <entry file="file://$PROJECT_DIR$/../../moodle.my/version.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -929,20 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../moodle.my/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5801377">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/categoryList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
-          <caret line="6" column="14" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
+          <caret line="2" column="3" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
           <folding>
             <marker date="1456732369691" expanded="true" signature="1478:1886" placeholder="..." />
             <marker date="1456732369691" expanded="true" signature="1602:1698" placeholder="..." />
@@ -955,11 +885,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../moodle.my/version.php">
+    <entry file="file://$PROJECT_DIR$/application/models/wisdom.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.7767677">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <marker date="1456841354352" expanded="true" signature="785:1007" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="810:1007" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:2977" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:2978" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:2985" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:2986" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3029" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3030" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3079" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3141" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3196" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3272" placeholder="..." />
+            <marker date="1456841354352" expanded="true" signature="2944:3336" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
