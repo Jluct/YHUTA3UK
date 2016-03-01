@@ -8,33 +8,36 @@
  */
 class wisdomController
 {
-    private $table='information';
+    private $table = 'information';
 
     public function actionWisdomType($view)
     {
 //        if(!isset($_GET['type']))
-        $wisdomData[]=$_GET['type'];
-        $wisdomData[]=$_GET['subtype'];
-        $wisdomData[]=$_GET['category'];
-        if($_GET['category'])$this->table = 'category';
-        $wisdomData[]=$_GET['subcategory'];
+        $wisdomData[] = $_GET['type'];
+        $wisdomData[] = $_GET['subtype'];
+        $wisdomData[] = $_GET['category'];
+        if ($_GET['category']) $this->table = 'category';
+        $wisdomData[] = $_GET['subcategory'];
 
         $view->type = $_GET['type'];
         $view->table = $this->table;
         $view->page = (int)$_GET['page'];
 
-        $view->categoryList = categoryList::categorMenu($wisdomData,$view->page);
+        $view->categoryList = categoryList::categorMenu($wisdomData, $view->page);
 //        $view->count_information = categoryList::$information_count;
 
-        $view->wisdom = wisdom::getWisdomByType($wisdomData,categoryList::$wisdomArray,$view->page,$view->count_information);
+        $view->wisdom = wisdom::getWisdomByType($wisdomData, categoryList::$wisdomArray, $view->page, $view->count_information);
         $view->count_data = wisdom::$count_data;
+        $view->path = wisdom::$path;
         echo $view->render('wisdom.php');
     }
 
-    public function actionGetWisdomById($view){
-        $type=$_GET['typeId'];
-        $id=$_GET['id'];
-        $view->data = wisdom::getWisdom($type,$id);
+    public function actionGetWisdomById($view)
+    {
+        $type = (int)$_GET['typeId'];
+        $id = (int)$_GET['id'];
+        $view->id = $id;
+        $view->data = wisdom::getWisdom($type, $id);
         echo $view->render('wisdomId.php');
     }
 }

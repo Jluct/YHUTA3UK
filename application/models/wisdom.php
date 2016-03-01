@@ -8,7 +8,9 @@
  */
 class wisdom
 {
-static $count_data = 0;
+    static $count_data = 0;
+
+    static $path = "";
 
     function getWisdomByType($array, $wisdomArray, $page = 1) //Вопрос о получении $wisdomData стаётся открытым. Пока костыль
     {
@@ -45,6 +47,7 @@ static $count_data = 0;
 //                    echo "page3 ".$page3;
                     $data = $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->ownInformationList;
                     self::$count_data += $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->countOwn('information');
+                    self::$path = "?ctrl=wisdom&action=WisdomType&type=" . $array[0] . "&subtype=" . $array[1] . "&category=" . $array[2] . "&subcategory=" . $array[3];
 
                 } else {
                     $step = 10;
@@ -54,8 +57,9 @@ static $count_data = 0;
                     $page1 = ($page - 1) * $step1;
                     $data = $array[1] ? $category->with(' LIMIT ?,?', [$page2, $step])->ownInformationList : $category->with(' LIMIT ?,?', [$page1, $step1])->ownInformationList;
 
-                    self::$count_data += $array[1] ? $category->with(' LIMIT ?,?', [$page2, $step])->countOwn('information'): $category->with(' LIMIT ?,?', [$page1, $step1])->countOwn('information');
+                    self::$count_data += $array[1] ? $category->with(' LIMIT ?,?', [$page2, $step])->countOwn('information') : $category->with(' LIMIT ?,?', [$page1, $step1])->countOwn('information');
 //                    echo " ".self::$count_data." ";
+                    self::$path = $array[1] ? "?ctrl=wisdom&action=WisdomType&type=" . $array[0] . "&subtype=" . $array[1] : "?ctrl=wisdom&action=WisdomType&type=" . $array[0];
                 }
 
                 foreach ($data as $item) {
@@ -82,41 +86,59 @@ static $count_data = 0;
 //        if (!(int)$id || !(int)$type) {
 //            return false;
 //        }
+
+
         db_connect::connect();
         $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
         $out = '';
 
-        $data = R::load('information', $id);
+        if ($type !== 3)
 
-        function foo($obj, $id, $int)
-        {
-            $table = ['Education', 'course', 'seminar'];//вопрос о получении открыт
-            if ($int > count($table))
-                return false;
-            $method = "own" . $table[$int];
-            $data = $obj->$method;
-            $data = reset(array_filter($data));
-            if ($data->count() != 0) {
-                return $data;
-            } else {
-                foo($data, $id, $int + 1);
-            }
+            $data = R::load('information', $id);
+        $subData = $data->ownEducationList;
+        $subData = reset(array_diff($subData, array('')));
+        $teacher = reset(array_diff($data->sharedUserList, array('')));
+        $teacherData = reset(array_diff($teacher->ownDossier, array('')));
+//        print_r($subData);
+        $count_modul = $subData->countOwn('education');
+//        $count_modul = $data->countOwn('education') ? $data->countOwn('education') : $data->countOwn('lesson');
+
+        $out = "<h2>" . $data->name . "</h2>
+            <div>" . $subData->description . "</div>
+            <div class=\"list-group\">
+  <a href=\"#\" class=\"list-group-item active\">
+    Дополнительная информация
+  </a>
+  <a href=\"#\" class=\"list-group-item\">Преподаватель: " . $teacher->login . " | " . $teacherData->surname . " " . $teacherData->name . " " . $teacherData->andername . "</a>
+  <a href=\"#\" class=\"list-group-item\">Кол-во модулей: " .$count_modul. "</a>
+</div>
+<ul class=\"list-group\">
+  <li class=\"list-group-item active\">Название модулей:</li>
+";
+        foreach ($subData->ownEducation as $item) {
+            $out .= "<ol class=\"list-group-item\">" . $item->name . "</ol>";
+        }
+        $out .= "</ul>";
+
+        $out .= "<ul class=\"list-group\">
+  <li class=\"list-group-item active\">Требования:</li>";
+
+        $requirement = R::findAll('requirements', "WHERE requirements.education_id = ?", [$id]);
+        foreach($requirement->withCondition()->own){
+
+        }
+//        $requirement_eduation = R::findAll('education',"WHERE education.id = ?",[$requirement->requirements]);
+
+        foreach($requirement_eduation->ownInformationList as $item){
+            $out .= "<ol class=\"list-group-item\">" . $item->name . " | ".$requirement_eduation->name."</ol>";
         }
 
-        $outData = foo($data, $id, 0);
-        $out = "<h2>" . $data->name . "</h2>
-        %
-         <div>" . $outData->description . "</div>";
+
+        $out .= '</ul>';
+//        $data = R::load('information', $id);
+
 
         return $out;
     }
 
-    private function education()
-    {
-        $data = "<ul class=\"list-group\">
-            <li class=\"list-group-item\">Количество предметов :</li>
-            <li class=\"list-group-item\">Преподаватель :</li>
-            <li class=\"list-group-item\">Количество выпускников :</li>
-         </ul>";
-    }
 }
