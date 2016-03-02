@@ -68,7 +68,7 @@ class wisdom
                         continue;
                     }
                     $out .= "<tr>
-                            <td><a href='?ctrl=wisdom&action=GetWisdomById&wisdomId=" . $subValue['type_id'] . "&id=" . $item->id . "'>" . $item->name . "</a></td>
+                            <td><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></td>
                             <td>" . $smallKey . "</td>
                             <td>" . $subValue['category_name'] . "</td>
                             <td>" . $subValue['subtype_name'] . "</td>
@@ -81,7 +81,7 @@ class wisdom
 
     }
 
-    public function getWisdom($type, $id)
+    public function getWisdom($id)
     {
 //        if (!(int)$id || !(int)$type) {
 //            return false;
@@ -92,11 +92,70 @@ class wisdom
         $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
         $out = '';
 
-        $information = R::load('information', $id);
-        $out = "<h2>".$information->name."</h2>";
-        $out .= "<div>".$information->description."</div>";
-        if ($type!==2 || $type !== 3)
 
+        $information = R::load('information', $id);
+        $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
+FROM information
+LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
+LEFT JOIN  `obuceisea`.`user` ON  `information_user`.`user_id` =  `user`.`id`
+LEFT JOIN  `obuceisea`.`dossier` ON  `user`.`id` =  `dossier`.`user_id`
+WHERE  `information`.`id` =?
+AND user.status =  \"teacher\"", [$id]);
+        $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
+
+
+        $out = "<h2>" . $information->name . "</h2>";
+        $out .= "<div>" . $information->description . "</div>";
+        if ($count_modul === 0) {
+            $out .= "<h2 class='text-center'>Совсем скоро!</h2>";
+            return $out;
+        }
+
+        $requirements = $information->withCondition('block = 1')->ownRequirementsList;
+
+        $if_requirements = '';
+        if (empty($requirements)) {
+            $if_requirements .= "<li class=\"list-group-item\"><strong>Без дополнительных требований</strong></li></ul>";
+        } else {
+            $if_requirements = "</ul>";
+            $if_requirements .= "</ul><ul class=\"list-group\"><li class=\"list-group-item active\">Требования</li>";
+            foreach ($requirements as $item) {
+                $information_requirements = R::getRow("SELECT information.id,information.name from information WHERE information.id = ?", [$item->requirements]);
+
+                $if_requirements .= "<li class=\"list-group-item\"><a href='?ctrl=wisdom&action=GetWisdomById&id="
+                    . $information_requirements['id'] . "'>" . $information_requirements['name'] . "</a></li>";
+            }
+
+            $if_requirements .= "</ul>";
+        }
+
+        $out .= "<ul class=\"list-group\">
+                    <li class=\"list-group-item active\">Дополнительная информация</li>
+                    <li class=\"list-group-item \">Автор:
+                    <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+            " " . $autor['name'] . " " . $autor['andername'] . " </a></li>
+                    <li class=\"list-group-item\"> Кол-во модулей: " . $count_modul . "</li>" . $if_requirements;
+
+//        print_r($information);
+        $education = $information->withCondition('education.information_id = ? and education.block = 1',[$id])->ownEducationList;
+        $out.="<ul class=\"list-group\"><li class=\"list-group-item active\">Изучаемые модули</li>";
+
+        foreach($education as $item){
+            $out.="<li class=\"list-group-item \"><h4 class=\"list-group-item-heading\">".$item->name."</h4>
+                    <p class=\"list-group-item-text\">$item->description</p>
+            </li>";
+        }
+//        print_r($education);die();
+
+
+        $out .= "        </div><div class=\"col-sm-3\"></div>
+        <div class=\"col-sm-6\">
+            <a href=\"?ctrl=subscription&action=SubscriptionById&id=" . $id . "\"><button style='margin-top:15px;' class=\"btn btn-success btn-block\">Записаться!</button></a>
+        </div>
+        <div class=\"col-sm-3\"></div>";
+
+//        if ($type !== 2 || $type !== 3)
 
 
         return $out;

@@ -34,10 +34,10 @@ class wisdomController
 
     public function actionGetWisdomById($view)
     {
-        $type = (int)$_GET['typeId'];
+
         $id = (int)$_GET['id'];
         $view->id = $id;
-        $view->data = wisdom::getWisdom($type, $id);
+        $view->data = wisdom::getWisdom( $id);
         echo $view->render('wisdomId.php');
     }
 }
