@@ -330,3 +330,8 @@ body{
 .categor_menu{
 
 }
+
+.breadcrumb{
+    margin: 10px 0;
+    font-size: 10pt;
+}

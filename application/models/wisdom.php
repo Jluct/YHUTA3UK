@@ -94,6 +94,11 @@ class wisdom
 
 
         $information = R::load('information', $id);
+        $subcategory = $information->category;
+        $category = $subcategory->category;
+        $subtype = $category->type;
+        $type= $subtype->type;
+//        print_r($subtype);die;
         $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
 FROM information
 LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
@@ -103,9 +108,16 @@ WHERE  `information`.`id` =?
 AND user.status =  \"teacher\"", [$id]);
         $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
 
+        $out.="<ol class=\"breadcrumb\">
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&page=1\">".$type->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&subtype=".$subtype->id."&page=1\">".$subtype->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&subtype=".$subtype->id."&category=".$category->id."&page=1\">".$category->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&subtype=".$subtype->id."&category=".$category->id."&subcategory=".$subcategory->id."&page=1\">".$subcategory->name."</a></li>
 
-        $out = "<h2>" . $information->name . "</h2>";
-        $out .= "<div>" . $information->description . "</div>";
+               </ol>";
+
+        $out .= "<h2>" . $information->name . "</h2>";
+        $out .= "<div style='margin-bottom: 15px;'>" . $information->description . "</div>";
         if ($count_modul === 0) {
             $out .= "<h2 class='text-center'>Совсем скоро!</h2>";
             return $out;
