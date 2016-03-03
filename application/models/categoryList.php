@@ -55,7 +55,7 @@ static public $information_count=0;
                         if ($v->id == $array[2]) $open = "open";
                         if (!$i_count) {
                             $i_count = 1;
-                            $out .= "<h3>" . $i->name . "</h3>";
+                            $out .= "<h4>" . $i->name . "</h4>";
                         }
                         $out .= "<div class=\"dropdown $open\">
   <button class=\"btn btn-default btn-block dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"tooltip\"

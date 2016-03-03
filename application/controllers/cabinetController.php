@@ -11,10 +11,25 @@ class cabinetController
 {
     function actionGetCabinet($view)
     {
-
-
-        if (!isset($_SESSION['user'])) {
+        if (!$_SESSION['user']->login || !$_SESSION['user']->authorisation==="7gF5dFG546jX15" ||
+            !$_SESSION['user']->status || $_SESSION['user']->block != 0) {
+            header("Location: /?");
             return false;
+        }
+        $view->userMenu='';
+        switch($_SESSION['user']->status){
+            case 'student':
+                $view->userMenu='studenMenu.php';
+                break;
+            case 'teacher':
+                $view->userMenu='teacherMenu.php';
+                break;
+            case 'moderator':
+                $view->userMenu='moderatorMenu.php';
+                break;
+            case 'admin':
+                $view->userMenu="adminMenu.php";
+                break;
         }
 
         echo $view->render('cabinet.php');

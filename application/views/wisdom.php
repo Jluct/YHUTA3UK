@@ -10,18 +10,18 @@ require_once(__DIR__ . "/../include/header.php"); ?>
 
     <section class="container">
         <div class="row">
-            <div class="col-sm-3 category">
+            <div class="col-sm-2 category">
                 <form>
                     <div class="input-group">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="button">Поиск</button>
       </span>
                         <input type="text" class="form-control" placeholder="Поиск...">
                     </div>
                 </form>
                 <? echo $categoryList; ?>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-10">
                 <? echo $wisdom; ?>
 
                 <? $page = new pagination($count_data, 10, $page);

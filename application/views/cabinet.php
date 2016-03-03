@@ -11,22 +11,13 @@ require_once(__DIR__."/../include/header.php"); ?>
     <section class="container">
     <div class="row">
         <div class="col-md-9">
-            <h1>Личный кабинет</h1>
+            <h2>Личный кабинет</h2>
 
-            <h2>Ваш статус:<? echo $_SESSION['user']['user_status']?> !</h2>
-            <table class="table table-striped">
-                <tr>
-                    <td>Кафедра</td>
-                    <td><?echo $_SESSION['student']['courses_name']?></td>
-                </tr>
-                <tr>
-                    <td>Специальность</td>
-                    <td><?echo $_SESSION['student']['specialty_name']?></td>
-                </tr>
-            </table>
+            <h3>Ваш статус:<? echo $_SESSION['user']->status?> !</h3>
+
         </div>
         <div class="col-md-3">
-            <?php require_once($userMenu); ?>
+            <?php require_once($user_menu); ?>
 
         </div>
     </div>

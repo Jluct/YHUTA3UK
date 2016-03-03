@@ -327,6 +327,15 @@ body{
     width: auto;
 }
 
+.category .dropdown  .btn{
+    font-size: 10pt;
+    word-wrap: break-word;
+}
+
+.category .dropdown ul li a {
+    font-size: 9pt;
+}
+
 .categor_menu{
 
 }

@@ -1,12 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] == false) {
-    $authorization = "cabinet.php";
-} else {
-    $authorization = "authorization.php";
 
-}
+
 /**
  * Created by PhpStorm.
  * User: инкогнито
@@ -20,6 +16,7 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <script src="../../js/jquery-2.1.1.min.js"></script>
     <script src="../../js/bootstrap.js"></script>
@@ -38,12 +35,10 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
         AND menu.menu_id = menu_item.menu_id", [1]);
                 $lightMenu->ul_tpl = "<ul class=\"nav\">";
                 echo $lightMenu->render(); ?>
-                <!--                --><? // $lightMenu = new menu(1);
-                //                    $lightMenu->ul_tpl="<ul class=\"nav\">";
-                //                echo $lightMenu->render(); ?>
+
             </div>
             <div class="col-sm-4">
-                <?php require_once($authorization); ?>
+                <?php require_once(__DIR__.'/authorization.php'); ?>
             </div>
         </div>
         <div class="row menu_heavy">
@@ -62,12 +57,6 @@ if (isset($_SESSION['user']['user_login']) && $_SESSION['user']['user_block'] ==
                 echo $bigMenu->render();
 
                 ?>
-
-                <!--                    --><? // $bigMenu = new menu(2);
-                //                        $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
-                //                        $bigMenu->li_tpl = "<li class=\"dropdown\" role=\"presentation\"><a href='%s'>%s<span class=\"caret\"></span></a>%s</li>";
-                //                    echo $bigMenu->render(); ?>
-
             </div>
             <div class="col-sm-1">
                 <button class="btn btn-block btn_search">Поиск</button>

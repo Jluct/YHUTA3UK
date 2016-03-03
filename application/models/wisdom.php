@@ -34,9 +34,9 @@ class wisdom
             $out .= "<h2>" . $key . "</h2><table class='table table-striped'>
                     <tr>
                         <th>Название</th>
+                        <th>Автор</th>
                         <th>Категория</th>
                         <th>Субкатегория</th>
-                        <th>Раздел</th>
                     </tr>";
             foreach ($value as $smallKey => $subValue) {
                 $category = R::load('category', $subValue['subcategory_id']);
@@ -67,11 +67,23 @@ class wisdom
                         $out .= "<tr><td colspan='4'><h4 class='text-center'><b>Ничего не найдено</b></h4></td></tr>";
                         continue;
                     }
+
+                    $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
+FROM information
+LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
+LEFT JOIN  `obuceisea`.`user` ON  `information_user`.`user_id` =  `user`.`id`
+LEFT JOIN  `obuceisea`.`dossier` ON  `user`.`id` =  `dossier`.`user_id`
+WHERE  `information`.`id` =?
+AND user.status =  \"teacher\"", [$item->id]);
+
                     $out .= "<tr>
                             <td><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></td>
+                            <td><a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+            " " . $autor['name'] . " " . $autor['andername'] . " </a></td>
                             <td>" . $smallKey . "</td>
                             <td>" . $subValue['category_name'] . "</td>
-                            <td>" . $subValue['subtype_name'] . "</td>
+
                         </tr>";
                 }
             }
