@@ -11,24 +11,27 @@ class cabinetController
 {
     function actionGetCabinet($view)
     {
-        if (!$_SESSION['user']->login || !$_SESSION['user']->authorisation==="7gF5dFG546jX15" ||
-            !$_SESSION['user']->status || $_SESSION['user']->block != 0) {
+        if (!$_SESSION['user']->login || !$_SESSION['user']->authorisation === "7gF5dFG546jX15" ||
+            !$_SESSION['user']->status || $_SESSION['user']->block != 0
+        ) {
             header("Location: /?");
             return false;
         }
-        $view->userMenu='';
-        switch($_SESSION['user']->status){
+
+
+        $view->userMenu = '';
+        switch ($_SESSION['user']->status) {
             case 'student':
-                $view->userMenu='studenMenu.php';
+                $view->typeMenu = 'studentMenu.php';
                 break;
             case 'teacher':
-                $view->userMenu='teacherMenu.php';
+                $view->typeMenu = 'teacherMenu.php';
                 break;
             case 'moderator':
-                $view->userMenu='moderatorMenu.php';
+                $view->typeMenu = 'moderatorMenu.php';
                 break;
             case 'admin':
-                $view->userMenu="adminMenu.php";
+                $view->typeMenu = "adminMenu.php";
                 break;
         }
 
@@ -57,4 +60,100 @@ class cabinetController
 
 //        header("Location: /?ctrl=cabinet&action=GetCabinet");
     }
+
+    function actionUserData($view, $userArray = '', $errorArray = '')
+    {
+        if (!empty($errorArray))
+            $view->message = ["Неверные данные или заполненны не все обязательные поля", "Внимание", 4];
+
+        $view->data = cabinet::getUserData($userArray, $errorArray);
+        echo $view->render('cabinet.php');
+    }
+
+    function actionUpdateUserData($view)
+    {
+        $userArray = array();
+        $errorArray = array();
+        $session;
+
+        foreach ($_POST as $key => $value) {
+            if ($key == 'firstPassword' || $key == 'anderPassword') {
+                if (empty($value))
+                    continue;
+            }
+            if ($key == 'email')
+                if (preg_match("~([a-zA-Z0-9!#$%&\'*+-/=?^_`{|}\~])@([a-zA-Z0-9-]).([a-zA-Z0-9]{2,4})~", $value)) {
+                    $userArray[$key] = $value;
+                    continue;
+                } else {
+                    $errorArray[$key] = $value;
+                    continue;
+                }
+
+            if ($key == 'phone')
+                if (preg_match("/^[+0-9-]{5,30}$/", $value)) {
+                    $userArray[$key] = $value;
+                    continue;
+                } else {
+                    $errorArray[$key] = $value;
+                    continue;
+                }
+
+            if (!preg_match('/^[A-Za-zАаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя0-9_]{2,30}$/', trim($value))) {
+                $errorArray[$key] = $value;
+            } else {
+                $userArray[$key] = $value;
+            }
+//
+        }
+
+        if (!isset($errorArray)) {
+            $view->message = ["Неверные данные или заполненны не все обязательные поля", "Внимание", 4];
+        } elseif (isset($userArray) && empty($errorArray)) {
+
+            $session = $_SESSION['user'];
+            print_r($session);
+            echo "<br>";
+//            foreach ($session as $key => $value) {
+            unset($session->authorisation);
+//                if ($session->$key)
+//                    $session->$key = $userArray[$key];
+            foreach ($session->dossier as $key => $value) {
+
+                if ($_SESSION['user']->dossier->$key && isset($userArray[$key])) {
+                    $session[$key] = $userArray[$key];
+
+                }
+            }
+//            }
+            db_connect::connect();
+
+//            R::freeze( TRUE );
+            R::freeze( false );
+            R::store($session);
+            print_r($session);
+            echo "<br>";
+
+            $view->message = ["Ваши личные данные изменены:", "Данные изменены", 1];
+
+            $userArray = $errorArray = '';
+        } else {
+            $view->message = ["Ошибка записи. Проверьте данные", "Внимание", 4];
+
+        }
+
+        $view->data = cabinet::getUserData($userArray, $errorArray);
+        echo $view->render('cabinet.php');
+
+
+//        echo "Норм ";
+//        print_r($userArray);
+//        echo "<br>Нет ";
+//        print_r($errorArray);
+//        echo $view->render('cabinet.php');
+    }
 }
+
+/*
+ * АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя
+ */

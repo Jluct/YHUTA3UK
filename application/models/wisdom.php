@@ -68,13 +68,7 @@ class wisdom
                         continue;
                     }
 
-                    $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
-FROM information
-LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
-LEFT JOIN  `obuceisea`.`user` ON  `information_user`.`user_id` =  `user`.`id`
-LEFT JOIN  `obuceisea`.`dossier` ON  `user`.`id` =  `dossier`.`user_id`
-WHERE  `information`.`id` =?
-AND user.status =  \"teacher\"", [$item->id]);
+                    $autor = self::getAuthorName($item->id);
 
                     $out .= "<tr>
                             <td><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></td>
@@ -111,14 +105,18 @@ AND user.status =  \"teacher\"", [$item->id]);
         $subtype = $category->type;
         $type= $subtype->type;
 //        print_r($subtype);die;
-        $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
-FROM information
-LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
-LEFT JOIN  `obuceisea`.`user` ON  `information_user`.`user_id` =  `user`.`id`
-LEFT JOIN  `obuceisea`.`dossier` ON  `user`.`id` =  `dossier`.`user_id`
-WHERE  `information`.`id` =?
-AND user.status =  \"teacher\"", [$id]);
-        $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
+        $autor = self::getAuthorName($id);
+        if($type->id == 6){
+
+            $out= R::load('lesson',$id)->text."Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+            " " . $autor['name'] . " " . $autor['andername'] . " </a></div>";
+            return $out;
+        }
+        if($type->id == 1) {
+            $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
+        }elseif($type->id == 5){
+            $count_modul = R::count("lesson", "lesson.information_id = ? and lesson.block = 1", [$id]);
+        }
 
         $out.="<ol class=\"breadcrumb\">
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&page=1\">".$type->name."</a></li>
@@ -130,27 +128,10 @@ AND user.status =  \"teacher\"", [$id]);
 
         $out .= "<h2>" . $information->name . "</h2>";
         $out .= "<div style='margin-bottom: 15px;'>" . $information->description . "</div>";
+
         if ($count_modul === 0) {
             $out .= "<h2 class='text-center'>Совсем скоро!</h2>";
             return $out;
-        }
-
-        $requirements = $information->withCondition('block = 1')->ownRequirementsList;
-
-        $if_requirements = '';
-        if (empty($requirements)) {
-            $if_requirements .= "<li class=\"list-group-item\"><strong>Без дополнительных требований</strong></li></ul>";
-        } else {
-            $if_requirements = "</ul>";
-            $if_requirements .= "</ul><ul class=\"list-group\"><li class=\"list-group-item active\">Требования</li>";
-            foreach ($requirements as $item) {
-                $information_requirements = R::getRow("SELECT information.id,information.name from information WHERE information.id = ?", [$item->requirements]);
-
-                $if_requirements .= "<li class=\"list-group-item\"><a href='?ctrl=wisdom&action=GetWisdomById&id="
-                    . $information_requirements['id'] . "'>" . $information_requirements['name'] . "</a></li>";
-            }
-
-            $if_requirements .= "</ul>";
         }
 
         $out .= "<ul class=\"list-group\">
@@ -159,10 +140,14 @@ AND user.status =  \"teacher\"", [$id]);
                     <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
                     <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
             " " . $autor['name'] . " " . $autor['andername'] . " </a></li>
-                    <li class=\"list-group-item\"> Кол-во модулей: " . $count_modul . "</li>" . $if_requirements;
+                    <li class=\"list-group-item\"> Кол-во модулей: " . $count_modul . "</li></ul>";
 
 //        print_r($information);
-        $education = $information->withCondition('education.information_id = ? and education.block = 1',[$id])->ownEducationList;
+        if($type->id == 1) {
+            $education = $information->withCondition('education.information_id = ? and education.block = 1',[$id])->ownEducationList;
+        }elseif($type->id == 5){
+            $education = $information->withCondition('lesson.information_id = ? and lesson.block = 1',[$id])->ownLessonList;
+        }
         $out.="<ul class=\"list-group\"><li class=\"list-group-item active\">Изучаемые модули</li>";
 
         foreach($education as $item){
@@ -170,19 +155,46 @@ AND user.status =  \"teacher\"", [$id]);
                     <p class=\"list-group-item-text\">$item->description</p>
             </li>";
         }
+
+        $out.="</ul>";
+
+        $requirements = $information->withCondition('block = 1')->ownRequirementsList;
+
+        $out .= "<ul class=\"list-group\"><li class=\"list-group-item active\">Требования</li>";
+        if (empty($requirements)) {
+            $out .= "<li class=\"list-group-item\"><strong>Без дополнительных требований</strong></li></ul>";
+        } else {
+
+            foreach ($requirements as $item) {
+                $information_requirements = R::getRow("SELECT information.id,information.name from information WHERE information.id = ?", [$item->requirements]);
+
+                $out .= "<li class=\"list-group-item\"><a href='?ctrl=wisdom&action=GetWisdomById&id="
+                    . $information_requirements['id'] . "'>" . $information_requirements['name'] . "</a></li>";
+            }
+
+            $out .= "</ul>";
+        }
 //        print_r($education);die();
 
 
-        $out .= "        </div><div class=\"col-sm-3\"></div>
+        $out .= "</div><div class=\"col-sm-3\"></div>
         <div class=\"col-sm-6\">
             <a href=\"?ctrl=subscription&action=SubscriptionById&id=" . $id . "\"><button style='margin-top:15px;' class=\"btn btn-success btn-block\">Записаться!</button></a>
         </div>
         <div class=\"col-sm-3\"></div>";
 
-//        if ($type !== 2 || $type !== 3)
-
-
         return $out;
+    }
+
+    static private function getAuthorName($id){
+        $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
+FROM information
+LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
+LEFT JOIN  `obuceisea`.`user` ON  `information_user`.`user_id` =  `user`.`id`
+LEFT JOIN  `obuceisea`.`dossier` ON  `user`.`dossier_id` =  `dossier`.`id`
+WHERE  `information`.`id` =?
+AND user.status =  \"teacher\"", [$id]);
+        return $autor;
     }
 
 }

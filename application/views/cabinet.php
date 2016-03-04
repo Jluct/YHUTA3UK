@@ -14,10 +14,12 @@ require_once(__DIR__."/../include/header.php"); ?>
             <h2>Личный кабинет</h2>
 
             <h3>Ваш статус:<? echo $_SESSION['user']->status?> !</h3>
+            <hr>
+            <? if($data) echo $data;?>
 
         </div>
         <div class="col-md-3">
-            <?php require_once($user_menu); ?>
+            <?php require_once(__DIR__.'/../include/userMenu.php'); ?>
 
         </div>
     </div>
