@@ -74,7 +74,16 @@ class cabinetController
     {
         $userArray = array();
         $errorArray = array();
-        $session;
+        $session = $_SESSION['user'];
+        if($_POST['firstPassword'] && $_POST['anderPassword'] && ($_POST['firstPassword'] === $_POST['anderPassword'])){
+            $session->password = $_POST['firstPassword'];
+        }else{
+            $view->message = ["Пароли не совпадают или не все поля заполненны", "Внимание", 4];
+            $errorArray = $_POST;
+            $view->data = cabinet::getUserData($userArray, $errorArray);
+            echo $view->render('cabinet.php');
+            return;
+        }
 
         foreach ($_POST as $key => $value) {
             if ($key == 'firstPassword' || $key == 'anderPassword') {
@@ -111,17 +120,17 @@ class cabinetController
             $view->message = ["Неверные данные или заполненны не все обязательные поля", "Внимание", 4];
         } elseif (isset($userArray) && empty($errorArray)) {
 
-            $session = $_SESSION['user'];
-            print_r($session);
-            echo "<br>";
+//            echo '<br>';
+//            print_r($session);
+//            echo "<br>";
 //            foreach ($session as $key => $value) {
-            unset($session->authorisation);
+//            unset($session->authorisation);
 //                if ($session->$key)
 //                    $session->$key = $userArray[$key];
             foreach ($session->dossier as $key => $value) {
 
                 if ($_SESSION['user']->dossier->$key && isset($userArray[$key])) {
-                    $session[$key] = $userArray[$key];
+                    $session->dossier->$key = $userArray[$key];
 
                 }
             }
@@ -129,16 +138,22 @@ class cabinetController
             db_connect::connect();
 
 //            R::freeze( TRUE );
-            R::freeze( false );
-            R::store($session);
-            print_r($session);
-            echo "<br>";
+//            R::freeze( false );
+//            echo "Конечные данные:<br>";
+//            print_r($session);
+//            echo "<br>Конец данных";
+
+            $id = R::store($session);
+            if (!$id) {
+                $view->message = ["Ошибка записи. Проверьте данные", "Ошибка", 4];
+
+            }
 
             $view->message = ["Ваши личные данные изменены:", "Данные изменены", 1];
 
             $userArray = $errorArray = '';
         } else {
-            $view->message = ["Ошибка записи. Проверьте данные", "Внимание", 4];
+            $view->message = ["Ошибка записи. Проверьте данные", "Ошибка", 4];
 
         }
 
@@ -151,6 +166,12 @@ class cabinetController
 //        echo "<br>Нет ";
 //        print_r($errorArray);
 //        echo $view->render('cabinet.php');
+    }
+
+    function actionUserInfo($view){
+        $view->user = cabinet::userInfo($_GET['id']);
+
+        $view->render('userInfo.php');
     }
 }
 

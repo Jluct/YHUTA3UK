@@ -24,6 +24,11 @@ require_once(__DIR__ . '/application/core/connect/db_connect.php');
 
     spl_autoload_register('myAutoload');
 
+
+db_connect::connect();
+
+
+
 $view = new View();
 $controller = new $ctrl();
 $controller->$action($view);

@@ -18,6 +18,7 @@
 //</ul>
 include_once(__DIR__.'/'.$_SESSION['user']->status.'Menu.php');
 $out = "<ul style=\"list-style-type: none\">
+        <li><a href='?ctrl=cabinet&action=GetCabinet'> <button class=\"btn btn-block btn-primary\" type=\"button\">Кабинет</button></a></li>
         <li><button class=\"btn btn-block btn-primary\" type=\"button\"><span class=\"badge\" style=\"margin-right: 10px;\">0</span>Сообщения</button></li>
         <li><hr color=\"black\"></li>".$type."
         <li><hr color=\"black\"></li>

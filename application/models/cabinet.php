@@ -12,9 +12,9 @@ class cabinet
     static function getUserData($userArray = '', $errorArray = '')
     {
 
-        print_r($userArray);
-        echo "Jib,rb ";
-        print_r($errorArray);
+//        print_r($userArray);
+//        echo "Jib,rb ";
+//        print_r($errorArray);
 
 //        $name;
 //        $surname;
@@ -25,6 +25,14 @@ class cabinet
 //        $phone = 'login';
 
         $array = array();
+        $session = $_SESSION['user'];
+        $data = $session->dossier;
+//        echo '<br>';
+//        print_r($_SESSION);
+
+//        print_r($data);
+//        echo "<br>";
+//        print_r($data->dossier);
 
         foreach ($_SESSION['user'] as $key => $value) {
 //            echo"<br> value ";
@@ -52,7 +60,7 @@ class cabinet
 //                echo 1;
                 continue;
             }
-            foreach($_SESSION['user']->dossier as $key1 => $value1){
+            foreach($data as $key1 => $value1){
 //                echo"<br> value1 ";
 //                print_r( $value1);
 //
@@ -61,7 +69,7 @@ class cabinet
 
 //                echo"<br>$value1->$key1<br>";
 //                print_r($value1->$key1);
-                if ($_SESSION['user']->dossier->$key1) {
+                if ($data->$key1) {
                     $array[$key1] = $value1;
 
                 }
@@ -146,31 +154,158 @@ class cabinet
             </div>
             <div class='col-sm-12'>
                 <input type='submit' class='btn btn-primary btn-block'>
+                </form>
             </div>";
         return $out;
     }
 
     function authorisation($array)
     {
-        db_connect::connect();
+//        db_connect::connect();
+//        $user = R::dispense('user');
+//        $dossier = R::dispense('dossier');
+////$dossier->name = "Сергей";
+//        $user->login = 'admin';
+//        $user->password = '12345';
+//        $user->dossier = $dossier;
+//
+//        R::store($user);die();
 //        print_r($array);
-        $user = R::findOne('user', ' login = :login and password=:password', $array);
+        $user = R::findOne('user', ' user.login = :login and user.password=:password', $array);
 //        print_r($user);die;
-        if (empty($user) || $user->user_block === 0)
+        if (empty($user) || $user->block === 0)
             return false;
-        $dossier = $user->dossier;//R::load('dossier', $user->dossier_id);
-        $user->authorisation = "7gF5dFG546jX15";
-        $user->dossier = $dossier;
+//        $dossier = $user->dossier;//R::load('dossier', $user->dossier_id);
+//        $user->authorisation = "7gF5dFG546jX15";
+//        $user->dossier = $dossier;
         $_SESSION['user'] = $user;
 //        print_r($user);
         return true;
 
     }
 
-    static function updateUserData()
+    static function userInfo($id)
     {
+        db_connect::connect();
+        $user = R::getRow('SELECT user.login,user.status dossier.* from user left join dossier on dossier.id = user.dossier_id where user.id = ?'[$id]);
 
+        $out="<h3>".$user['login']." | ".$user['surname'] .
+            " " . $user['name'] . " " . $user['andername']."</h3>";
+        $out .="<ul class=\"list-group\">
+                    <li class=\"list-group-item\">Статус: ".$user['status']."</li>
+                    <li class=\"list-group-item\">Страна: ".$user['land']."</li>
+                    <li class=\"list-group-item\">Город: ".$user['sity']."</li>
+                    <li class=\"list-group-item\">Количество учебных материалов: </li>
+                </ul>";
     }
 
 }
 
+/*
+ * <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+            " " . $autor['name'] . " " . $autor['andername'] . " </a>
+ *
+ *
+        Array
+(
+    [user] => RedBeanPHP\OODBBean Object
+        (
+            [properties:protected] => Array
+                (
+                    [id] => 3
+                    [login] => boris
+                    [password] => 12345
+                    [dossier_id] => 3
+                    [block] => 0
+                    [status] => student
+                    [authorisation] => 7gF5dFG546jX15
+                    [dossier] => RedBeanPHP\OODBBean Object
+                        (
+                            [properties:protected] => Array
+                                (
+                                    [id] => 3
+                                    [name] => Борис
+                                    [andername] => Борисович
+                                    [lastname] => Борисов
+                                    [phone] => 11111111
+                                    [sity] => Минск
+                                    [land] => Беларусь
+                                    [email] => boris@gmail.com
+                                )
+
+                            [__info:protected] => Array
+                                (
+                                    [type] => dossier
+                                    [sys.id] => id
+                                    [sys.orig] => Array
+                                        (
+                                            [id] => 3
+                                            [name] => Борис
+                                            [andername] => Борисович
+                                            [lastname] => Борисов
+                                            [phone] => 11111111
+                                            [sity] => Минск
+                                            [land] => Беларусь
+                                            [email] => boris@gmail.com
+                                        )
+
+                                    [tainted] =>
+                                    [changed] =>
+                                )
+
+                            [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+                                (
+                                )
+
+                            [fetchType:protected] =>
+                            [withSql:protected] =>
+                            [withParams:protected] => Array
+                                (
+                                )
+
+                            [aliasName:protected] =>
+                            [via:protected] =>
+                            [noLoad:protected] =>
+                            [all:protected] =>
+                        )
+
+                )
+
+            [__info:protected] => Array
+                (
+                    [type] => user
+                    [sys.id] => id
+                    [sys.orig] => Array
+                        (
+                            [id] => 3
+                            [login] => boris
+                            [password] => 12345
+                            [dossier_id] => 3
+                            [block] => 0
+                            [status] => student
+                        )
+
+                    [tainted] => 1
+                    [changed] => 1
+                )
+
+            [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
+                (
+                )
+
+            [fetchType:protected] =>
+            [withSql:protected] =>
+            [withParams:protected] => Array
+                (
+                )
+
+            [aliasName:protected] =>
+            [via:protected] =>
+            [noLoad:protected] =>
+            [all:protected] =>
+        )
+
+)
+
+ */

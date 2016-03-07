@@ -19,6 +19,8 @@ class subscription
             echo"NOT<br>";
             print_r($requirement);
         }else{
+
+
             print_r($requirement);
         }
 

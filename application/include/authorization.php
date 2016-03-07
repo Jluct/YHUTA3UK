@@ -32,7 +32,7 @@ if (!$_SESSION['user']):
         </div>
     </div>
 <? endif ?>
-<? if ($_SESSION['user']->login && $_SESSION['user']->authorisation==="7gF5dFG546jX15" &&
+<? if ($_SESSION['user']->login  &&
     $_SESSION['user']->status && $_SESSION['user']->block == 0)
    require_once(__DIR__.'/cabinet.php');
 ?>

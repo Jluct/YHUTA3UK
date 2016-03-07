@@ -137,8 +137,8 @@ class wisdom
         $out .= "<ul class=\"list-group\">
                     <li class=\"list-group-item active\">Дополнительная информация</li>
                     <li class=\"list-group-item \">Автор:
-                    <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
-                    <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
             " " . $autor['name'] . " " . $autor['andername'] . " </a></li>
                     <li class=\"list-group-item\"> Кол-во модулей: " . $count_modul . "</li></ul>";
 
