@@ -72,8 +72,8 @@ class wisdom
 
                     $out .= "<tr>
                             <td><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></td>
-                            <td><a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
-                    <a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+                            <td><a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
             " " . $autor['name'] . " " . $autor['andername'] . " </a></td>
                             <td>" . $smallKey . "</td>
                             <td>" . $subValue['category_name'] . "</td>
@@ -106,6 +106,7 @@ class wisdom
         $type= $subtype->type;
 //        print_r($subtype);die;
         $autor = self::getAuthorName($id);
+//        print_r($autor);
         if($type->id == 6){
 
             $out= R::load('lesson',$id)->text."Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
@@ -187,7 +188,7 @@ class wisdom
     }
 
     static private function getAuthorName($id){
-        $autor = R::getRow("SELECT  `information`.`id` ,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
+        $autor = R::getRow("SELECT  `information`.`id` as info,user.id,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
 FROM information
 LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
 LEFT JOIN  `obuceisea`.`user` ON  `information_user`.`user_id` =  `user`.`id`

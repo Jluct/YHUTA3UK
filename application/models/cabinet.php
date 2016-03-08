@@ -55,12 +55,12 @@ class cabinet
                 continue;
             }
 
-            if ($_SESSION[$key]=='password') {
+            if ($_SESSION[$key] == 'password') {
 //                $array[$key] = $value;
 //                echo 1;
                 continue;
             }
-            foreach($data as $key1 => $value1){
+            foreach ($data as $key1 => $value1) {
 //                echo"<br> value1 ";
 //                print_r( $value1);
 //
@@ -187,16 +187,50 @@ class cabinet
     static function userInfo($id)
     {
         db_connect::connect();
-        $user = R::getRow('SELECT user.login,user.status dossier.* from user left join dossier on dossier.id = user.dossier_id where user.id = ?'[$id]);
+        $user = R::load('user', $id);
 
-        $out="<h3>".$user['login']." | ".$user['surname'] .
-            " " . $user['name'] . " " . $user['andername']."</h3>";
-        $out .="<ul class=\"list-group\">
-                    <li class=\"list-group-item\">Статус: ".$user['status']."</li>
-                    <li class=\"list-group-item\">Страна: ".$user['land']."</li>
-                    <li class=\"list-group-item\">Город: ".$user['sity']."</li>
-                    <li class=\"list-group-item\">Количество учебных материалов: </li>
-                </ul>";
+        $out = "<div class='col-sm-4 text-center'>
+                    <img style=\"max-width: 100%;max-height:100%;margin: 15px; \" src='images/user/".$user->dossier->image."'>
+                </div>
+                    <div class='col-sm-8'>
+                    <h3>" . $user->login . " | " . $user->dossier->surname .
+                        " " . $user->dossier->name . " " . $user->dossier->andername .
+                    "</h3>";
+        $out .= "<ul class=\"list-group\">
+                    <li class=\"list-group-item alert-primary\"><h4>Основная информация</h4></li>
+                    <li class=\"list-group-item\">Статус: " . $user->status . "</li>
+                    <li class=\"list-group-item\">Страна: " . $user->dossier->land . "</li>
+                    <li class=\"list-group-item\">Город: " . $user->dossier->sity . "</li>
+                    <li class=\"list-group-item\">Количество учебных материалов: " . $user->withCondition('activ = 1')->countShared('information') . " </li>
+                </ul>
+                </div>";
+
+        $about = $user->dossier->about?$user->dossier->about:'<h3>Нет инфориации</h3>';
+
+        $out.="<div class='col-sm-12'>
+                    <div class=\"panel panel-primary\">
+                        <div class=\"panel-heading\">О себе</div>
+                        <div class=\"panel-body\">".$about."</div>
+                    </div>
+                </div>";
+
+        if ($user->status === 'teacher') {
+            $data = $user->withCondition('activ=1')->sharedInformationList;
+//    print_r($data);
+            $out .= "<div class='col-sm-12'><div class=\"list-group\"><ul style='padding-left:0; '>";
+            $out .= "<li class=\"list-group-item active\">
+            <h4 class=\"list-group-item-heading \">Разработанные учебные матириалы</h4>
+  </li>";
+            foreach ($data as $item) {
+                $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
+                $out .= "<li class=\"list-group-item\">
+            <h4 class=\"list-group-item-heading\"><a href='?ctrl=wisdom&action=GetWisdomById&id=".$item->id."'>" . $item->name . "</a></h4>
+    <p class=\"list-group-item-text\">" . $short_description . "</p>
+  </li>";
+            }
+            $out .= "</ul></div></div>";
+        }
+        return $out;
     }
 
 }

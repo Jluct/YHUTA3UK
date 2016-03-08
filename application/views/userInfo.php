@@ -8,9 +8,9 @@
 
 require_once(__DIR__ . "/../include/header.php"); ?>
 
-<section class="container">
-    <div class="row">
-
-    </div>
-</section>
-<?php require_once(__DIR__."/../include/footer.php"); ?>
+    <section class="container">
+        <div class="row">
+            <? echo $user; ?>
+        </div>
+    </section>
+<?php require_once(__DIR__ . "/../include/footer.php"); ?>

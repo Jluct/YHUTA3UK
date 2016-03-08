@@ -171,7 +171,7 @@ class cabinetController
     function actionUserInfo($view){
         $view->user = cabinet::userInfo($_GET['id']);
 
-        $view->render('userInfo.php');
+        echo $view->render('userInfo.php');
     }
 }
 
