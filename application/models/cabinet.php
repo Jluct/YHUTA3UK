@@ -10,9 +10,11 @@ session_start();
 class cabinet
 {
 
-    static private function getInfoEducation()
+    static private function getInfoEducation($item)
     {
+        $data = $item->ownEducationList;
 
+        return $data;
     }
 
     static function getUserInforamtion()
@@ -41,13 +43,17 @@ class cabinet
 
             $typeData = wisdom::getType($item);
 
+                $modul = self::getInfoEducation($item);
+
+
+
             $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
             $out .= "<li class=\"list-group-item\">
-<ol class=\"breadcrumb\">
-                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&page=1\" > ".$typeData[3]->name."</a></li>
-                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&subtype=".$typeData[2]->id."&page=1\" > ".$typeData[2]->name."</a></li>
-                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&page=1\" > ".$typeData[1]->name."</a></li>
-                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&subcategory=".$typeData[0]->id."&page=1\" > ".$typeData[0]->name."</a></li>
+                <ol class=\"breadcrumb\">
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&page=1\" > ".$typeData[3]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&page=1\" > ".$typeData[2]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&page=1\" > ".$typeData[1]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&subcategory=".$typeData[0]->id."&page=1\" > ".$typeData[0]->name."</a></li>
 
                 </ol>
             <h4 class=\"list-group-item-heading\"><h3><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h3>".$author."</h4>
