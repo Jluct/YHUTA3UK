@@ -6,14 +6,53 @@ session_start();
  * User: Listopadov
  * Date: 06.01.2016
  * Time: 12:23
+ *
+ *  <div class="panel panel-default">
+ * <div class="panel-heading" role="tab" id="headingTwo">
+ * <h4 class="panel-title">
+ * <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+ * Collapsible Group Item #2
+ * </a>
+ * </h4>
+ * </div>
+ *
  */
 class cabinet
 {
 
     static private function getInfoEducation($item)
     {
-        $data = $item->ownEducationList;
 
+        $data = "<ul class=\"list-group\">";
+
+        foreach ($item->ownEducationList as $value) {
+            $data .= "<li href=\"#\" class=\"list-group-item\">
+    <h4 class=\"list-group-item-heading\">" . $value->name . "</h4>
+    <div class=\"list-group-item-text\">" . $value->description . "</p>";
+
+            $data .= "<div class=\"panel panel-primary\">
+<div class=\"panel-heading \" role=\"tab\" id=\"heading" . $value->id . "\">
+<h4 class=\"panel-title\">
+<a class=\"collapsed\" role=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" . $value->id .
+                "\" aria-expanded=\"false\" aria-controls=\"collapse" . $value->id . "\"> Список предметов </a></h4></div>
+                <div id=\"collapse" . $value->id . "\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading" . $value->id . "\">
+      <div class=\"panel-body\"><ul class=\"list-group\">";
+
+            foreach ($value->ownLessonList as $subvalue) {
+                $data .= "
+  <li class=\"list-group-item\">
+    <h4>".$subvalue->number." ".$subvalue->name."</h4>
+    <p>".$subvalue->description."</p>
+  </li>
+";
+            }
+
+            $data .= "</ul></div></div></div>";
+            $data .= "</li>";
+        };
+
+
+        $data .= "</ul>";
         return $data;
     }
 
@@ -24,7 +63,7 @@ class cabinet
 //        print_r($data);
 
 
-        $out='';
+        $out = '';
 
         $out .= "<div class='col-sm-12'>
             <div class=\"list-group\"><ul style='padding-left:0; '>";
@@ -34,30 +73,29 @@ class cabinet
 
         foreach ($data->sharedInformationList as $item) {
 
-            if($_SESSION['user']->status!=='author'){
+            if ($_SESSION['user']->status !== 'author') {
                 $autor = wisdom::getAuthorName($item->id);
                 $author = "<br><a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
                     <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
-            " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
+                    " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
             }
 
             $typeData = wisdom::getType($item);
 
-                $modul = self::getInfoEducation($item);
-
+            $modul = self::getInfoEducation($item);
 
 
             $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
             $out .= "<li class=\"list-group-item\">
                 <ol class=\"breadcrumb\">
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&page=1\" > ".$typeData[3]->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&page=1\" > ".$typeData[2]->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&page=1\" > ".$typeData[1]->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&subcategory=".$typeData[0]->id."&page=1\" > ".$typeData[0]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&page=1\" > " . $typeData[3]->name . "</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&page=1\" > " . $typeData[2]->name . "</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&category=" . $typeData[1]->id . "&page=1\" > " . $typeData[1]->name . "</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&category=" . $typeData[1]->id . "&subcategory=" . $typeData[0]->id . "&page=1\" > " . $typeData[0]->name . "</a></li>
 
                 </ol>
-            <h4 class=\"list-group-item-heading\"><h3><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h3>".$author."</h4>
-    <p class=\"list-group-item-text\">" . $short_description . "</p>{{information_data}}
+            <h4 class=\"list-group-item-heading\"><h3><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h3>" . $author . "</h4>
+    <p class=\"list-group-item-text\">" . $short_description . "</p>".$modul."
     <div class='btn btn-primary btn-block' style='margin-top:20px;'>Приступить</div>
   </li>";
         }
