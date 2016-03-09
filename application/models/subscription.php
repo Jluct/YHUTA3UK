@@ -14,7 +14,7 @@ class subscription
 //            header("Location: ?ctrl=registration&action=Registration");
 
 
-        $requirement = R::findAll('requirements', "WHERE requirements.education_id = ?", [$id]);
+        $requirement = R::findAll('requirements', "WHERE requirements.information_id = ?", [$id]);
         if(empty($requirement)){
             echo"NOT<br>";
             print_r($requirement);

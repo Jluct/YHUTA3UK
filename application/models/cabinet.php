@@ -9,6 +9,57 @@ session_start();
  */
 class cabinet
 {
+
+    static private function getInfoEducation()
+    {
+
+    }
+
+    static function getUserInforamtion()
+    {
+
+        $data = R::duplicate($_SESSION['user']);
+//        print_r($data);
+
+
+        $out='';
+
+        $out .= "<div class='col-sm-12'>
+            <div class=\"list-group\"><ul style='padding-left:0; '>";
+        $out .= "<li class=\"list-group-item active\">
+            <h4 class=\"list-group-item-heading \">Изучаемые курсы</h4>
+  </li>";
+
+        foreach ($data->sharedInformationList as $item) {
+
+            if($_SESSION['user']->status!=='author'){
+                $autor = wisdom::getAuthorName($item->id);
+                $author = "<br><a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+            " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
+            }
+
+            $typeData = wisdom::getType($item);
+
+            $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
+            $out .= "<li class=\"list-group-item\">
+<ol class=\"breadcrumb\">
+                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&page=1\" > ".$typeData[3]->name."</a></li>
+                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&subtype=".$typeData[2]->id."&page=1\" > ".$typeData[2]->name."</a></li>
+                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&page=1\" > ".$typeData[1]->name."</a></li>
+                    <li><a href=\" ? ctrl = wisdom & action = WisdomType & type = ".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&subcategory=".$typeData[0]->id."&page=1\" > ".$typeData[0]->name."</a></li>
+
+                </ol>
+            <h4 class=\"list-group-item-heading\"><h3><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h3>".$author."</h4>
+    <p class=\"list-group-item-text\">" . $short_description . "</p>{{information_data}}
+    <div class='btn btn-primary btn-block' style='margin-top:20px;'>Приступить</div>
+  </li>";
+        }
+        $out .= "</ul></div></div>";
+        return $out;
+//        print_r();
+    }
+
     static function getUserData($userArray = '', $errorArray = '')
     {
 
@@ -190,27 +241,28 @@ class cabinet
         $user = R::load('user', $id);
 
         $out = "<div class='col-sm-4 text-center'>
-                    <img style=\"max-width: 100%;max-height:100%;margin: 15px; \" src='images/user/".$user->dossier->image."'>
+                    <img style=\"max-width: 100%;max-height:100%;margin: 15px; \" src='images/user/" . $user->dossier->image . "'>
                 </div>
                     <div class='col-sm-8'>
                     <h3>" . $user->login . " | " . $user->dossier->surname .
-                        " " . $user->dossier->name . " " . $user->dossier->andername .
-                    "</h3>";
+            " " . $user->dossier->name . " " . $user->dossier->andername .
+            "</h3>";
         $out .= "<ul class=\"list-group\">
-                    <li class=\"list-group-item alert-primary\"><h4>Основная информация</h4></li>
+                    <li class=\"list-group-item\"><h4>Основная информация</h4></li>
                     <li class=\"list-group-item\">Статус: " . $user->status . "</li>
                     <li class=\"list-group-item\">Страна: " . $user->dossier->land . "</li>
                     <li class=\"list-group-item\">Город: " . $user->dossier->sity . "</li>
+                    <li class=\"list-group-item\">Электронная почта: " . $user->dossier->email . "</li>
                     <li class=\"list-group-item\">Количество учебных материалов: " . $user->withCondition('activ = 1')->countShared('information') . " </li>
                 </ul>
                 </div>";
 
-        $about = $user->dossier->about?$user->dossier->about:'<h3>Нет инфориации</h3>';
+        $about = $user->dossier->about ? $user->dossier->about : '<h3>Нет инфориации</h3>';
 
-        $out.="<div class='col-sm-12'>
+        $out .= "<div class='col-sm-12'>
                     <div class=\"panel panel-primary\">
                         <div class=\"panel-heading\">О себе</div>
-                        <div class=\"panel-body\">".$about."</div>
+                        <div class=\"panel-body\">" . $about . "</div>
                     </div>
                 </div>";
 
@@ -224,7 +276,7 @@ class cabinet
             foreach ($data as $item) {
                 $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
                 $out .= "<li class=\"list-group-item\">
-            <h4 class=\"list-group-item-heading\"><a href='?ctrl=wisdom&action=GetWisdomById&id=".$item->id."'>" . $item->name . "</a></h4>
+            <h4 class=\"list-group-item-heading\"><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h4>
     <p class=\"list-group-item-text\">" . $short_description . "</p>
   </li>";
             }

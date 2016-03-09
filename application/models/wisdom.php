@@ -87,8 +87,21 @@ class wisdom
 
     }
 
+    static public function getType($obj)
+    {
+        $subcategory = $obj->category;
+        $category = $subcategory->category;
+        $subtype = $category->type;
+        $type = $subtype->type;
+
+        return [$subcategory,$category,$subtype,$type];
+    }
+
     public function getWisdom($id)
     {
+        $information = R::load('information', $id);
+        $typeData = self::getType($information);
+
 //        if (!(int)$id || !(int)$type) {
 //            return false;
 //        }
@@ -99,33 +112,29 @@ class wisdom
         $out = '';
 
 
-        $information = R::load('information', $id);
-        $subcategory = $information->category;
-        $category = $subcategory->category;
-        $subtype = $category->type;
-        $type= $subtype->type;
+
 //        print_r($subtype);die;
         $autor = self::getAuthorName($id);
 //        print_r($autor);
-        if($type->id == 6){
+        if($typeData[3]->id == 6){
 
             $out= R::load('lesson',$id)->text."Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
             " " . $autor['name'] . " " . $autor['andername'] . " </a></div>";
             return $out;
         }
-        if($type->id == 1) {
+        if($typeData[3]->id == 1) {
             $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
-        }elseif($type->id == 5){
+        }elseif($typeData[3]->id == 5){
             $count_modul = R::count("lesson", "lesson.information_id = ? and lesson.block = 1", [$id]);
         }
 
-        $out.="<ol class=\"breadcrumb\">
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&page=1\">".$type->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&subtype=".$subtype->id."&page=1\">".$subtype->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&subtype=".$subtype->id."&category=".$category->id."&page=1\">".$category->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$type->id."&subtype=".$subtype->id."&category=".$category->id."&subcategory=".$subcategory->id."&page=1\">".$subcategory->name."</a></li>
+        $out .= "<ol class=\"breadcrumb\">
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&page=1\">".$typeData[3]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&page=1\">".$typeData[2]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&page=1\">".$typeData[1]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&subcategory=".$typeData[0]->id."&page=1\">".$typeData[0]->name."</a></li>
 
-               </ol>";
+                </ol>";
 
         $out .= "<h2>" . $information->name . "</h2>";
         $out .= "<div style='margin-bottom: 15px;'>" . $information->description . "</div>";
@@ -144,9 +153,9 @@ class wisdom
                     <li class=\"list-group-item\"> Кол-во модулей: " . $count_modul . "</li></ul>";
 
 //        print_r($information);
-        if($type->id == 1) {
+        if($typeData[3]->id == 1) {
             $education = $information->withCondition('education.information_id = ? and education.block = 1',[$id])->ownEducationList;
-        }elseif($type->id == 5){
+        }elseif($typeData[3]->id == 5){
             $education = $information->withCondition('lesson.information_id = ? and lesson.block = 1',[$id])->ownLessonList;
         }
         $out.="<ul class=\"list-group\"><li class=\"list-group-item active\">Изучаемые модули</li>";
@@ -187,7 +196,7 @@ class wisdom
         return $out;
     }
 
-    static private function getAuthorName($id){
+    static function getAuthorName($id){
         $autor = R::getRow("SELECT  `information`.`id` as info,user.id,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
 FROM information
 LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`

@@ -9,6 +9,14 @@ session_start();
  */
 class cabinetController
 {
+
+    function actionGetInformation($view)
+    {
+        $view->data = cabinet::getUserInforamtion();
+        echo $view->render('userInformation.php');
+
+    }
+
     function actionGetCabinet($view)
     {
         if (!$_SESSION['user']->login || !$_SESSION['user']->authorisation === "7gF5dFG546jX15" ||
@@ -17,6 +25,8 @@ class cabinetController
             header("Location: /?");
             return false;
         }
+
+
 
 
         $view->userMenu = '';
