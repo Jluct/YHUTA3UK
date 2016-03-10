@@ -20,6 +20,25 @@ session_start();
 class cabinet
 {
 
+
+    static function getLessonById($id)
+    {
+        $out='';
+        $data=R::load('lesson',$id);
+        $out="<h4>".$data->name."</h4><div class='col-sm-12'>".$data->text."</div>";
+        return $out;
+    }
+
+    static function deleteUserProgress($id)
+    {
+        $data = R::duplicate($_SESSION['user']);
+        unset($_SESSION['user']->sharedInformationList[$id]);
+        R::store($_SESSION['user']);
+        return true;
+
+    }
+
+
     static private function getInfoEducation($item)
     {
 
@@ -41,8 +60,8 @@ class cabinet
             foreach ($value->ownLessonList as $subvalue) {
                 $data .= "
   <li class=\"list-group-item\">
-    <h4>".$subvalue->number." ".$subvalue->name."</h4>
-    <p>".$subvalue->description."</p>
+    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=".$subvalue->id."' style='float:right;' class='btn btn-success'>Приступить</a></h4>
+    <p>" . $subvalue->description . "</p>
   </li>
 ";
             }
@@ -56,37 +75,83 @@ class cabinet
         return $data;
     }
 
-    static function getUserInforamtion()
-    {
 
+    static function getUserProgress($id = 0)
+    {
         $data = R::duplicate($_SESSION['user']);
-//        print_r($data);
+//        print_r($data->ownInformation_userList);
 
 
         $out = '';
 
         $out .= "<div class='col-sm-12'>
-            <div class=\"list-group\"><ul style='padding-left:0; '>";
-        $out .= "<li class=\"list-group-item active\">
-            <h4 class=\"list-group-item-heading \">Изучаемые курсы</h4>
-  </li>";
+            <div class=\"list-group\"><ul style='padding-left:0;'>";
+        $out .= "<li class=\"list-group-item active\">";
+        if ($id == 0)
+            $out .= "<h4 class=\"list-group-item-heading \">Изучаемые курсы</h4>";
+        $out .= '</li></ul></div>';
 
-        foreach ($data->sharedInformationList as $item) {
+        if ($id == 0) {
+            $wisdom = $data->sharedInformationList;
+//            print_r($wisdom);
+        } else {
 
-            if ($_SESSION['user']->status !== 'author') {
-                $autor = wisdom::getAuthorName($item->id);
-                $author = "<br><a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
-                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
-                    " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
+            $userInfo = $data->ownInformation_userList;
+            foreach ($userInfo as $value) {
+//                echo $value->information_id." ".$id;
+                if ($value->information_id == $id)
+                    $wisdom = R::findAll('information', 'where id = ?', [$id]);
+            }
+//            print_r($userInfo);
+        }
+
+        if ($id === 0) {
+            $typeMenu = '';
+            switch ($_SESSION['user']->status) {
+                case "student":
+                    $typeMenu = 3;
+                    break;
+                case "teacher":
+                    $typeMenu = 4;
+                    break;
+                case "moderator":
+                    $typeMenu = 5;
+                    break;
+                case "admin":
+                    $typeMenu = 6;
+                    break;
             }
 
-            $typeData = wisdom::getType($item);
+            $bigMenu = new menu("SELECT menu_item.*
+        FROM  `menu` ,  `menu_item`
+        WHERE menu_item.menu_id = ?
+       AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
+//            $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+//            $bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
 
-            $modul = self::getInfoEducation($item);
 
+            //$out .= $bigMenu->render(); //"<a href='?ctrl=cabinet&action=GetUserInformation&id=" . $item->id . "'><div class='btn btn-success btn-block' style='margin-top:20px;'>Приступить</div></a>";
+        }
 
-            $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
-            $out .= "<li class=\"list-group-item\">
+        if (!empty($wisdom))
+            foreach ($wisdom as $item) {
+//                echo 1;
+                if ($id != 0) {
+                    $modul = self::getInfoEducation($item);
+
+                }
+
+                if ($_SESSION['user']->status !== 'author') {
+                    $autor = wisdom::getAuthorName($item->id);
+                    $author = "<br><a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
+                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+                        " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
+                }
+
+                $typeData = wisdom::getType($item);
+
+                $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
+                $out .= "<li class=\"list-group-item\">
                 <ol class=\"breadcrumb\">
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&page=1\" > " . $typeData[3]->name . "</a></li>
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&page=1\" > " . $typeData[2]->name . "</a></li>
@@ -94,14 +159,43 @@ class cabinet
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&category=" . $typeData[1]->id . "&subcategory=" . $typeData[0]->id . "&page=1\" > " . $typeData[0]->name . "</a></li>
 
                 </ol>
-            <h4 class=\"list-group-item-heading\"><h3><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h3>" . $author . "</h4>
-    <p class=\"list-group-item-text\">" . $short_description . "</p>".$modul."
-    <div class='btn btn-primary btn-block' style='margin-top:20px;'>Приступить</div>
-  </li>";
-        }
-        $out .= "</ul></div></div>";
-        return $out;
+            <h4 class=\"list-group-item-heading\"><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h4><h5>" . $author . "</h5>
+    <p class=\"list-group-item-text\">" . $short_description . "</p>" . $modul;
+                if ($id === 0) {
+//                    $typeMenu = '';
+//                    switch ($_SESSION['user']->status) {
+//                        case "student":
+//                            $typeMenu = 3;
+//                            break;
+//                        case "teacher":
+//                            $typeMenu = 4;
+//                            break;
+//                        case "moderator":
+//                            $typeMenu = 5;
+//                            break;
+//                        case "admin":
+//                            $typeMenu = 6;
+//                            break;
+//                    }
+//
+//                    $bigMenu = new menu("SELECT menu_item.*
+//        FROM  `menu` ,  `menu_item`
+//        WHERE menu_item.menu_id = ?
+//       AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
+                    $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+                    $bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
+
+
+                    $out .= $bigMenu->render(); //"<a href='?ctrl=cabinet&action=GetUserInformation&id=" . $item->id . "'><div class='btn btn-success btn-block' style='margin-top:20px;'>Приступить</div></a>";
+                }
+                $out .= "</li>";
+
+                $out .= "</ul></div></div></div>";
 //        print_r();
+            }
+        if (empty($wisdom))
+            $out .= "Вы не подписанны на данный учебный материал";
+        return $out;
     }
 
     static function getUserData($userArray = '', $errorArray = '')
@@ -129,33 +223,47 @@ class cabinet
 //        echo "<br>";
 //        print_r($data->dossier);
 
-        foreach ($_SESSION['user'] as $key => $value) {
-//            echo"<br> value ";
-//            print_r( $value);
+//        foreach ($_SESSION['user'] as $key => $value) {
+////            echo"<br> value ";
+////            print_r( $value);
+////
+////            echo" <br>$value->$key ";
+////            print_r($value->$key);
+////
+////            echo "<br>Array ";
+////            print_r($array ? $array : 'Пусто');
+////            echo "<br>";
+//            if (empty($errorArray) && !empty($errorArray[$key])) {  // !!! \\
+//                $array[$key] = $errorArray[$key];
+////                echo 4;
+//                continue;
+//            }
+//            if (empty($userArray) && !empty($userArray[$key])) {   // !!! \\
+//                $array[$key] = $userArray[$key];
+////                echo 3;
+//                continue;
+//            }
 //
-//            echo" <br>$value->$key ";
-//            print_r($value->$key);
-//
-//            echo "<br>Array ";
-//            print_r($array ? $array : 'Пусто');
-//            echo "<br>";
-            if (empty($errorArray) && !empty($errorArray[$key])) {  // !!! \\
-                $array[$key] = $errorArray[$key];
+//            if ($_SESSION[$key] == 'password') {
+////                $array[$key] = $value;
+////                echo 1;
+//                continue;
+//            }
+//        }
+
+        foreach ($data as $key1 => $value1) {
+
+            if (empty($errorArray) && !empty($errorArray[$key1])) {  // !!! \\
+                $array[$key1] = $errorArray[$key1];
 //                echo 4;
                 continue;
             }
-            if (empty($userArray) && !empty($userArray[$key])) {   // !!! \\
-                $array[$key] = $userArray[$key];
+            if (empty($userArray) && !empty($userArray[$key1])) {   // !!! \\
+                $array[$key1] = $userArray[$key1];
 //                echo 3;
                 continue;
             }
 
-            if ($_SESSION[$key] == 'password') {
-//                $array[$key] = $value;
-//                echo 1;
-                continue;
-            }
-            foreach ($data as $key1 => $value1) {
 //                echo"<br> value1 ";
 //                print_r( $value1);
 //
@@ -164,12 +272,14 @@ class cabinet
 
 //                echo"<br>$value1->$key1<br>";
 //                print_r($value1->$key1);
-                if ($data->$key1) {
-                    $array[$key1] = $value1;
+            if($key1=="image")continue;
 
-                }
+            if ($data->$key1) {
+                $array[$key1] = $value1;
+                print_r($key1." ");
+
+
             }
-
         }
 
 
@@ -219,6 +329,10 @@ class cabinet
     <h4 class=\"list-group-item-heading\">Город</h4>
     <p class=\"list-group-item-text\"><input type='text' class='form-control' name='sity' value='" . $array['sity'] . "'></p>
   </a>
+  <a href=\"#\" class=\"list-group-item\">
+    <h4 class=\"list-group-item-heading\">О себе</h4 >
+    <p class=\"list-group-item-text\" ><textarea class='form-control' name='about'>". $array['about'] ."</textarea></p >
+  </a >
 
 </div>
         </div>";
@@ -330,112 +444,3 @@ class cabinet
     }
 
 }
-
-/*
- * <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
-                    <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
-            " " . $autor['name'] . " " . $autor['andername'] . " </a>
- *
- *
-        Array
-(
-    [user] => RedBeanPHP\OODBBean Object
-        (
-            [properties:protected] => Array
-                (
-                    [id] => 3
-                    [login] => boris
-                    [password] => 12345
-                    [dossier_id] => 3
-                    [block] => 0
-                    [status] => student
-                    [authorisation] => 7gF5dFG546jX15
-                    [dossier] => RedBeanPHP\OODBBean Object
-                        (
-                            [properties:protected] => Array
-                                (
-                                    [id] => 3
-                                    [name] => Борис
-                                    [andername] => Борисович
-                                    [lastname] => Борисов
-                                    [phone] => 11111111
-                                    [sity] => Минск
-                                    [land] => Беларусь
-                                    [email] => boris@gmail.com
-                                )
-
-                            [__info:protected] => Array
-                                (
-                                    [type] => dossier
-                                    [sys.id] => id
-                                    [sys.orig] => Array
-                                        (
-                                            [id] => 3
-                                            [name] => Борис
-                                            [andername] => Борисович
-                                            [lastname] => Борисов
-                                            [phone] => 11111111
-                                            [sity] => Минск
-                                            [land] => Беларусь
-                                            [email] => boris@gmail.com
-                                        )
-
-                                    [tainted] =>
-                                    [changed] =>
-                                )
-
-                            [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
-                                (
-                                )
-
-                            [fetchType:protected] =>
-                            [withSql:protected] =>
-                            [withParams:protected] => Array
-                                (
-                                )
-
-                            [aliasName:protected] =>
-                            [via:protected] =>
-                            [noLoad:protected] =>
-                            [all:protected] =>
-                        )
-
-                )
-
-            [__info:protected] => Array
-                (
-                    [type] => user
-                    [sys.id] => id
-                    [sys.orig] => Array
-                        (
-                            [id] => 3
-                            [login] => boris
-                            [password] => 12345
-                            [dossier_id] => 3
-                            [block] => 0
-                            [status] => student
-                        )
-
-                    [tainted] => 1
-                    [changed] => 1
-                )
-
-            [beanHelper:protected] => RedBeanPHP\BeanHelper\SimpleFacadeBeanHelper Object
-                (
-                )
-
-            [fetchType:protected] =>
-            [withSql:protected] =>
-            [withParams:protected] => Array
-                (
-                )
-
-            [aliasName:protected] =>
-            [via:protected] =>
-            [noLoad:protected] =>
-            [all:protected] =>
-        )
-
-)
-
- */

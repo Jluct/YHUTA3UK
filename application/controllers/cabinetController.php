@@ -10,11 +10,29 @@ session_start();
 class cabinetController
 {
 
-    function actionGetInformation($view)
+    function actionGetLesson($view)
     {
-        $view->data = cabinet::getUserInforamtion();
+        $id = (int)$_GET['id'];
+        $view->data = cabinet::getLessonById($id);
+        echo $view->render('userInformation.php');
+    }
+
+    function actionGetUserInformation($view)
+    {
+
+        $id = (int)$_GET['id'];
+        $view->data = cabinet::getUserProgress($id);
         echo $view->render('userInformation.php');
 
+    }
+
+
+    function actionDeleteUserInformation($view)
+    {
+        $id = (int)$_GET['id'];
+        if (cabinet::deleteUserProgress($id))
+            $view->data = cabinet::getUserProgress();
+        echo $view->render('userInformation.php');
     }
 
     function actionGetCabinet($view)
@@ -25,8 +43,6 @@ class cabinetController
             header("Location: /?");
             return false;
         }
-
-
 
 
         $view->userMenu = '';
@@ -85,9 +101,11 @@ class cabinetController
         $userArray = array();
         $errorArray = array();
         $session = $_SESSION['user'];
-        if($_POST['firstPassword'] && $_POST['anderPassword'] && ($_POST['firstPassword'] === $_POST['anderPassword'])){
+        if (!empty($_POST['firstPassword']) && !empty($_POST['anderPassword']) && ($_POST['firstPassword'] === $_POST['anderPassword'])) {
+
             $session->password = $_POST['firstPassword'];
-        }else{
+        } elseif(empty($_POST['firstPassword']) && $_POST['firstPassword']!='' && empty($_POST['anderPassword']) && ($_POST['firstPassword'] === $_POST['anderPassword'])) {
+
             $view->message = ["Пароли не совпадают или не все поля заполненны", "Внимание", 4];
             $errorArray = $_POST;
             $view->data = cabinet::getUserData($userArray, $errorArray);
@@ -102,26 +120,34 @@ class cabinetController
             }
             if ($key == 'email')
                 if (preg_match("~([a-zA-Z0-9!#$%&\'*+-/=?^_`{|}\~])@([a-zA-Z0-9-]).([a-zA-Z0-9]{2,4})~", $value)) {
-                    $userArray[$key] = $value;
+                    $userArray[$key] = htmlspecialchars($value);
                     continue;
                 } else {
-                    $errorArray[$key] = $value;
+                    $errorArray[$key] = htmlspecialchars($value);
+                    continue;
+                }
+            if($key=='about')
+                if(count($value)<2000){
+                    $userArray[$key] = htmlspecialchars($value);
+                    continue;
+                } else {
+                    $errorArray[$key] = htmlspecialchars($value);
                     continue;
                 }
 
             if ($key == 'phone')
                 if (preg_match("/^[+0-9-]{5,30}$/", $value)) {
-                    $userArray[$key] = $value;
+                    $userArray[$key] = htmlspecialchars($value);
                     continue;
                 } else {
-                    $errorArray[$key] = $value;
+                    $errorArray[$key] = htmlspecialchars($value);
                     continue;
                 }
 
             if (!preg_match('/^[A-Za-zАаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя0-9_]{2,30}$/', trim($value))) {
-                $errorArray[$key] = $value;
+                $errorArray[$key] = htmlspecialchars($value);
             } else {
-                $userArray[$key] = $value;
+                $userArray[$key] = htmlspecialchars($value);
             }
 //
         }
@@ -178,7 +204,8 @@ class cabinetController
 //        echo $view->render('cabinet.php');
     }
 
-    function actionUserInfo($view){
+    function actionUserInfo($view)
+    {
         $view->user = cabinet::userInfo($_GET['id']);
 
         echo $view->render('userInfo.php');
