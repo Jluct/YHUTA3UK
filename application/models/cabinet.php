@@ -39,12 +39,41 @@ class cabinet
     }
 
 
+    static private function getUserInfoProgress($id=0,$userFlags=0)
+    {
+        $data = R::duplicate($_SESSION['user']);
+        $userInfo = $data->ownInformation_userList;
+
+        $flags=FALSE;
+
+        foreach ($userInfo as $value) {
+//                echo $value->information_id." ".$id;
+            if ($value->information_id == $id) {
+                $flags = TRUE;
+                $wisdom = R::findAll('information', 'where id = ?', [$id]);
+            }
+        }
+
+        if($flags=0)return $flags;
+    }
+
     static private function getInfoEducation($item)
     {
 
+         /**********************
+         *******Выделение*******
+         **********************/
+
         $data = "<ul class=\"list-group\">";
 
+        $data = R::duplicate($_SESSION['user']);
+        $userInfo = $data->ownInformation_userList; ///?
+
+
         foreach ($item->ownEducationList as $value) {
+
+//            if(in_array($value->id,))
+
             $data .= "<li href=\"#\" class=\"list-group-item\">
     <h4 class=\"list-group-item-heading\">" . $value->name . "</h4>
     <div class=\"list-group-item-text\">" . $value->description . "</p>";

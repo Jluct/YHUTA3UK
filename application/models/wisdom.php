@@ -178,6 +178,11 @@ class wisdom
             foreach ($requirements as $item) {
                 $information_requirements = R::getRow("SELECT information.id,information.name from information WHERE information.id = ?", [$item->requirements]);
 
+
+                 /**********************
+                 *******Выделение*******
+                 **********************/
+
                 $out .= "<li class=\"list-group-item\"><a href='?ctrl=wisdom&action=GetWisdomById&id="
                     . $information_requirements['id'] . "'>" . $information_requirements['name'] . "</a></li>";
             }
