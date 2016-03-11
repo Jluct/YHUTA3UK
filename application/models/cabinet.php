@@ -92,8 +92,7 @@ class cabinet
             return $data;
         }
 
-        if(!empty($wisdom)) {
-            $value = $wisdom;
+        if($wisdom!=='') {
             $data .= renderLesson($wisdom);
             $data .= "</ul></div></div></div>";
             $data .= "</li>";
@@ -126,8 +125,7 @@ class cabinet
 //  </li>
 //";
 //            }
-            if(!empty($wisdom))
-                $value = $wisdom;
+
             $data .= renderLesson($value);
 
             $data .= "</ul></div></div></div>";
@@ -229,8 +227,10 @@ class cabinet
 
 //                echo 1;
                 if ($id != 0) {
-                    if($typeData[3]->id!==1)
+                    $itemClone='';
+                    if($typeData[3]->id!=1) {
                         $itemClone = $item;
+                    }
                     $modul = self::getInfoEducation($item,$itemClone);
 
                 }
