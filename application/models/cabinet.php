@@ -23,9 +23,9 @@ class cabinet
 
     static function getLessonById($id)
     {
-        $out='';
-        $data=R::load('lesson',$id);
-        $out="<h4>".$data->name."</h4><div class='col-sm-12'>".$data->text."</div>";
+        $out = '';
+        $data = R::load('lesson', $id);
+        $out = "<h4>" . $data->name . "</h4><div class='col-sm-12'>" . $data->text . "</div>";
         return $out;
     }
 
@@ -39,44 +39,48 @@ class cabinet
     }
 
 
-    static private function getUserInfoProgress($id=0,$userFlags=0)
+    static private function getUserInfoProgress($id = 0, $userFlags = '')
     {
         $data = R::duplicate($_SESSION['user']);
         $userInfo = $data->ownInformation_userList;
 
-        $flags=FALSE;
+        $flags = FALSE;
 
         foreach ($userInfo as $value) {
-//                echo $value->information_id." ".$id;
-            if ($value->information_id == $id) {
-                $flags = TRUE;
-                $wisdom = R::findAll('information', 'where id = ?', [$id]);
+//                echo " ".$userFlags." ".$value->$userFlags." - ".$id." ";
+            if ($value->$userFlags == $id && $value->status === 1) {
+                return $flags = TRUE;
+//                $wisdom = R::findAll('information', 'where id = ?', [$id]);
             }
         }
 
-        if($flags=0)return $flags;
+//        if($flags=0)
+        return $flags;
+
     }
 
     static private function getInfoEducation($item)
     {
 
-         /**********************
-         *******Выделение*******
-         **********************/
+        /*********************\
+         * |******Выделение********|
+         * \*********************/
 
         $data = "<ul class=\"list-group\">";
 
-        $data = R::duplicate($_SESSION['user']);
-        $userInfo = $data->ownInformation_userList; ///?
+//        $data = R::duplicate($_SESSION['user']);
+//        $userInfo = $data->ownInformation_userList; ///?
 
 
         foreach ($item->ownEducationList as $value) {
+            $helpClass = '';
 
-//            if(in_array($value->id,))
+            if (self::getUserInfoProgress($value->id, 'education_id'))
+                $helpClass = 'bg-success';
 
-            $data .= "<li href=\"#\" class=\"list-group-item\">
+            $data .= "<li href=\"#\" class=\"list-group-item " . $helpClass . " \">
     <h4 class=\"list-group-item-heading\">" . $value->name . "</h4>
-    <div class=\"list-group-item-text\">" . $value->description . "</p>";
+    <div class=\"list-group-item-text \">" . $value->description . "</p>";
 
             $data .= "<div class=\"panel panel-primary\">
 <div class=\"panel-heading \" role=\"tab\" id=\"heading" . $value->id . "\">
@@ -89,7 +93,7 @@ class cabinet
             foreach ($value->ownLessonList as $subvalue) {
                 $data .= "
   <li class=\"list-group-item\">
-    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=".$subvalue->id."' style='float:right;' class='btn btn-success'>Приступить</a></h4>
+    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
     <p>" . $subvalue->description . "</p>
   </li>
 ";
@@ -105,7 +109,7 @@ class cabinet
     }
 
 
-    static function getUserProgress($id = 0)
+    static function getUserProgress($id = 0, $complete = 0)
     {
         $data = R::duplicate($_SESSION['user']);
 //        print_r($data->ownInformation_userList);
@@ -116,15 +120,45 @@ class cabinet
         $out .= "<div class='col-sm-12'>
             <div class=\"list-group\"><ul style='padding-left:0;'>";
         $out .= "<li class=\"list-group-item active\">";
-        if ($id == 0)
-            $out .= "<h4 class=\"list-group-item-heading \">Изучаемые курсы</h4>";
+
+        if ($id == 0 && $complete == 0)
+            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Изучаемые курсы </h4>";
+
+        if ($complete == 1)
+            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Изученные курсы</h4>";
+
         $out .= '</li></ul></div>';
 
         if ($id == 0) {
-            $wisdom = $data->sharedInformationList;
-//            print_r($wisdom);
+
+            $preWisdom = $data->ownInformation_userList;
+            $arrayId = array();
+            foreach ($preWisdom as $value) {
+                if ($complete == 0) {
+                    if (is_null($value->status) && is_null($value->education_id) && is_null($value->lesson_id))
+                        $arrayId[] = $value->information_id;
+
+                } else {
+                    if (!is_null($value->status) && is_null($value->education_id) && is_null($value->lesson_id))
+                        $arrayId[] = $value->information_id;
+                }
+//                echo "info ".$value->information_id." | ";
+//                echo " educ ".$value->education_id." | ";
+//                echo " less ".$value->lesson_id." | ";
+//                echo " stat ".$value->status;
+//                echo"<br>";
+
+            }
+            $wisdom = R::loadAll('information', $arrayId);
+//            print_r($preWisdom);
+
+//            $wisdom = $data->via('information_user')->withCondition('status is null')->sharedInformation;
+//                        print_r($wisdom);
+
+
         } else {
 
+            // проверяем записан ли пользователь на данный УМ
             $userInfo = $data->ownInformation_userList;
             foreach ($userInfo as $value) {
 //                echo $value->information_id." ".$id;
@@ -134,8 +168,9 @@ class cabinet
 //            print_r($userInfo);
         }
 
+        $typeMenu = '6';
+        if($complete==0)
         if ($id === 0) {
-            $typeMenu = '';
             switch ($_SESSION['user']->status) {
                 case "student":
                     $typeMenu = 3;
@@ -151,16 +186,12 @@ class cabinet
                     break;
             }
 
-            $bigMenu = new menu("SELECT menu_item.*
+        }
+        $bigMenu = new menu("SELECT menu_item.*
         FROM  `menu` ,  `menu_item`
         WHERE menu_item.menu_id = ?
        AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
-//            $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
-//            $bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
 
-
-            //$out .= $bigMenu->render(); //"<a href='?ctrl=cabinet&action=GetUserInformation&id=" . $item->id . "'><div class='btn btn-success btn-block' style='margin-top:20px;'>Приступить</div></a>";
-        }
 
         if (!empty($wisdom))
             foreach ($wisdom as $item) {
@@ -169,6 +200,11 @@ class cabinet
                     $modul = self::getInfoEducation($item);
 
                 }
+
+                $helpClass = '';
+
+                if (self::getUserInfoProgress($item->id, 'information_id'))
+                    $helpClass = 'bg-success';
 
                 if ($_SESSION['user']->status !== 'author') {
                     $autor = wisdom::getAuthorName($item->id);
@@ -180,7 +216,7 @@ class cabinet
                 $typeData = wisdom::getType($item);
 
                 $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
-                $out .= "<li class=\"list-group-item\">
+                $out .= "<li class=\"list-group-item " . $helpClass . " \">
                 <ol class=\"breadcrumb\">
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&page=1\" > " . $typeData[3]->name . "</a></li>
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&page=1\" > " . $typeData[2]->name . "</a></li>
@@ -212,6 +248,7 @@ class cabinet
 //        WHERE menu_item.menu_id = ?
 //       AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
                     $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+
                     $bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
 
 
@@ -230,105 +267,33 @@ class cabinet
     static function getUserData($userArray = '', $errorArray = '')
     {
 
-//        print_r($userArray);
-//        echo "Jib,rb ";
-//        print_r($errorArray);
-
-//        $name;
-//        $surname;
-//        $andername;
-//        $land;
-//        $sity;
-//        $email;
-//        $phone = 'login';
 
         $array = array();
         $session = $_SESSION['user'];
         $data = $session->dossier;
-//        echo '<br>';
-//        print_r($_SESSION);
 
-//        print_r($data);
-//        echo "<br>";
-//        print_r($data->dossier);
-
-//        foreach ($_SESSION['user'] as $key => $value) {
-////            echo"<br> value ";
-////            print_r( $value);
-////
-////            echo" <br>$value->$key ";
-////            print_r($value->$key);
-////
-////            echo "<br>Array ";
-////            print_r($array ? $array : 'Пусто');
-////            echo "<br>";
-//            if (empty($errorArray) && !empty($errorArray[$key])) {  // !!! \\
-//                $array[$key] = $errorArray[$key];
-////                echo 4;
-//                continue;
-//            }
-//            if (empty($userArray) && !empty($userArray[$key])) {   // !!! \\
-//                $array[$key] = $userArray[$key];
-////                echo 3;
-//                continue;
-//            }
-//
-//            if ($_SESSION[$key] == 'password') {
-////                $array[$key] = $value;
-////                echo 1;
-//                continue;
-//            }
-//        }
 
         foreach ($data as $key1 => $value1) {
 
             if (empty($errorArray) && !empty($errorArray[$key1])) {  // !!! \\
                 $array[$key1] = $errorArray[$key1];
-//                echo 4;
+
                 continue;
             }
             if (empty($userArray) && !empty($userArray[$key1])) {   // !!! \\
                 $array[$key1] = $userArray[$key1];
-//                echo 3;
+
                 continue;
             }
 
-//                echo"<br> value1 ";
-//                print_r( $value1);
-//
-//                echo" <br>key1 ";
-//                print_r($key1);
 
-//                echo"<br>$value1->$key1<br>";
-//                print_r($value1->$key1);
-            if($key1=="image")continue;
+            if ($key1 == "image") continue;
 
             if ($data->$key1) {
                 $array[$key1] = $value1;
-                print_r($key1." ");
-
 
             }
         }
-
-
-//        $name = $_SESSION['user']->dossier->name;
-//        if ($userArray['name'])
-//            $name = $userArray['name'];
-//        if ($errorArray['name'])
-//            $name = $errorArray['name'];
-//
-//        $surname = $_SESSION['user']->dossier->surname;
-//        if ($userArray['surname'])
-//            $surname = $userArray['surname'];
-//        if ($errorArray['surname'])
-//            $name = $errorArray['surname'];
-//
-//        $andername = $_SESSION['andername']->dossier->andername;
-//        if ($userArray['andername'])
-//            $surname = $userArray['andername'];
-//        if ($errorArray['andername'])
-//            $name = $errorArray['andername'];
 
 
         $out = "<h3>Личные данные</h3>
@@ -360,7 +325,7 @@ class cabinet
   </a>
   <a href=\"#\" class=\"list-group-item\">
     <h4 class=\"list-group-item-heading\">О себе</h4 >
-    <p class=\"list-group-item-text\" ><textarea class='form-control' name='about'>". $array['about'] ."</textarea></p >
+    <p class=\"list-group-item-text\" ><textarea class='form-control' name='about'>" . $array['about'] . "</textarea></p >
   </a >
 
 </div>
@@ -440,7 +405,7 @@ class cabinet
                     <li class=\"list-group-item\">Страна: " . $user->dossier->land . "</li>
                     <li class=\"list-group-item\">Город: " . $user->dossier->sity . "</li>
                     <li class=\"list-group-item\">Электронная почта: " . $user->dossier->email . "</li>
-                    <li class=\"list-group-item\">Количество учебных материалов: " . $user->withCondition('activ = 1')->countShared('information') . " </li>
+                    <li class=\"list-group-item\">Количество учебных материалов: " . $user->withCondition('activ = 1 and education_id is null and lesson_id is null')->countShared('information') . " </li>
                 </ul>
                 </div>";
 
@@ -458,7 +423,7 @@ class cabinet
 //    print_r($data);
             $out .= "<div class='col-sm-12'><div class=\"list-group\"><ul style='padding-left:0; '>";
             $out .= "<li class=\"list-group-item active\">
-            <h4 class=\"list-group-item-heading \">Разработанные учебные матириалы</h4>
+            <h4 class=\"list-group-item-heading \">Разработанные учебные материалы</h4>
   </li>";
             foreach ($data as $item) {
                 $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';

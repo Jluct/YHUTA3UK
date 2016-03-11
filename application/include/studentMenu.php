@@ -7,4 +7,7 @@
  */
 
 $type="
-<li><button class=\"btn btn-block btn-info\" type=\"button\"><a href='?ctrl=cabinet&action=GetUserInformation'>Текущие курсы</a></button></li>";
+<li><a role='button' class=\"btn btn-block btn-info\" href='?ctrl=cabinet&action=GetUserInformation'>Текущие курсы</a></li>
+<li><a role='button' class=\"btn btn-block btn-info\" href='?ctrl=cabinet&action=GetUserCompleteInformation'>Изученные курсы</a></li>
+
+";

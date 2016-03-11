@@ -10,6 +10,14 @@ session_start();
 class cabinetController
 {
 
+
+    function actionGetUserCompleteInformation($view)
+    {
+        $id = (int)$_GET['id'];
+        $view->data = cabinet::getUserProgress($id,1);
+        echo $view->render('userInformation.php');
+    }
+
     function actionGetLesson($view)
     {
         $id = (int)$_GET['id'];
