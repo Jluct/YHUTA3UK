@@ -26,6 +26,12 @@ class cabinet
         $out = '';
         $data = R::load('lesson', $id);
         $out = "<h4>" . $data->name . "</h4><div class='col-sm-12'>" . $data->text . "</div>";
+        $out .= "
+<div class='col-sm-4'></div>
+<div class='col-sm-2'><a role='button' href='' class='btn btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
+<div class='col-sm-2'><a role='button' href='' class='btn btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
+<div class='col-sm-4'></div>
+";
         return $out;
     }
 
@@ -59,18 +65,40 @@ class cabinet
 
     }
 
-    static private function getInfoEducation($item)
+    static private function getInfoEducation($item,$wisdom='')
     {
 
         /*********************\
-         * |******Выделение********|
-         * \*********************/
+        |******Выделение*******|
+        \*********************/
 
         $data = "<ul class=\"list-group\">";
 
 //        $data = R::duplicate($_SESSION['user']);
 //        $userInfo = $data->ownInformation_userList; ///?
 
+        function renderLesson($value,$flag=0){
+            $data='';
+
+            foreach ($value->ownLessonList as $subvalue) {
+//                print_r($subvalue);
+                $data .= "
+  <li class=\"list-group-item\">
+    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
+    <p>" . $subvalue->description . "</p>
+  </li>
+";
+            }
+            return $data;
+        }
+
+        if(!empty($wisdom)) {
+            $value = $wisdom;
+            $data .= renderLesson($wisdom);
+            $data .= "</ul></div></div></div>";
+            $data .= "</li>";
+            return $data;
+        }
 
         foreach ($item->ownEducationList as $value) {
             $helpClass = '';
@@ -90,14 +118,17 @@ class cabinet
                 <div id=\"collapse" . $value->id . "\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading" . $value->id . "\">
       <div class=\"panel-body\"><ul class=\"list-group\">";
 
-            foreach ($value->ownLessonList as $subvalue) {
-                $data .= "
-  <li class=\"list-group-item\">
-    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
-    <p>" . $subvalue->description . "</p>
-  </li>
-";
-            }
+//            foreach ($value->ownLessonList as $subvalue) {
+//                $data .= "
+//  <li class=\"list-group-item\">
+//    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
+//    <p>" . $subvalue->description . "</p>
+//  </li>
+//";
+//            }
+            if(!empty($wisdom))
+                $value = $wisdom;
+            $data .= renderLesson($value);
 
             $data .= "</ul></div></div></div>";
             $data .= "</li>";
@@ -137,7 +168,6 @@ class cabinet
                 if ($complete == 0) {
                     if (is_null($value->status) && is_null($value->education_id) && is_null($value->lesson_id))
                         $arrayId[] = $value->information_id;
-
                 } else {
                     if (!is_null($value->status) && is_null($value->education_id) && is_null($value->lesson_id))
                         $arrayId[] = $value->information_id;
@@ -195,9 +225,13 @@ class cabinet
 
         if (!empty($wisdom))
             foreach ($wisdom as $item) {
+                $typeData = wisdom::getType($item);
+
 //                echo 1;
                 if ($id != 0) {
-                    $modul = self::getInfoEducation($item);
+                    if($typeData[3]->id!==1)
+                        $itemClone = $item;
+                    $modul = self::getInfoEducation($item,$itemClone);
 
                 }
 
@@ -213,7 +247,6 @@ class cabinet
                         " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
                 }
 
-                $typeData = wisdom::getType($item);
 
                 $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
                 $out .= "<li class=\"list-group-item " . $helpClass . " \">
