@@ -23,13 +23,77 @@ class cabinet
 
     static function getLessonById($id)
     {
-        $out = '';
+
+
+        $user = R::duplicate($_SESSION['user']);
         $data = R::load('lesson', $id);
+        $userInfo = R::getAll('SELECT * FROM information_user WHERE user_id = ?', [$_SESSION['user']->id]);
+        $userInfo = R::convertToBeans('information_user', $userInfo);
+        if (!empty($data->education_id)) {
+            $education = R::load('education', $data->education_id);
+            if ($education->number != 1) {
+                $numb = $education->number - 1;
+
+                //получаем id предметов, которые предшевствуют текущему
+                $prev_education = R::findAll('education', ' WHERE number =? and information_id=?', [$numb, $education->information_id]);
+
+//                echo $numb;
+//                echo '<br>';
+//                print_r($userInfo);
+//                echo '<br>';
+//                echo '<br>';
+//                print_r($education);
+//                echo '<br>';
+//                echo '<br>';
+//                print_r($prev_education);
+
+                foreach ($prev_education as $item) {
+
+                    //проверяем, содержит ли массив $userInfo id приведущего модуля
+                    foreach ($userInfo as $it) {
+                        if ($item->id == $it->education_id && is_null($it->status))
+                            return false;
+                    }
+                }
+
+
+            }
+
+
+        }
+        if ($data->number != 1) {
+            $numb = $data->number - 1;
+//            echo $numb;
+            if (!empty($data->education_id)) {
+                $query = ' WHERE number =? and education_id=?';
+                $dataArray = [$numb, $data->education_id];
+            } else {
+                $query = ' WHERE number =? and information_id=?';
+                $dataArray = [$numb, $data->information_id];
+            }
+
+            $lesson_parent = R::findAll('lesson', $query, $dataArray);
+//            print_r($lesson_parent);
+
+            foreach ($lesson_parent as $item) {
+
+                //проверяем, содержит ли массив $userInfo id приведущего модуля
+                foreach ($userInfo as $it) {
+                    echo $it->lesson_id." <br>";
+                    echo "---------";
+                    echo $item->id." ";
+                    if ($item->id == $it->lesson_id && is_null($it->status))
+                        return false;
+                }
+            }
+        }
+
+        $out = '';
         $out = "<h4>" . $data->name . "</h4><div class='col-sm-12'>" . $data->text . "</div>";
         $out .= "
 <div class='col-sm-4'></div>
-<div class='col-sm-2'><a role='button' href='' class='btn btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
-<div class='col-sm-2'><a role='button' href='' class='btn btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
+<div class='col-sm-2'><a role='button' href='#' class='btn btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
+<div class='col-sm-2'><a role='button' href='#' class='btn btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
 <div class='col-sm-4'></div>
 ";
         return $out;
@@ -53,8 +117,8 @@ class cabinet
         $flags = FALSE;
 
         foreach ($userInfo as $value) {
-//                echo " ".$userFlags." ".$value->$userFlags." - ".$id." ";
-            if ($value->$userFlags == $id && $value->status === 1) {
+//            echo " " . $userFlags . " | значение - " . $value->$userFlags . " | id - " . $id . " | статус - " . $value->status . "<br>";
+            if ($value->$userFlags == $id && $value->status == 1) {
                 return $flags = TRUE;
 //                $wisdom = R::findAll('information', 'where id = ?', [$id]);
             }
@@ -65,35 +129,70 @@ class cabinet
 
     }
 
-    static private function getInfoEducation($item,$wisdom='')
+    static private function renderLesson($value, $flag = 0)
+    {
+        $data = '';
+
+        foreach ($value->ownLessonList as $subvalue) {
+
+            $helpClass = '';
+
+            //подсветка
+            if (self::getUserInfoProgress($subvalue->id, 'lesson_id'))
+                $helpClass = 'bg-success';
+
+//                print_r($subvalue);
+            $data .= "
+  <li class=\"list-group-item " . $helpClass . "\">
+    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
+    <p>" . $subvalue->description . "</p>
+  </li>
+";
+        }
+        return $data;
+    }
+
+    static private function getInfoEducation($item, $wisdom = '')
     {
 
         /*********************\
-        |******Выделение*******|
-        \*********************/
+         * |******Выделение*******|
+         * \*********************/
 
         $data = "<ul class=\"list-group\">";
 
 //        $data = R::duplicate($_SESSION['user']);
 //        $userInfo = $data->ownInformation_userList; ///?
 
-        function renderLesson($value,$flag=0){
-            $data='';
+//        function renderLesson($value, $flag = 0)
+//        {
+//            $data = '';
+//
+//            foreach ($value->ownLessonList as $subvalue) {
+//
+//                $helpClass = '';
+//
+//                //подсветка
+//                if (self::getUserInfoProgress($subvalue->id, 'lesson_id')) {
+//
+//                    $helpClass = 'bg-success';
+//                    echo 1111;
+//                } else {
+//                    echo 0000;
+//                }
+////                print_r($subvalue);
+//                $data .= "
+//  <li class=\"list-group-item\">
+//    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
+//    <p>" . $subvalue->description . "</p>
+//  </li>
+//";
+//            }
+//            return $data;
+//        }
 
-            foreach ($value->ownLessonList as $subvalue) {
-//                print_r($subvalue);
-                $data .= "
-  <li class=\"list-group-item\">
-    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
-    <p>" . $subvalue->description . "</p>
-  </li>
-";
-            }
-            return $data;
-        }
-
-        if($wisdom!=='') {
-            $data .= renderLesson($wisdom);
+        if ($wisdom !== '') {
+            $data .= self::renderLesson($wisdom);
             $data .= "</ul></div></div></div>";
             $data .= "</li>";
             return $data;
@@ -102,6 +201,7 @@ class cabinet
         foreach ($item->ownEducationList as $value) {
             $helpClass = '';
 
+            //подсветка
             if (self::getUserInfoProgress($value->id, 'education_id'))
                 $helpClass = 'bg-success';
 
@@ -126,7 +226,7 @@ class cabinet
 //";
 //            }
 
-            $data .= renderLesson($value);
+            $data .= self::renderLesson($value);
 
             $data .= "</ul></div></div></div>";
             $data .= "</li>";
@@ -197,24 +297,24 @@ class cabinet
         }
 
         $typeMenu = '6';
-        if($complete==0)
-        if ($id === 0) {
-            switch ($_SESSION['user']->status) {
-                case "student":
-                    $typeMenu = 3;
-                    break;
-                case "teacher":
-                    $typeMenu = 4;
-                    break;
-                case "moderator":
-                    $typeMenu = 5;
-                    break;
-                case "admin":
-                    $typeMenu = 6;
-                    break;
-            }
+        if ($complete == 0)
+            if ($id === 0) {
+                switch ($_SESSION['user']->status) {
+                    case "student":
+                        $typeMenu = 3;
+                        break;
+                    case "teacher":
+                        $typeMenu = 4;
+                        break;
+                    case "moderator":
+                        $typeMenu = 5;
+                        break;
+                    case "admin":
+                        $typeMenu = 6;
+                        break;
+                }
 
-        }
+            }
         $bigMenu = new menu("SELECT menu_item.*
         FROM  `menu` ,  `menu_item`
         WHERE menu_item.menu_id = ?
@@ -227,18 +327,14 @@ class cabinet
 
 //                echo 1;
                 if ($id != 0) {
-                    $itemClone='';
-                    if($typeData[3]->id!=1) {
+                    $itemClone = '';
+                    if ($typeData[3]->id != 1) {
                         $itemClone = $item;
                     }
-                    $modul = self::getInfoEducation($item,$itemClone);
+                    $modul = self::getInfoEducation($item, $itemClone);
 
                 }
 
-                $helpClass = '';
-
-                if (self::getUserInfoProgress($item->id, 'information_id'))
-                    $helpClass = 'bg-success';
 
                 if ($_SESSION['user']->status !== 'author') {
                     $autor = wisdom::getAuthorName($item->id);
@@ -249,7 +345,7 @@ class cabinet
 
 
                 $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
-                $out .= "<li class=\"list-group-item " . $helpClass . " \">
+                $out .= "<li class=\"list-group-item\">
                 <ol class=\"breadcrumb\">
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&page=1\" > " . $typeData[3]->name . "</a></li>
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&page=1\" > " . $typeData[2]->name . "</a></li>

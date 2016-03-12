@@ -14,7 +14,7 @@ class cabinetController
     function actionGetUserCompleteInformation($view)
     {
         $id = (int)$_GET['id'];
-        $view->data = cabinet::getUserProgress($id,1);
+        $view->data = cabinet::getUserProgress($id, 1);
         echo $view->render('userInformation.php');
     }
 
@@ -22,7 +22,14 @@ class cabinetController
     {
         $id = (int)$_GET['id'];
         $view->data = cabinet::getLessonById($id);
+        if ($view->data == false) {
+
+            $view->message = ["Вы не изучили приведущие материалы", "Внимание", 4];
+        }else{
+
+        }
         echo $view->render('userInformation.php');
+
     }
 
     function actionGetUserInformation($view)
@@ -112,7 +119,7 @@ class cabinetController
         if (!empty($_POST['firstPassword']) && !empty($_POST['anderPassword']) && ($_POST['firstPassword'] === $_POST['anderPassword'])) {
 
             $session->password = $_POST['firstPassword'];
-        } elseif(empty($_POST['firstPassword']) && $_POST['firstPassword']!='' && empty($_POST['anderPassword']) && ($_POST['firstPassword'] === $_POST['anderPassword'])) {
+        } elseif (empty($_POST['firstPassword']) && $_POST['firstPassword'] != '' && empty($_POST['anderPassword']) && ($_POST['firstPassword'] === $_POST['anderPassword'])) {
 
             $view->message = ["Пароли не совпадают или не все поля заполненны", "Внимание", 4];
             $errorArray = $_POST;
@@ -134,8 +141,8 @@ class cabinetController
                     $errorArray[$key] = htmlspecialchars($value);
                     continue;
                 }
-            if($key=='about')
-                if(count($value)<2000){
+            if ($key == 'about')
+                if (count($value) < 2000) {
                     $userArray[$key] = htmlspecialchars($value);
                     continue;
                 } else {
