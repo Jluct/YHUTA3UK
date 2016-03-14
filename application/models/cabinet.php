@@ -6,16 +6,6 @@ session_start();
  * User: Listopadov
  * Date: 06.01.2016
  * Time: 12:23
- *
- *  <div class="panel panel-default">
- * <div class="panel-heading" role="tab" id="headingTwo">
- * <h4 class="panel-title">
- * <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
- * Collapsible Group Item #2
- * </a>
- * </h4>
- * </div>
- *
  */
 class cabinet
 {
@@ -36,16 +26,6 @@ class cabinet
 
                 //получаем id предметов, которые предшевствуют текущему
                 $prev_education = R::findAll('education', ' WHERE number =? and information_id=?', [$numb, $education->information_id]);
-
-//                echo $numb;
-//                echo '<br>';
-//                print_r($userInfo);
-//                echo '<br>';
-//                echo '<br>';
-//                print_r($education);
-//                echo '<br>';
-//                echo '<br>';
-//                print_r($prev_education);
 
                 foreach ($prev_education as $item) {
 
@@ -155,41 +135,11 @@ class cabinet
     static private function getInfoEducation($item, $wisdom = '')
     {
 
-        /*********************\
+           /*********************\
          * |******Выделение*******|
          * \*********************/
 
         $data = "<ul class=\"list-group\">";
-
-//        $data = R::duplicate($_SESSION['user']);
-//        $userInfo = $data->ownInformation_userList; ///?
-
-//        function renderLesson($value, $flag = 0)
-//        {
-//            $data = '';
-//
-//            foreach ($value->ownLessonList as $subvalue) {
-//
-//                $helpClass = '';
-//
-//                //подсветка
-//                if (self::getUserInfoProgress($subvalue->id, 'lesson_id')) {
-//
-//                    $helpClass = 'bg-success';
-//                    echo 1111;
-//                } else {
-//                    echo 0000;
-//                }
-////                print_r($subvalue);
-//                $data .= "
-//  <li class=\"list-group-item\">
-//    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
-//    <p>" . $subvalue->description . "</p>
-//  </li>
-//";
-//            }
-//            return $data;
-//        }
 
         if ($wisdom !== '') {
             $data .= self::renderLesson($wisdom);
@@ -217,15 +167,6 @@ class cabinet
                 <div id=\"collapse" . $value->id . "\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading" . $value->id . "\">
       <div class=\"panel-body\"><ul class=\"list-group\">";
 
-//            foreach ($value->ownLessonList as $subvalue) {
-//                $data .= "
-//  <li class=\"list-group-item\">
-//    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
-//    <p>" . $subvalue->description . "</p>
-//  </li>
-//";
-//            }
-
             $data .= self::renderLesson($value);
 
             $data .= "</ul></div></div></div>";
@@ -241,8 +182,6 @@ class cabinet
     static function getUserProgress($id = 0, $complete = 0)
     {
         $data = R::duplicate($_SESSION['user']);
-//        print_r($data->ownInformation_userList);
-
 
         $out = '';
 
@@ -270,18 +209,11 @@ class cabinet
                     if (!is_null($value->status) && is_null($value->education_id) && is_null($value->lesson_id))
                         $arrayId[] = $value->information_id;
                 }
-//                echo "info ".$value->information_id." | ";
-//                echo " educ ".$value->education_id." | ";
-//                echo " less ".$value->lesson_id." | ";
-//                echo " stat ".$value->status;
-//                echo"<br>";
+
 
             }
             $wisdom = R::loadAll('information', $arrayId);
-//            print_r($preWisdom);
-
-//            $wisdom = $data->via('information_user')->withCondition('status is null')->sharedInformation;
-//                        print_r($wisdom);
+            print_r($wisdom);
 
 
         } else {
@@ -289,11 +221,10 @@ class cabinet
             // проверяем записан ли пользователь на данный УМ
             $userInfo = $data->ownInformation_userList;
             foreach ($userInfo as $value) {
-//                echo $value->information_id." ".$id;
                 if ($value->information_id == $id)
                     $wisdom = R::findAll('information', 'where id = ?', [$id]);
             }
-//            print_r($userInfo);
+
         }
 
         $typeMenu = '6';
@@ -304,13 +235,13 @@ class cabinet
                         $typeMenu = 3;
                         break;
                     case "teacher":
-                        $typeMenu = 4;
+                        $typeMenu = 7;
                         break;
                     case "moderator":
-                        $typeMenu = 5;
+                        $typeMenu = 4;
                         break;
                     case "admin":
-                        $typeMenu = 6;
+                        $typeMenu = 9;
                         break;
                 }
 
@@ -493,25 +424,14 @@ class cabinet
 
     function authorisation($array)
     {
-//        db_connect::connect();
-//        $user = R::dispense('user');
-//        $dossier = R::dispense('dossier');
-////$dossier->name = "Сергей";
-//        $user->login = 'admin';
-//        $user->password = '12345';
-//        $user->dossier = $dossier;
-//
-//        R::store($user);die();
-//        print_r($array);
+
         $user = R::findOne('user', ' user.login = :login and user.password=:password', $array);
-//        print_r($user);die;
+
         if (empty($user) || $user->block === 0)
             return false;
-//        $dossier = $user->dossier;//R::load('dossier', $user->dossier_id);
-//        $user->authorisation = "7gF5dFG546jX15";
-//        $user->dossier = $dossier;
+
         $_SESSION['user'] = $user;
-//        print_r($user);
+
         return true;
 
     }

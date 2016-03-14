@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * Created by PhpStorm.
  * User: Listopadov
@@ -12,9 +12,9 @@ class wisdom
 
     static $path = "";
 
-    function getWisdomByType($array, $wisdomArray, $page = 1) //Вопрос о получении $wisdomData стаётся открытым. Пока костыль
+    function getWisdomByType($array, $wisdomArray, $page = 1)
     {
-        $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
+
         if (!(int)$array[0]) {
             return false;
         }
@@ -49,6 +49,7 @@ class wisdom
                     self::$count_data += $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->countOwn('information');
                     self::$path = "?ctrl=wisdom&action=WisdomType&type=" . $array[0] . "&subtype=" . $array[1] . "&category=" . $array[2] . "&subcategory=" . $array[3];
 
+
                 } else {
                     $step = 10;
                     $step1 = 2;
@@ -74,7 +75,7 @@ class wisdom
                             <td><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></td>
                             <td><a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'>" . $autor['login'] . "</a> |
                     <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
-            " " . $autor['name'] . " " . $autor['andername'] . " </a></td>
+                        " " . $autor['name'] . " " . $autor['andername'] . " </a></td>
                             <td>" . $smallKey . "</td>
                             <td>" . $subValue['category_name'] . "</td>
 
@@ -83,21 +84,30 @@ class wisdom
             }
             $out .= "</table>";
         }
+
+        if ($array[3] && $array[2] && $_SESSION['user']->status == 'teacher' && $_SESSION['user']->block == 0) {
+            $out .= "<a role='button' href='?ctrl=teacher&action=WisdomData&type=".
+                $array[0]."&subtype=".$array[1]."&category=".$array[2]."&subcategory=".$array[3]."&page=1' class='btn btn-info btn-block'>Добавить учебный материал</a>";
+        }
+//        print_r("<br>".$array[3] ." ". $array[2] ." ". $_SESSION['user']->status ." ". $_SESSION['user']->block);
+
         return $out;
 
     }
 
     static public function getType($obj)
     {
+
+
         $subcategory = $obj->category;
         $category = $subcategory->category;
         $subtype = $category->type;
         $type = $subtype->type;
 
-        return [$subcategory,$category,$subtype,$type];
+        return [$subcategory, $category, $subtype, $type];
     }
 
-    public function getWisdom($id)
+    static public function getWisdom($id)
     {
         $information = R::load('information', $id);
         $typeData = self::getType($information);
@@ -112,27 +122,26 @@ class wisdom
         $out = '';
 
 
-
 //        print_r($subtype);die;
         $autor = self::getAuthorName($id);
 //        print_r($autor);
-        if($typeData[3]->id == 6){
+        if ($typeData[3]->id == 6) {
 
-            $out= R::load('lesson',$id)->text."Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
-            " " . $autor['name'] . " " . $autor['andername'] . " </a></div>";
+            $out = R::load('lesson', $id)->text . "Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+                " " . $autor['name'] . " " . $autor['andername'] . " </a></div>";
             return $out;
         }
-        if($typeData[3]->id == 1) {
+        if ($typeData[3]->id == 1) {
             $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
-        }elseif($typeData[3]->id == 5){
+        } elseif ($typeData[3]->id == 5) {
             $count_modul = R::count("lesson", "lesson.information_id = ? and lesson.block = 1", [$id]);
         }
 
         $out .= "<ol class=\"breadcrumb\">
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&page=1\">".$typeData[3]->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&page=1\">".$typeData[2]->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&page=1\">".$typeData[1]->name."</a></li>
-                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=".$typeData[3]->id."&subtype=".$typeData[2]->id."&category=".$typeData[1]->id."&subcategory=".$typeData[0]->id."&page=1\">".$typeData[0]->name."</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&page=1\">" . $typeData[3]->name . "</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&page=1\">" . $typeData[2]->name . "</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&category=" . $typeData[1]->id . "&page=1\">" . $typeData[1]->name . "</a></li>
+                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&category=" . $typeData[1]->id . "&subcategory=" . $typeData[0]->id . "&page=1\">" . $typeData[0]->name . "</a></li>
 
                 </ol>";
 
@@ -153,20 +162,20 @@ class wisdom
                     <li class=\"list-group-item\"> Кол-во модулей: " . $count_modul . "</li></ul>";
 
 //        print_r($information);
-        if($typeData[3]->id == 1) {
-            $education = $information->withCondition('education.information_id = ? and education.block = 1',[$id])->ownEducationList;
-        }elseif($typeData[3]->id == 5){
-            $education = $information->withCondition('lesson.information_id = ? and lesson.block = 1',[$id])->ownLessonList;
+        if ($typeData[3]->id == 1) {
+            $education = $information->withCondition('education.information_id = ? and education.block = 1', [$id])->ownEducationList;
+        } elseif ($typeData[3]->id == 5) {
+            $education = $information->withCondition('lesson.information_id = ? and lesson.block = 1', [$id])->ownLessonList;
         }
-        $out.="<ul class=\"list-group\"><li class=\"list-group-item active\">Изучаемые модули</li>";
+        $out .= "<ul class=\"list-group\"><li class=\"list-group-item active\">Изучаемые модули</li>";
 
-        foreach($education as $item){
-            $out.="<li class=\"list-group-item \"><h4 class=\"list-group-item-heading\">".$item->name."</h4>
+        foreach ($education as $item) {
+            $out .= "<li class=\"list-group-item \"><h4 class=\"list-group-item-heading\">" . $item->name . "</h4>
                     <p class=\"list-group-item-text\">$item->description</p>
             </li>";
         }
 
-        $out.="</ul>";
+        $out .= "</ul>";
 
         $requirements = $information->withCondition('block = 1')->ownRequirementsList;
 
@@ -179,7 +188,7 @@ class wisdom
                 $information_requirements = R::getRow("SELECT information.id,information.name from information WHERE information.id = ?", [$item->requirements]);
 
 
-                 /**********************
+                /**********************
                  *******Выделение*******
                  **********************/
 
@@ -201,7 +210,8 @@ class wisdom
         return $out;
     }
 
-    static function getAuthorName($id){
+    static function getAuthorName($id)
+    {
         $autor = R::getRow("SELECT  `information`.`id` as info,user.id,  `user`.`login` ,  `dossier`.`name` ,  `dossier`.`andername` ,  `dossier`.`surname`
 FROM information
 LEFT JOIN  `obuceisea`.`information_user` ON  `information`.`id` =  `information_user`.`information_id`
