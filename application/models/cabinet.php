@@ -54,26 +54,48 @@ class cabinet
 
             $lesson_parent = R::findAll('lesson', $query, $dataArray);
 //            print_r($lesson_parent);
-
+            $lesson_flag = false;
             foreach ($lesson_parent as $item) {
 
                 //проверяем, содержит ли массив $userInfo id приведущего модуля
                 foreach ($userInfo as $it) {
-                    echo $it->lesson_id." <br>";
-                    echo "---------";
-                    echo $item->id." ";
-                    if ($item->id == $it->lesson_id && is_null($it->status))
-                        return false;
+
+                    if ($item->id == $it->lesson_id && !is_null($it->status))
+                        $lesson_flag = true;
                 }
+                if($lesson_flag==false)return false;
+                
             }
+        }
+        
+        $prev = '';
+        $next = '';
+        $next_lesson = array_values(R::find('lesson',"where number = ? and education_id=? and block=1",[$data->number+1,$data->education_id]));
+        
+        
+        if ($data->number == 1){
+            $help_class_prev = 'disabled';
+            $prev = 1;
+        }else{
+            $help_class_prev = '';
+            $prev = array_values(R::find('lesson','WHERE number = ? and block=1',[$numb]))[0]->id;
+            print_r($prev);
+        }
+        if(!empty($next_lesson)){
+            $help_class_next = '';
+            $next = $next_lesson[0]->id;
+            
+        }else{
+            $help_class_next = 'disabled';
+            $next=$data->id;
         }
 
         $out = '';
         $out = "<h4>" . $data->name . "</h4><div class='col-sm-12'>" . $data->text . "</div>";
         $out .= "
 <div class='col-sm-4'></div>
-<div class='col-sm-2'><a role='button' href='#' class='btn btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
-<div class='col-sm-2'><a role='button' href='#' class='btn btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
+<div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=".$prev."' class='btn ".$help_class_prev." btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
+<div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=".$next."' class='btn ".$help_class_next." btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
 <div class='col-sm-4'></div>
 ";
         return $out;
