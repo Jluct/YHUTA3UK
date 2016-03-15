@@ -37,7 +37,7 @@ class wisdomController
 
         $id = (int)$_GET['id'];
         $view->id = $id;
-        $view->data = wisdom::getWisdom( $id);
+        $view->data = wisdom::getWisdom($id);
         echo $view->render('wisdomId.php');
     }
 }

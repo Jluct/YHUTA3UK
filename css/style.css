@@ -348,3 +348,20 @@ body{
 .back_button{
     margin-right: 25px;
 }
+
+.container img{
+    max-width: 100% !important;
+}
+
+.container form input[name="block"]{
+    width: 20px;
+    height: 20px;
+    display: inline;
+    margin-right: 45px;
+    /*margin-top: 3px;*/
+    float: right;
+}
+
+.container form h4.bg-primary{
+    padding: 3px;
+}

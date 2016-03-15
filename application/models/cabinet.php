@@ -19,7 +19,7 @@ class cabinet
         $data = R::load('lesson', $id);
         $userInfo = R::getAll('SELECT * FROM information_user WHERE user_id = ?', [$_SESSION['user']->id]);
         $userInfo = R::convertToBeans('information_user', $userInfo);
-        if (!empty($data->education_id)) {
+        if (!empty($data->education_id ) && $_SESSION['user']->status=='student') {
             $education = R::load('education', $data->education_id);
             if ($education->number != 1) {
                 $numb = $education->number - 1;
@@ -41,7 +41,7 @@ class cabinet
 
 
         }
-        if ($data->number != 1) {
+        if ($data->number != 1 && $_SESSION['user']->status=='student') {
             $numb = $data->number - 1;
 //            echo $numb;
             if (!empty($data->education_id)) {
@@ -63,39 +63,39 @@ class cabinet
                     if ($item->id == $it->lesson_id && !is_null($it->status))
                         $lesson_flag = true;
                 }
-                if($lesson_flag==false)return false;
-                
+                if ($lesson_flag == false) return false;
+
             }
         }
-        
+
         $prev = '';
         $next = '';
-        $next_lesson = array_values(R::find('lesson',"where number = ? and education_id=? and block=1",[$data->number+1,$data->education_id]));
-        
-        
-        if ($data->number == 1){
+        $next_lesson = array_values(R::find('lesson', "where number = ? and education_id=? and block=1", [$data->number + 1, $data->education_id]));
+
+
+        if ($data->number == 1) {
             $help_class_prev = 'disabled';
             $prev = 1;
-        }else{
+        } else {
             $help_class_prev = '';
-            $prev = array_values(R::find('lesson','WHERE number = ? and block=1',[$numb]))[0]->id;
+            $prev = array_values(R::find('lesson', 'WHERE number = ? and block=1', [$numb]))[0]->id;
             print_r($prev);
         }
-        if(!empty($next_lesson)){
+        if (!empty($next_lesson)) {
             $help_class_next = '';
             $next = $next_lesson[0]->id;
-            
-        }else{
+
+        } else {
             $help_class_next = 'disabled';
-            $next=$data->id;
+            $next = $data->id;
         }
 
         $out = '';
         $out = "<h4>" . $data->name . "</h4><div class='col-sm-12'>" . $data->text . "</div>";
         $out .= "
 <div class='col-sm-4'></div>
-<div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=".$prev."' class='btn ".$help_class_prev." btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
-<div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=".$next."' class='btn ".$help_class_next." btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
+<div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $prev . "' class='btn " . $help_class_prev . " btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
+<div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $next . "' class='btn " . $help_class_next . " btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
 <div class='col-sm-4'></div>
 ";
         return $out;
@@ -135,6 +135,15 @@ class cabinet
     {
         $data = '';
 
+        $typeMenu = 8;
+
+/////////////////////////////////////////////////////////////
+        
+        $menuModerator = new menu("SELECT menu_item.*
+        FROM  `menu` ,  `menu_item`
+        WHERE menu_item.menu_id = ?
+       AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
+
         foreach ($value->ownLessonList as $subvalue) {
 
             $helpClass = '';
@@ -148,6 +157,7 @@ class cabinet
   <li class=\"list-group-item " . $helpClass . "\">
     <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
     <p>" . $subvalue->description . "</p>
+    <hr>
   </li>
 ";
         }
@@ -157,8 +167,8 @@ class cabinet
     static private function getInfoEducation($item, $wisdom = '')
     {
 
-           /*********************\
-         * |******Выделение*******|
+        /*********************\
+         * |******лекции*******|
          * \*********************/
 
         $data = "<ul class=\"list-group\">";
@@ -190,8 +200,8 @@ class cabinet
       <div class=\"panel-body\"><ul class=\"list-group\">";
 
             $data .= self::renderLesson($value);
-
-            $data .= "</ul></div></div></div>";
+            $data .= "<hr>";
+            $data .= "</ul></div></div><div class='panel-footer'>NTCN</div> </div>";
             $data .= "</li>";
         };
 
@@ -235,7 +245,7 @@ class cabinet
 
             }
             $wisdom = R::loadAll('information', $arrayId);
-            print_r($wisdom);
+//            print_r($wisdom);
 
 
         } else {
@@ -250,20 +260,25 @@ class cabinet
         }
 
         $typeMenu = '6';
+        $typeMenu1 = '';
         if ($complete == 0)
             if ($id === 0) {
                 switch ($_SESSION['user']->status) {
                     case "student":
                         $typeMenu = 3;
+                        $typeMenu1 = '';
                         break;
                     case "teacher":
                         $typeMenu = 7;
+                        $typeMenu1 = 8;
                         break;
                     case "moderator":
                         $typeMenu = 4;
+//                        $typeMenu1=8;
                         break;
                     case "admin":
                         $typeMenu = 9;
+                        $typeMenu1 = 8;
                         break;
                 }
 
@@ -272,6 +287,8 @@ class cabinet
         FROM  `menu` ,  `menu_item`
         WHERE menu_item.menu_id = ?
        AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
+
+        $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
 
 
         if (!empty($wisdom))
@@ -329,13 +346,16 @@ class cabinet
 //        FROM  `menu` ,  `menu_item`
 //        WHERE menu_item.menu_id = ?
 //       AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
-                    $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+
 
                     $bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
 
 
                     $out .= $bigMenu->render(); //"<a href='?ctrl=cabinet&action=GetUserInformation&id=" . $item->id . "'><div class='btn btn-success btn-block' style='margin-top:20px;'>Приступить</div></a>";
                 }
+                //меню модерирования модуля
+                if ($_SESSION['user']->status !== 'student' && !empty($_SESSION['user']->status) && $id != 0)
+                    $out .= "<a role='button' href='?ctrl=teacher&action=AddModul&id=" . $id . "' class='btn btn-info btn-block'>Добавить модуль</a>";
                 $out .= "</li>";
 
                 $out .= "</ul></div></div></div>";

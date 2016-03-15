@@ -11,18 +11,18 @@ class teacherController
     function actionWisdomData($view)
     {
 
-        if(!empty($_POST)) {
-            $id = teacher::wisdomRecord();
+        if (!empty($_POST)) {
+            $id = teacher::wisdomRecord((int)$_GET['id']);
 //            $view->message = ["Ошибка добавления курса!", "Внимание", 4];
 
             if (!empty($id) && $id) {
-                header('Location:?ctrl=cabinet&action=GetUserInformation&id='.$id);
+                header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . $id);
 //                $view->data = wisdom::getWisdom($id);
 //                $view->message = ["Модуль добавлен!", "Добавление модуля", 1];
 //                echo $view->render('wisdomId.php');
                 return;
             } else {
-                $view->message = ["Ошибка добавления курса!", "Добавление модуля", 4];
+                $view->message = ["Ошибка добавления модуля!", "Добавление модуля", 4];
             }
         }
 
@@ -34,4 +34,30 @@ class teacherController
         $view->data = teacher::addWisdom($wisdomData);
         echo $view->render('teacher.php');
     }
+
+    function actionEditWisdom($view)
+    {
+        $id = (int)$_GET['id'];
+        $view->data = teacher::editWisdom($id);
+        echo $view->render('teacher.php');
+    }
+
+    function actionAddModul($view)
+    {
+        $id = (int)$_GET['id'];
+        if(!empty($_POST)){
+            $userData = $_POST;
+            $success = teacher::modulRecord($userData,$id);
+            if($success){
+                header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . $id);
+            }else{
+                $view->message = ["Ошибка добавления модуля!", "Добавление модуля", 4];
+            }
+        }
+        $view->data = teacher::addModul($id);
+        echo $view->render('teacher.php');
+
+    }
+
+
 }
