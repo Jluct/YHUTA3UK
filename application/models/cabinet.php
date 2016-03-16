@@ -144,13 +144,21 @@ class cabinet
         WHERE menu_item.menu_id = ?
        AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
 
+
+        //$bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+        //$bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
+        //$out .= $bigMenu->render();
+        $menuModerator->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+
         foreach ($value->ownLessonList as $subvalue) {
 
             $helpClass = '';
+            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $value->id . "&lesson=".$subvalue->id."'>%s %s</a>%s</li>";
 
             //подсветка
             if (self::getUserInfoProgress($subvalue->id, 'lesson_id'))
-                $helpClass = 'bg-success';
+
+            $helpClass = 'bg-success';
 
 //                print_r($subvalue);
             $data .= "
@@ -158,6 +166,7 @@ class cabinet
     <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
     <p>" . $subvalue->description . "</p>
     <hr>
+    ".$menuModerator->render()."
   </li>
 ";
         }
@@ -171,6 +180,14 @@ class cabinet
          * |******лекции*******|
          * \*********************/
 
+        $menuModerator = new menu("SELECT menu_item.*
+        FROM  `menu` ,  `menu_item`
+        WHERE menu_item.menu_id = ?
+       AND menu.menu_id = menu_item.menu_id", [8]);
+
+        $menuModerator->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
+
+
         $data = "<ul class=\"list-group\">";
 
         if ($wisdom !== '') {
@@ -182,6 +199,7 @@ class cabinet
 
         foreach ($item->ownEducationList as $value) {
             $helpClass = '';
+            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "&education=".$value->id."'>%s %s</a>%s</li>";
 
             //подсветка
             if (self::getUserInfoProgress($value->id, 'education_id'))
@@ -201,7 +219,10 @@ class cabinet
 
             $data .= self::renderLesson($value);
             $data .= "<hr>";
-            $data .= "</ul></div></div><div class='panel-footer'>NTCN</div> </div>";
+            $data .= "</ul></div></div><div class='panel-footer'>
+".$menuModerator->render()."
+<!--меню модуля-->
+</div> </div>";
             $data .= "</li>";
         };
 
