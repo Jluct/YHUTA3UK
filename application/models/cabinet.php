@@ -138,7 +138,7 @@ class cabinet
         $typeMenu = 8;
 
 /////////////////////////////////////////////////////////////
-        
+
         $menuModerator = new menu("SELECT menu_item.*
         FROM  `menu` ,  `menu_item`
         WHERE menu_item.menu_id = ?
