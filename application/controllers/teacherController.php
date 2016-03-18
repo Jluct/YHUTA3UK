@@ -59,5 +59,22 @@ class teacherController
 
     }
 
+    function actionAddLesson($view)
+    {
+        //добавление лекции
+        $id = (int)$_GET['id'];
+        if(!empty($_POST)){
+            $userData = $_POST;
+            $success = teacher::modulRecord($userData,$id);
+            if($success){
+                header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . $id);
+            }else{
+                $view->message = ["Ошибка добавления модуля!", "Добавление модуля", 4];
+            }
+        }
+        $view->data = teacher::AddLesson($id);
+        echo $view->render('teacher.php');
+    }
+
 
 }

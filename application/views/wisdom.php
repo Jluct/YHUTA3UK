@@ -8,7 +8,7 @@
 
 require_once(__DIR__ . "/../include/header.php"); ?>
 
-    <section class="container">
+
         <div class="row">
             <div class="col-sm-2 category">
                 <form>
@@ -43,6 +43,6 @@ require_once(__DIR__ . "/../include/header.php"); ?>
 
             </div>
         </div>
-    </section>
+
 
 <?php require_once(__DIR__ . "/../include/footer.php"); ?>

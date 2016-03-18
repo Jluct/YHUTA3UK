@@ -165,7 +165,7 @@ class cabinet
   <li class=\"list-group-item " . $helpClass . "\">
     <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
     <p>" . $subvalue->description . "</p>
-    <hr>
+
     ".$menuModerator->render()."
   </li>
 ";
@@ -219,6 +219,8 @@ class cabinet
 
             $data .= self::renderLesson($value);
             $data .= "<hr>";
+            if ($_SESSION['user']->status !== 'student' && !empty($_SESSION['user']->status) && $value->id != 0)
+                $data .= "<a role='button' href='?ctrl=teacher&action=AddLesson&id=" . $value->id . "' class='btn btn-info btn-block'>Добавить лекцию</a>";
             $data .= "</ul></div></div><div class='panel-footer'>
 ".$menuModerator->render()."
 <!--меню модуля-->

@@ -8,7 +8,7 @@
 
 require_once(__DIR__."/../include/header.php"); ?>
     <!-- autorisation -->
-    <section class="container">
+
     <div class="row">
         <div class="col-md-9">
             <h2>Личный кабинет</h2>
@@ -23,7 +23,6 @@ require_once(__DIR__."/../include/header.php"); ?>
 
         </div>
     </div>
-    </section>
 
 
 <?php require_once(__DIR__."/../include/footer.php"); ?>

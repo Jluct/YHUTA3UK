@@ -1,3 +1,12 @@
+
+.row{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container{
+    background: white;
+}
 /* header */
 
 body{
@@ -14,6 +23,7 @@ body{
 
 .menu_light {
     padding: 5px 0;
+    margin-left: 5px;
 }
 
 .menu_light li {
@@ -34,6 +44,7 @@ body{
 
 .menu_light li a:hover {
     color: black;
+    background: none;
 }
 
 
@@ -364,4 +375,25 @@ body{
 
 .container form h4.bg-primary{
     padding: 3px;
+}
+
+footer{
+    margin-top: 10px;
+}
+
+.footer .dropdown-menu {
+    background: none;
+    float: none;
+    position: relative;
+    display: block;
+    border: none;
+    box-shadow: none;
+}
+
+.footer .sub_menu li {
+    text-align: left;
+}
+
+.footer ul li {
+    background: none;
 }
