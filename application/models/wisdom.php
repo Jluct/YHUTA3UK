@@ -132,7 +132,7 @@ class wisdom
             return $out;
         }
         if ($typeData[3]->id == 1) {
-            $count_modul = R::count("education", " education.information_id = ? and education.block = 1 and education.parent is NOT NULL ", [$id]);
+            $count_modul = R::count("education", " education.information_id = ? and education.block = 1", [$id]);
         } elseif ($typeData[3]->id == 5) {
             $count_modul = R::count("lesson", "lesson.information_id = ? and lesson.block = 1", [$id]);
         }

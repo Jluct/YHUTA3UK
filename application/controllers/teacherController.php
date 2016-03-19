@@ -12,11 +12,11 @@ class teacherController
     {
 
         if (!empty($_POST)) {
-            $id = teacher::wisdomRecord((int)$_GET['id']);
+            $id = teacher::wisdomRecord((int)$_GET['id'],(int)$_GET['education']);
 //            $view->message = ["Ошибка добавления курса!", "Внимание", 4];
 
             if (!empty($id) && $id) {
-                header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . $id);
+                header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . (int)$_GET['id']);
 //                $view->data = wisdom::getWisdom($id);
 //                $view->message = ["Модуль добавлен!", "Добавление модуля", 1];
 //                echo $view->render('wisdomId.php');
@@ -38,7 +38,8 @@ class teacherController
     function actionEditWisdom($view)
     {
         $id = (int)$_GET['id'];
-        $view->data = teacher::editWisdom($id);
+        $education = (int)$_GET['education'];
+        $view->data = teacher::editWisdom($id,$education);
         echo $view->render('teacher.php');
     }
 

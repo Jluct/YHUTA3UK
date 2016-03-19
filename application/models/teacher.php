@@ -36,7 +36,7 @@ class teacher
 
         $out .= "<div class='row'><div class='col-sm-12'><h2>Добавление модуля</h2></div></div>";
         $out .= "<div class='row'><div class='col-sm-6'>
-<form method='post' action='?ctrl=teacher&action=AddModul&id=".$id."'>
+<form method='post' action='?ctrl=teacher&action=AddModul&id=" . $id . "'>
                 <input type='text' name='name' class='form-control' placeholder='Имя'>
                 <input type='text' name='number' class='form-control' placeholder='Номер модуля'>
                 <h4 class='bg-primary'>Блокировка<small><input type='checkbox' name='block' class='checkbox'></small></h4>
@@ -149,23 +149,35 @@ class teacher
         return $out;
     }
 
-    static function wisdomRecord($id = 0)
+    static function wisdomRecord($id = 0,$education = 0)
     {
         db_connect::connect();
 
-        if ($id != 0) {
+        if ($id != 0 && $education==0) {
             $information = R::load('information', $id);
-        } else {
+            $information->shortdescription = $_POST['shortdescription'];
+            $information->category_id = $_GET['category'];
+            $information->sharedUser[] = $_SESSION['user'];
+
+
+        } elseif($id == 0 && $education==0) {
             $information = R::dispense('information');
+            $information->shortdescription = $_POST['shortdescription'];
+            $information->category_id = $_GET['category'];
+            $information->sharedUser[] = $_SESSION['user'];
+
+
+        }elseif($id != 0 && $education!=0){
+//            echo 1;
+            $information = R::load('education',$education);
+            $information->number = $_POST['number'];
+            $information->information_id = $id;
+
         }
 
 
         $information->name = $_POST['name'];
-        $information->shortdescription = $_POST['shortdescription'];
-        $information->category_id = $_GET['category'];
         $information->description = $_POST['description'];
-
-        $information->sharedUser[] = $_SESSION['user'];
 
         $id = R::store($information);
 
@@ -209,18 +221,24 @@ class teacher
 
     }
 
-    static function editWisdom($id)
+    static function editWisdom($id, $education)
     {
         $data = R::load('information', $id);
+        if ($education)
+            $education = R::load('education', $education);
 //        print_r($data);
         $typeData = wisdom::getType($data);
 //        echo "<br>";
 //        print_r($typeData);
 
-//        $subcategory = R::load('category',$wisdomData[3]);
-//        $category = R::load('category',$wisdomData[2]);
-//        $subtype = R::load('type',$wisdomData[1]);
-//        $type = R::load('type',$wisdomData[0]);
+        if (!empty($education)) {
+            $aaa = '&education=' . $education->id;
+        } else {
+            $aaa = '';
+        }
+
+        $name = !empty($education) ? $education->name : $data->name;
+        $description = !empty($education) ? $education->description : $data->description;
 
         $out = "<li class=\"list-group-item\">
                 <ol class=\"breadcrumb\">
@@ -230,17 +248,18 @@ class teacher
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&subtype=" . $typeData[2]->id . "&category=" . $typeData[1]->id . "&subcategory=" . $typeData[0]->id . "&page=1\" > " . $typeData[0]->name . "</a></li>
 
                 </ol>";
-        $out .= "
-
-            <form method='post' action='?ctrl=teacher&action=WisdomData&category=" . $typeData[0]->id . "&id=" . $id . "'>
-                <input class='form-control' name='name' placeholder='Имя' value='" . $data->name . "'>
+        $out .= "<form method='post' action='?ctrl=teacher&action=WisdomData&category=" . $typeData[0]->id . "&id=" . $id . $aaa . "'>
+                <input class='form-control' name='name' placeholder='Имя' value='" . $name . "'>";
 
 
+        if (empty($education))
+            $out .= "<textarea class='form-control' name='shortdescription' placeholder='Краткое описание'>" . $data->shortdescription . "</textarea>";
 
-            <textarea class='form-control' name='shortdescription' placeholder='Краткое описание'>" . $data->shortdescription . "</textarea>
+        if (!empty($education))
+            $out .= "<input type='text' name='number' class=\"form-control\" placeholder='Номер курса' value='".$education->number."'>";
 
-            <textarea class='form-control' name='description' placeholder='Полное описание'>" . $data->description . "</textarea>
-</div>
+        $out .= "<textarea class='form-control' name='description' placeholder='Полное описание'>" . $description . "</textarea>
+        </div>
         <div class='col-sm-6'>
             <input type='reset' class='btn alert-danger btn-block'>
         </div>
