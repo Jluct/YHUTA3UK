@@ -17,9 +17,6 @@ class teacherController
 
             if (!empty($id) && $id) {
                 header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . (int)$_GET['id']);
-//                $view->data = wisdom::getWisdom($id);
-//                $view->message = ["Модуль добавлен!", "Добавление модуля", 1];
-//                echo $view->render('wisdomId.php');
                 return;
             } else {
                 $view->message = ["Ошибка добавления модуля!", "Добавление модуля", 4];
@@ -35,11 +32,43 @@ class teacherController
         echo $view->render('teacher.php');
     }
 
+    function actionLessonData($view)
+    {
+
+        if (!empty($_POST)) {
+            $id = teacher::lessonRecord($_GET['id']);
+//            $view->message = ["Ошибка добавления курса!", "Внимание", 4];
+
+            if (!empty($id) && $id) {
+                if(!empty($id->information_id)) {
+//                    echo $id->education->information->id;die;
+                    $id=$id->information_id;
+                }else{
+                    $id= $id->education->information->id;
+
+                }
+                header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . $id);
+                return;
+            } else {
+                $view->message = ["Ошибка добавления модуля!", "Добавление модуля", 4];
+            }
+        }
+//
+//        $wisdomData[] = $_GET['type'];
+//        $wisdomData[] = $_GET['subtype'];
+//        $wisdomData[] = $_GET['category'];
+//        $wisdomData[] = $_GET['subcategory'];
+//
+//        $view->data = teacher::addWisdom($wisdomData);
+//        echo $view->render('teacher.php');
+    }
+
     function actionEditWisdom($view)
     {
         $id = (int)$_GET['id'];
         $education = (int)$_GET['education'];
-        $view->data = teacher::editWisdom($id,$education);
+        $lesson = (int)$_GET['lesson'];
+        $view->data = teacher::editWisdom($id,$education,$lesson);
         echo $view->render('teacher.php');
     }
 
@@ -79,5 +108,11 @@ class teacherController
         echo $view->render('teacher.php');
     }
 
+    function actionEditLesson($view)
+    {
+        $lesson = (int)$_GET['lesson'];
+        $view->data = teacher::editLesson($lesson);
+        echo $view->render('teacher.php');
+    }
 
 }

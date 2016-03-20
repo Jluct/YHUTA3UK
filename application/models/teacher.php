@@ -110,10 +110,10 @@ class teacher
 
     static function AddLesson($id)
     {
-        $education = R::load('education',$id);
-        $information = R::load('information',$education->information_id);
+        $education = R::load('education', $id);
+        $information = R::load('information', $education->information_id);
 
-        $out = '<h2>Создание лекции - '.$education->name.' / '.$information->name.'</h2>';
+        $out = '<h2>Создание лекции - ' . $education->name . ' / ' . $information->name . '</h2>';
         db_connect::connect();
 
 //        $subcategory = R::load('category', $wisdomData[3]);
@@ -131,7 +131,7 @@ class teacher
 //                </ol>";
         $out .= "
 
-            <form method='post' action='?ctrl=teacher&action=AddLesson&id=".$information->id."&education=" . $id . "'>
+            <form method='post' action='?ctrl=teacher&action=AddLesson&id=" . $information->id . "&education=" . $id . "'>
                 <input class='form-control' name='name' placeholder='Имя'>
                 <input class='form-control' name='number' placeholder='Номер'>
             <textarea class='form-control' name='description' placeholder='Описание'></textarea>
@@ -152,6 +152,7 @@ class teacher
 
         return $out;
     }
+
 
     static function wisdomRecord($id = 0, $education = 0)
     {
@@ -192,7 +193,7 @@ class teacher
 
     }
 
-    static function modulRecord($arr, $id, $education_data='')
+    static function modulRecord($arr, $id, $education_data = '')
     {
         if (!$arr)
             return false;
@@ -203,7 +204,7 @@ class teacher
             $typeData = wisdom::getType($information);
         }
 
-        if (!empty($typeData) && $typeData[3]->id == (int)1 && $education_data=='') {
+        if (!empty($typeData) && $typeData[3]->id == (int)1 && $education_data == '') {
 
             $education = R::dispense('education');
             $education->name = $arr['name'];
@@ -286,6 +287,50 @@ class teacher
         ";
 
         return $out;
+    }
+
+    static function editLesson($lesson)
+    {
+//        $information= R::load('information',$info);
+        $lesson = R::load('lesson', $lesson);
+
+        $out = "<form method='post' action='?ctrl=teacher&action=LessonData&id=" . $lesson->id . "'>
+                <input class='form-control' name='name' placeholder='Имя' value='" . $lesson->name . "'>";
+
+        $out .= "<input type='text' name='number' class=\"form-control\" placeholder='Номер курса' value='" . $lesson->number . "'>";
+
+        $out .= "<textarea class='form-control' name='description' placeholder='Полное описание'>" . $lesson->description . "</textarea>";
+        $out .= "<textarea class='form-control' name='text' placeholder='Lesson'>" . $lesson->text . "</textarea>";
+        $out .= " </div>
+        <div class='col-sm-6'>
+            <input type='reset' class='btn alert-danger btn-block'>
+        </div>
+        <div class='col-sm-6'>
+            <input type='submit' class='btn alert-success btn-block'>
+            </form>
+        </div>
+        <script src='../../ckeditor/ckeditor.js'></script>
+        <script>
+            CKEDITOR.replace('text');
+        </script>
+        ";
+
+        return $out;
+    }
+
+    static function lessonRecord($lesson)
+    {
+//echo ($lesson);die;
+        $lesson = R::load('lesson', $lesson);
+//        print_r($lesson);
+
+        $lesson->name = $_POST['name'];
+        $lesson->description = $_POST['description'];
+        $lesson->text = $_POST['text'];
+
+        $id = R::store($lesson);
+        if ($id)
+            return $lesson;
     }
 
 }

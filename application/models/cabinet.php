@@ -135,7 +135,7 @@ class cabinet
     {
         $data = '';
 
-        $typeMenu = 8;
+        $typeMenu = 9;
 
 /////////////////////////////////////////////////////////////
 
@@ -144,26 +144,21 @@ class cabinet
         WHERE menu_item.menu_id = ?
        AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
 
-
-        //$bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
-        //$bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
-        //$out .= $bigMenu->render();
         $menuModerator->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
 
         foreach ($value->ownLessonList as $subvalue) {
 
             $helpClass = '';
-            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $value->id . "&lesson=".$subvalue->id."'>%s %s</a>%s</li>";
+            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s&lesson=".$subvalue->id."'>%s %s</a>%s</li>";
 
             //подсветка
             if (self::getUserInfoProgress($subvalue->id, 'lesson_id'))
 
             $helpClass = 'bg-success';
 
-//                print_r($subvalue);
             $data .= "
   <li class=\"list-group-item " . $helpClass . "\">
-    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Приступить</a></h4>
+    <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Открыть</a></h4>
     <p>" . $subvalue->description . "</p>
 
     ".$menuModerator->render()."
