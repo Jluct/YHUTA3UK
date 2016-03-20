@@ -63,10 +63,12 @@ class teacherController
     function actionAddLesson($view)
     {
         //добавление лекции
+
         $id = (int)$_GET['id'];
+        $education = (int)$_GET['education'];    //было id
         if(!empty($_POST)){
             $userData = $_POST;
-            $success = teacher::modulRecord($userData,$id);
+            $success = teacher::modulRecord($userData,$id,$education);
             if($success){
                 header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . $id);
             }else{

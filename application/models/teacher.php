@@ -110,7 +110,10 @@ class teacher
 
     static function AddLesson($id)
     {
-        $out = '<h2>Создание учебного лекции</h2>';
+        $education = R::load('education',$id);
+        $information = R::load('information',$education->information_id);
+
+        $out = '<h2>Создание лекции - '.$education->name.' / '.$information->name.'</h2>';
         db_connect::connect();
 
 //        $subcategory = R::load('category', $wisdomData[3]);
@@ -128,8 +131,9 @@ class teacher
 //                </ol>";
         $out .= "
 
-            <form method='post' action='?ctrl=teacher&action=WisdomData&category=" . $id . "'>
+            <form method='post' action='?ctrl=teacher&action=AddLesson&id=".$information->id."&education=" . $id . "'>
                 <input class='form-control' name='name' placeholder='Имя'>
+                <input class='form-control' name='number' placeholder='Номер'>
             <textarea class='form-control' name='description' placeholder='Описание'></textarea>
             <textarea class='form-control' name='text' placeholder='Лекция'></textarea>
 </div>
@@ -149,27 +153,27 @@ class teacher
         return $out;
     }
 
-    static function wisdomRecord($id = 0,$education = 0)
+    static function wisdomRecord($id = 0, $education = 0)
     {
         db_connect::connect();
 
-        if ($id != 0 && $education==0) {
+        if ($id != 0 && $education == 0) {
             $information = R::load('information', $id);
             $information->shortdescription = $_POST['shortdescription'];
             $information->category_id = $_GET['category'];
             $information->sharedUser[] = $_SESSION['user'];
 
 
-        } elseif($id == 0 && $education==0) {
+        } elseif ($id == 0 && $education == 0) {
             $information = R::dispense('information');
             $information->shortdescription = $_POST['shortdescription'];
             $information->category_id = $_GET['category'];
             $information->sharedUser[] = $_SESSION['user'];
 
 
-        }elseif($id != 0 && $education!=0){
+        } elseif ($id != 0 && $education != 0) {
 //            echo 1;
-            $information = R::load('education',$education);
+            $information = R::load('education', $education);
             $information->number = $_POST['number'];
             $information->information_id = $id;
 
@@ -188,15 +192,19 @@ class teacher
 
     }
 
-    static function modulRecord($arr, $id)
+    static function modulRecord($arr, $id, $education_data='')
     {
         if (!$arr)
             return false;
 
-        $information = R::load('information', $id);
-        $typeData = wisdom::getType($information);
 
-        if ($typeData[3]->id == (int)1) {
+        if ($id) {
+            $information = R::load('information', $id);
+            $typeData = wisdom::getType($information);
+        }
+
+        if (!empty($typeData) && $typeData[3]->id == (int)1 && $education_data=='') {
+
             $education = R::dispense('education');
             $education->name = $arr['name'];
             $education->description = $arr['description'];
@@ -213,7 +221,11 @@ class teacher
             $lesson->number = $arr['number'];
 //            $lesson->block = $arr['block'];
             $lesson->text = $arr['text'];
-            $lesson->information = $information;
+            if ($education_data) {
+                $lesson->education_id = $education_data;
+            } else {
+                $lesson->information = $information;
+            }
 
             $id = R::store($lesson);
         }
@@ -256,7 +268,7 @@ class teacher
             $out .= "<textarea class='form-control' name='shortdescription' placeholder='Краткое описание'>" . $data->shortdescription . "</textarea>";
 
         if (!empty($education))
-            $out .= "<input type='text' name='number' class=\"form-control\" placeholder='Номер курса' value='".$education->number."'>";
+            $out .= "<input type='text' name='number' class=\"form-control\" placeholder='Номер курса' value='" . $education->number . "'>";
 
         $out .= "<textarea class='form-control' name='description' placeholder='Полное описание'>" . $description . "</textarea>
         </div>
