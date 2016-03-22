@@ -18,13 +18,10 @@ class wisdom
         if (!(int)$array[0]) {
             return false;
         }
-//      print_r($wisdomArray);
-
 
         $out = '';
         db_connect::connect();
 
-//        print_r($wisdomArray);die();
         if (empty($wisdomArray)) {
             $out .= "<h2>Ничего не найдено</h2>";
             return $out;
@@ -44,7 +41,6 @@ class wisdom
                 if ($array[3] && $array[2]) {
                     $step = 10;
                     $page3 = ($page - 1) * $step;
-//                    echo "page3 ".$page3;
                     $data = $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->ownInformationList;
                     self::$count_data += $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->countOwn('information');
                     self::$path = "?ctrl=wisdom&action=WisdomType&type=" . $array[0] . "&subtype=" . $array[1] . "&category=" . $array[2] . "&subcategory=" . $array[3];
@@ -112,19 +108,11 @@ class wisdom
         $information = R::load('information', $id);
         $typeData = self::getType($information);
 
-//        if (!(int)$id || !(int)$type) {
-//            return false;
-//        }
-
-
-        db_connect::connect();
         $wisdomTypeArray = [1 => 1, 2 => 2, 3 => 3];
         $out = '';
 
-
-//        print_r($subtype);die;
         $autor = self::getAuthorName($id);
-//        print_r($autor);
+
         if ($typeData[3]->id == 6) {
 
             $out = R::load('lesson', $id)->text . "Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
@@ -187,19 +175,12 @@ class wisdom
             foreach ($requirements as $item) {
                 $information_requirements = R::getRow("SELECT information.id,information.name from information WHERE information.id = ?", [$item->requirements]);
 
-
-                /**********************
-                 *******Выделение*******
-                 **********************/
-
                 $out .= "<li class=\"list-group-item\"><a href='?ctrl=wisdom&action=GetWisdomById&id="
                     . $information_requirements['id'] . "'>" . $information_requirements['name'] . "</a></li>";
             }
 
             $out .= "</ul>";
         }
-//        print_r($education);die();
-
 
         $out .= "</div><div class=\"col-sm-3\"></div>
         <div class=\"col-sm-6\">

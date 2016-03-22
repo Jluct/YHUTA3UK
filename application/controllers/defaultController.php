@@ -13,12 +13,8 @@ class defaultController {
 
     public function actionDefault($view) {
 
-
-//        $view = new View();
-
         $view->news = news::getDataDefaultNews();
-//        $view->messageData = ["Неверный логин или пароль", "Внимание", 4];
         echo $view->render('default.php');
     }
 
-} 
+}

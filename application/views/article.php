@@ -5,8 +5,7 @@
  * Date: 04.01.2016
  * Time: 20:59
  */
-require_once(__DIR__."/../include/header.php");
-?>
+require_once(__DIR__."/../include/header.php"); ?>
 
 <!-- autorisation -->
 
@@ -19,7 +18,5 @@ require_once(__DIR__."/../include/header.php");
             <label><? echo $article['news_date'] ?></label>
         </div>
     </div>
-
-
 
 <?php require_once(__DIR__."/../include/footer.php"); ?>

@@ -26,7 +26,7 @@ session_start();
 <body>
 <header class="head">
     <div class="container">
-        <? print_r($_SESSION); ?>
+<!--        --><?// print_r($_SESSION); ?>
         <div class="row">
             <div class="col-sm-8 menu_light">
                 <? $lightMenu = new menu("SELECT menu_item.*
@@ -43,8 +43,8 @@ session_start();
         </div>
         <div class="row menu_heavy">
             <div class="col-sm-2">
-                <img class="logo_img" src="images/imgTest.png">
-                Обучайся!
+                <img class="logo_img" src="images/logo.jpg">
+<!--                Обучайся!-->
             </div>
             <div class="col-sm-9 actual_menu">
 

@@ -22,8 +22,7 @@ body{
 
 
 .menu_light {
-    padding: 5px 0;
-    margin-left: 5px;
+    /*margin-left: 5px;*/
 }
 
 .menu_light li {
@@ -168,7 +167,8 @@ body{
 
 .logo_img {
     max-height: 100%;
-    height: 40px;
+    width: 100%;
+    /*height: 40px;*/
 }
 
 .btn_search {
@@ -233,10 +233,10 @@ body{
     position: relative;
 }
 
-.actual_news>div {
-    position: absolute;
-    top: 0;
-}
+/*.actual_news>div {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+/*}*/
 
 .actual_news img{
     width: 100%;
@@ -269,10 +269,6 @@ body{
     position: relative;
 }
 
-.actual_news>div {
-    position: absolute;
-    top: 0;
-}
 
 .actual_news img{
     width: 100%;
@@ -396,4 +392,11 @@ footer{
 
 .footer ul li {
     background: none;
+}
+
+.slider_text{
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-family: 'Microsoft Sans Serif', Tahoma, Arial, Verdana, Sans-Serif;
+
 }

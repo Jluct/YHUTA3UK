@@ -1,9 +1,7 @@
 <?php require_once("/../include/header.php"); ?>
-    <!-- autorisation -->
+
     <section class="content">
         <? echo $news; ?>
-
-        <!-- content END-->
 
         <div class="row">
             <div class="col-sm-3"></div>
@@ -20,15 +18,12 @@
         <span aria-hidden=\"true\">&raquo;</span>
       </a>
     </li>");
-                $page->responsePagination(3,'news');
-                echo $page;
-
-                ?>
+                $page->responsePagination(3);
+                echo $page; ?>
 
             </div>
             <div class="col-sm-3"></div>
         </div>
     </section>
-    <!-- footer begin -->
 
 <?php require_once("/../include/footer.php"); ?>

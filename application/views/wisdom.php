@@ -8,41 +8,19 @@
 
 require_once(__DIR__ . "/../include/header.php"); ?>
 
-
         <div class="row">
             <div class="col-sm-2 category">
-                <form>
-                    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Поиск</button>
-      </span>
-                        <input type="text" class="form-control" placeholder="Поиск...">
-                    </div>
-                </form>
                 <? echo $categoryList; ?>
             </div>
             <div class="col-sm-10">
-                <? echo $wisdom; ?>
+                <? echo $wisdom;
 
-                <? $page = new pagination($count_data, 10, $page);
-                                $page->setTplElement("<li><a href='".$path."&page=%s'>%s</a></li>");
-//                $page->setTplPrevious(" <li>
-//      <a href=\"?ctrl=news&action=News&page=%s\" aria-label=\"Previous\">
-//        <span aria-hidden=\"true\">&laquo;</span>
-//      </a>
-//    </li>");
-//                $page->setTplNext("<li>
-//      <a href=\"?ctrl=news&action=News&page=%s\" aria-label=\"Next\">
-//        <span aria-hidden=\"true\">&raquo;</span>
-//      </a>
-//    </li>");
-                //                $page->responsePagination(3);
-                echo $page;
-
+                $page = new pagination($count_data, 10, $page);
+                    $page->setTplElement("<li><a href='".$path."&page=%s'>%s</a></li>");
+                    echo $page;
                 ?>
 
             </div>
         </div>
-
 
 <?php require_once(__DIR__ . "/../include/footer.php"); ?>

@@ -1,12 +1,4 @@
 <?php require_once(__DIR__."/../include/header.php"); ?>
-<!-- header end -->
-<!-- content -->
-
-
-<? //require_once ("load.php") ?>
-<!-- SLIDER -->
-
-
 
     <div class="row">
         <div class="big_photo">
@@ -33,24 +25,24 @@
                 <!-- Wrapper for slides -->
                 <div class="slider_section carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="images/PhotoTest.png" alt="...">
+                        <img src="../../images/zwalls.ru-27962.jpg" alt="...">
 
                         <div class="carousel-caption">
-                            ...
+                            <span class="slider_text">Талантливые педагоги!</span>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="images/PhotoTest.png" alt="...">
+                        <img src="../../images/hdwallpapersimage.jpg" alt="...">
 
                         <div class="carousel-caption">
-                            ...
+                            <span class="slider_text">Обширный материал!</span>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="images/PhotoTest.png" alt="...">
+                        <img src="../../images/resize-img.jpg" alt="...">
 
                         <div class="carousel-caption">
-                            ...
+                            <span class="slider_text" style="color: black;">Дружная компания!</span>
                         </div>
                     </div>
                 </div>
@@ -73,7 +65,7 @@
                 <div class="col-sm-6 col-md-6">
                     <div class="actual_news">
                         <div>
-                            <? echo "<a href=\"?ctrl=news&action=GetArticle&article=" . $news[0]['id'] . "\">" . $news[0]['news_header'] . "</a>" ?>
+                            <? echo "<h3><a href=\"?ctrl=news&action=GetArticle&article=" . $news[0]['id'] . "\">" . $news[0]['news_header'] . "</a></h3>" ?>
                             <? echo $news[0]['news_date'] ?>
                         </div>
                         <img src="/../../<? echo $news[0]['news_img'] ?>"/>
@@ -109,5 +101,4 @@
         </div>
     </div>
 
-<!-- footer begin -->
 <?php require_once(__DIR__."/../include/footer.php"); ?>

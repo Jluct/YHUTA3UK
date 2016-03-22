@@ -12,7 +12,7 @@ db_connect::connect();
 
 class news
 {
-    private static function count_news($begin = 0, $count = 5)
+    private static function getNews($begin = 0, $count = 5)
     {
 
         $data=R::getAll("SELECT * FROM news ORDER BY  news.news_date DESC LIMIT ?,?",[$begin,$count]);
@@ -25,7 +25,7 @@ class news
     {
         $count = 5;
         $page = (int)($page - 1) * $count;
-        $newsData = self::count_news($page, $count);
+        $newsData = self::getNews($page, $count);
 
         $news = '';
         for ($i = 0; $i < count($newsData); $i++) {
@@ -45,17 +45,13 @@ class news
 
     public static function getArticle($id)
     {
-
         $id = (int)$id;
         db_connect::connect();
         return R::getAll("SELECT * FROM news WHERE id=?",[$id])[0];
-
-
     }
 
     public static function getDataDefaultNews()
     {
-        return self::count_news(0);
-
+        return self::getNews();
     }
 }

@@ -12,7 +12,6 @@ class wisdomController
 
     public function actionWisdomType($view)
     {
-//        if(!isset($_GET['type']))
         $wisdomData[] = $_GET['type'];
         $wisdomData[] = $_GET['subtype'];
         $wisdomData[] = $_GET['category'];
@@ -22,10 +21,7 @@ class wisdomController
         $view->type = $_GET['type'];
         $view->table = $this->table;
         $view->page = (int)$_GET['page'];
-
         $view->categoryList = categoryList::categorMenu($wisdomData, $view->page);
-//        $view->count_information = categoryList::$information_count;
-
         $view->wisdom = wisdom::getWisdomByType($wisdomData, categoryList::$wisdomArray, $view->page, $view->count_information);
         $view->count_data = wisdom::$count_data;
         $view->path = wisdom::$path;
@@ -34,7 +30,6 @@ class wisdomController
 
     public function actionGetWisdomById($view)
     {
-
         $id = (int)$_GET['id'];
         $view->id = $id;
         $view->data = wisdom::getWisdom($id);

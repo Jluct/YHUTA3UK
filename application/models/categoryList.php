@@ -15,8 +15,6 @@ static public $information_count=0;
     static function categorMenu($array,$page=1)
     {
         $open = '';
-//        if(!$array[0] || !is_int($array[0]))
-//            return false;
 
         db_connect::connect();
 
@@ -31,24 +29,20 @@ static public $information_count=0;
 
         $out = "";
 
-
         foreach ($item as $i) {
 
             $i_count = 0;
             if (!$array[2]) {
                 $j = $i->ownCategoryList;
-//                print_r($i);
             } else {
                 $j = $i->withCondition('category.id = ? LIMIT 0,3', [$array[2]])->ownCategoryList;
 
             }
             foreach ($j as $v) {
 
-//                print_r($v->name."<br>");
                 $v_count = 0;
                 foreach ($v->ownCategory as $o) {
                     if (!$v_count && $o->name) {
-
 
                         $v_count = 1;
 
@@ -71,7 +65,6 @@ static public $information_count=0;
                         self::$wisdomArray[$i->name][$o->name]['subcategory_id'] = $o->id;
                         $out .= "<li><a href='?ctrl=wisdom&action=WisdomType&type=".$data->id."&subtype=".$i->id."&category=" . $v->id . "&subcategory=".$o->id."&page=1'>" . $o->name . "</a></li>";
 
-//                        print_r(" - ".$o->name."<br>");
                     }
                 }
                 $out .= "</ul></div>";
