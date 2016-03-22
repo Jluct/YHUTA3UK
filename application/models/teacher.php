@@ -334,6 +334,3 @@ class teacher
     }
 
 }
-
-
-//http://obuceisea.my/?ctrl=teacher&action=WisdomData

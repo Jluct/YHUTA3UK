@@ -11,8 +11,6 @@ require_once(__DIR__."/../include/header.php"); ?>
     <div class="row">
         <div class="col-sm-12">
             <? echo $data; ?>
-
-
     </div>
 
 

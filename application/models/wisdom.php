@@ -14,7 +14,6 @@ class wisdom
 
     function getWisdomByType($array, $wisdomArray, $page = 1)
     {
-
         if (!(int)$array[0]) {
             return false;
         }
@@ -44,8 +43,6 @@ class wisdom
                     $data = $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->ownInformationList;
                     self::$count_data += $category->withCondition('information.category_id = ? LIMIT ?,?', [$array[3], $page3, $step])->countOwn('information');
                     self::$path = "?ctrl=wisdom&action=WisdomType&type=" . $array[0] . "&subtype=" . $array[1] . "&category=" . $array[2] . "&subcategory=" . $array[3];
-
-
                 } else {
                     $step = 10;
                     $step1 = 2;
@@ -85,8 +82,6 @@ class wisdom
             $out .= "<a role='button' href='?ctrl=teacher&action=WisdomData&type=".
                 $array[0]."&subtype=".$array[1]."&category=".$array[2]."&subcategory=".$array[3]."&page=1' class='btn btn-info btn-block'>Добавить учебный материал</a>";
         }
-//        print_r("<br>".$array[3] ." ". $array[2] ." ". $_SESSION['user']->status ." ". $_SESSION['user']->block);
-
         return $out;
 
     }

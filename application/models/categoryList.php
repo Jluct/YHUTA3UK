@@ -9,7 +9,8 @@
 class categoryList
 {
 
-static public $information_count=0;
+    static public $information_count=0;
+
     static public $wisdomArray = [];
 
     static function categorMenu($array,$page=1)
