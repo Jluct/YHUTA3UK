@@ -34,11 +34,9 @@ class cabinetController
 
     function actionGetUserInformation($view)
     {
-
         $id = (int)$_GET['id'];
         $view->data = cabinet::getUserProgress($id);
         echo $view->render('userInformation.php');
-
     }
 
 

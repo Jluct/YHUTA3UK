@@ -147,7 +147,8 @@ class cabinet
         $menuModerator->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
 
         foreach ($value->ownLessonList as $subvalue) {
-
+        if($_SESSION['user']->status=='teacher')
+            $menu = $menuModerator->render();
             $helpClass = '';
             $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s&lesson=".$subvalue->id."'>%s %s</a>%s</li>";
 
@@ -161,7 +162,7 @@ class cabinet
     <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Открыть</a></h4>
     <p>" . $subvalue->description . "</p>
 
-    ".$menuModerator->render()."
+    ".$menu."
   </li>
 ";
         }
@@ -193,6 +194,8 @@ class cabinet
         }
 
         foreach ($item->ownEducationList as $value) {
+            if($_SESSION['user']->status=='teacher')
+                $menu = $menuModerator->render();
             $helpClass = '';
             $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "&education=".$value->id."'>%s %s</a>%s</li>";
 
@@ -213,14 +216,15 @@ class cabinet
       <div class=\"panel-body\"><ul class=\"list-group\">";
 
             $data .= self::renderLesson($value);
-            $data .= "<hr>";
-            if ($_SESSION['user']->status !== 'student' && !empty($_SESSION['user']->status) && $value->id != 0)
+            if ($_SESSION['user']->status == 'teacher' && !empty($_SESSION['user']->status) && $value->id != 0) {
+                $data .= "<hr>";
                 $data .= "<a role='button' href='?ctrl=teacher&action=AddLesson&id=" . $value->id . "' class='btn btn-info btn-block'>Добавить лекцию</a>";
-            $data .= "</ul></div></div><div class='panel-footer'>
-".$menuModerator->render()."
+                $data .= "</ul></div></div><div class='panel-footer'>
+" . $menu . "
 <!--меню модуля-->
-</div> </div>";
-            $data .= "</li>";
+</div> ";
+            }
+            $data .= "</div></li>";
         };
 
 

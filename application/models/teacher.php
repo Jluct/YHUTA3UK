@@ -19,11 +19,6 @@ class teacher
 
         $typeData = wisdom::getType($data);
 
-//        $subcategory = R::load('category',$wisdomData[3]);
-//        $category = R::load('category',$wisdomData[2]);
-//        $subtype = R::load('type',$wisdomData[1]);
-//        $type = R::load('type',$wisdomData[0]);
-
         $out = "
                 <ol class=\"breadcrumb\">
                     <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $typeData[3]->id . "&page=1\" > " . $typeData[3]->name . "</a></li>
@@ -46,7 +41,7 @@ class teacher
             </div></div> ";
 
         if ($typeData[3]->id != 1) {
-//            echo $typeData[3]->id;
+
             $out .= "<textarea class='form-control' name='text' placeholder='Материал лекции'></textarea>
                 <input type='submit' class='btn btn-info btn-block'></button>
                 </form>
@@ -116,19 +111,6 @@ class teacher
         $out = '<h2>Создание лекции - ' . $education->name . ' / ' . $information->name . '</h2>';
         db_connect::connect();
 
-//        $subcategory = R::load('category', $wisdomData[3]);
-//        $category = R::load('category', $wisdomData[2]);
-//        $subtype = R::load('type', $wisdomData[1]);
-//        $type = R::load('type', $wisdomData[0]);
-//
-//        $out .= "<div class='col-sm-12'>
-//                <ol class=\"breadcrumb\">
-//                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $type->id . "&page=1\" > " . $type->name . "</a></li>
-//                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $type->id . "&subtype=" . $subtype->id . "&page=1\" > " . $subtype->name . "</a></li>
-//                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $type->id . "&subtype=" . $subtype->id . "&category=" . $category->id . "&page=1\" > " . $category->name . "</a></li>
-//                    <li><a href=\"?ctrl=wisdom&action=WisdomType&type=" . $type->id . "&subtype=" . $subtype->id . "&category=" . $category->id . "&subcategory=" . $subcategory->id . "&page=1\" > " . $subcategory->name . "</a></li>
-//
-//                </ol>";
         $out .= "
 
             <form method='post' action='?ctrl=teacher&action=AddLesson&id=" . $information->id . "&education=" . $id . "'>
