@@ -22,7 +22,7 @@ $out = "<ul style=\"list-style-type: none\">
         <li><button class=\"btn btn-block btn-primary\" type=\"button\"><span class=\"badge\" style=\"margin-right: 10px;\">0</span>Сообщения</button></li>
         <li><hr color=\"black\"></li>".$type."
         <li><hr color=\"black\"></li>
-       <li><a href='?ctrl=cabinet&action=UserData'><button class=\"btn btn-block btn-primary\" type=\"button\">Настройки</button></a></li>
+       <li><a href='?ctrl=cabinet&action=UserData'><button class=\"btn btn-block btn-primary\" type=\"button\">Личные данные</button></a></li>
        <li><a href=\"exit.php\"><button class=\"btn btn-block btn-danger\">Выйти</button></a></li>
 </ul>";
 echo $out;

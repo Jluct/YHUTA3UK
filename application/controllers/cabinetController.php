@@ -52,8 +52,7 @@ class cabinetController
 
     function actionGetCabinet($view)
     {
-        if (!$_SESSION['user']->login || !$_SESSION['user']->authorisation === "7gF5dFG546jX15" ||
-            !$_SESSION['user']->status || $_SESSION['user']->block != 0
+        if (!$_SESSION['user']->login || !$_SESSION['user']->status || $_SESSION['user']->block != 0
         ) {
             header("Location: /?");
             return false;
@@ -171,13 +170,6 @@ class cabinetController
             $view->message = ["Неверные данные или заполненны не все обязательные поля", "Внимание", 4];
         } elseif (isset($userArray) && empty($errorArray)) {
 
-//            echo '<br>';
-//            print_r($session);
-//            echo "<br>";
-//            foreach ($session as $key => $value) {
-//            unset($session->authorisation);
-//                if ($session->$key)
-//                    $session->$key = $userArray[$key];
             foreach ($session->dossier as $key => $value) {
 
                 if ($_SESSION['user']->dossier->$key && isset($userArray[$key])) {
@@ -185,14 +177,8 @@ class cabinetController
 
                 }
             }
-//            }
-            db_connect::connect();
 
-//            R::freeze( TRUE );
-//            R::freeze( false );
-//            echo "Конечные данные:<br>";
-//            print_r($session);
-//            echo "<br>Конец данных";
+            db_connect::connect();
 
             $id = R::store($session);
             if (!$id) {
@@ -211,12 +197,6 @@ class cabinetController
         $view->data = cabinet::getUserData($userArray, $errorArray);
         echo $view->render('cabinet.php');
 
-
-//        echo "Норм ";
-//        print_r($userArray);
-//        echo "<br>Нет ";
-//        print_r($errorArray);
-//        echo $view->render('cabinet.php');
     }
 
     function actionUserInfo($view)

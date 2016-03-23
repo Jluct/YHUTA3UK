@@ -91,7 +91,7 @@ class cabinet
         }
 
         $out = '';
-        $out = "<h4>" . $data->name . "</h4><div class='col-sm-12'>" . $data->text . "</div>";
+        $out = "<h1>" . $data->name . "</h1><div class='col-sm-12'>" . $data->text . "</div>";
         $out .= "
 <div class='col-sm-4'></div>
 <div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $prev . "' class='btn " . $help_class_prev . " btn-success btn-block'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span>Назад</a></div>
@@ -240,7 +240,7 @@ class cabinet
         $out .= "<li class=\"list-group-item active\">";
 
         if ($id == 0 && $complete == 0)
-            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Изучаемые курсы </h4>";
+            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Текущие курсы </h4>";
 
         if ($complete == 1)
             $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Изученные курсы</h4>";
@@ -344,40 +344,16 @@ class cabinet
             <h4 class=\"list-group-item-heading\"><a href='?ctrl=wisdom&action=GetWisdomById&id=" . $item->id . "'>" . $item->name . "</a></h4><h5>" . $author . "</h5>
     <p class=\"list-group-item-text\">" . $short_description . "</p>" . $modul;
                 if ($id === 0) {
-//                    $typeMenu = '';
-//                    switch ($_SESSION['user']->status) {
-//                        case "student":
-//                            $typeMenu = 3;
-//                            break;
-//                        case "teacher":
-//                            $typeMenu = 4;
-//                            break;
-//                        case "moderator":
-//                            $typeMenu = 5;
-//                            break;
-//                        case "admin":
-//                            $typeMenu = 6;
-//                            break;
-//                    }
-//
-//                    $bigMenu = new menu("SELECT menu_item.*
-//        FROM  `menu` ,  `menu_item`
-//        WHERE menu_item.menu_id = ?
-//       AND menu.menu_id = menu_item.menu_id", [$typeMenu]);
-
-
                     $bigMenu->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "'>%s %s</a>%s</li>";
-
-
-                    $out .= $bigMenu->render(); //"<a href='?ctrl=cabinet&action=GetUserInformation&id=" . $item->id . "'><div class='btn btn-success btn-block' style='margin-top:20px;'>Приступить</div></a>";
+                    $out .= $bigMenu->render();
                 }
-                //меню модерирования модуля
+
                 if ($_SESSION['user']->status !== 'student' && !empty($_SESSION['user']->status) && $id != 0)
                     $out .= "<a role='button' href='?ctrl=teacher&action=AddModul&id=" . $id . "' class='btn btn-info btn-block'>Добавить модуль</a>";
                 $out .= "</li>";
 
                 $out .= "</ul></div></div></div>";
-//        print_r();
+
             }
         if (empty($wisdom))
             $out .= "Вы не подписанны на данный учебный материал";
@@ -386,32 +362,24 @@ class cabinet
 
     static function getUserData($userArray = '', $errorArray = '')
     {
-
-
         $array = array();
         $session = $_SESSION['user'];
         $data = $session->dossier;
 
-
         foreach ($data as $key1 => $value1) {
-
-            if (empty($errorArray) && !empty($errorArray[$key1])) {  // !!! \\
+            if (empty($errorArray) && !empty($errorArray[$key1])) {
                 $array[$key1] = $errorArray[$key1];
-
                 continue;
             }
-            if (empty($userArray) && !empty($userArray[$key1])) {   // !!! \\
+            if (empty($userArray) && !empty($userArray[$key1])) {
                 $array[$key1] = $userArray[$key1];
-
                 continue;
             }
-
 
             if ($key1 == "image") continue;
 
             if ($data->$key1) {
                 $array[$key1] = $value1;
-
             }
         }
 
