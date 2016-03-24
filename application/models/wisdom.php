@@ -108,12 +108,12 @@ class wisdom
 
         $autor = self::getAuthorName($id);
 
-        if ($typeData[3]->id == 6) {
-
-            $out = R::load('lesson', $id)->text . "Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
-                " " . $autor['name'] . " " . $autor['andername'] . " </a></div>";
-            return $out;
-        }
+//        if ($typeData[3]->id == 6) {
+//
+//        $out = R::load('lesson', $id)->text . "Автор:<a  href='?ctrl=user&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
+//            " " . $autor['name'] . " " . $autor['andername'] . " </a></div>";
+//        return $out;
+//    }
         if ($typeData[3]->id == 1) {
             $count_modul = R::count("education", " education.information_id = ? and education.block = 1", [$id]);
         } elseif ($typeData[3]->id == 5) {
@@ -130,7 +130,8 @@ class wisdom
 
         $out .= "<h2>" . $information->name . "</h2>";
         $out .= "<div style='margin-bottom: 15px;'>" . $information->description . "</div>";
-
+        if ($typeData[3]->id == 6)
+            return $out;
         if ($count_modul === 0) {
             $out .= "<h2 class='text-center'>Совсем скоро!</h2>";
             return $out;
