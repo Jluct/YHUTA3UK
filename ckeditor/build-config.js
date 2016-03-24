@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/26bd47d216628f5cccc6731d847a2c75
+ * (2) http://ckeditor.com/builder/f5c7154bda728ee0b91971fe8db3409b
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/26bd47d216628f5cccc6731d847a2c75
+ * (3) http://ckeditor.com/builder/download/f5c7154bda728ee0b91971fe8db3409b
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,7 +25,7 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'moono',
+	skin: 'office2013',
 	preset: 'standard',
 	ignore: [
 		'.bender',
@@ -50,11 +50,17 @@ var CKBUILDER_CONFIG = {
 		'tests'
 	],
 	plugins : {
+		'a11yhelp' : 1,
+		'about' : 1,
+		'autocorrect' : 1,
 		'basicstyles' : 1,
+		'bidi' : 1,
 		'blockquote' : 1,
 		'bootstrapTabs' : 1,
 		'bootstrapVisibility' : 1,
+		'bt_table' : 1,
 		'btgrid' : 1,
+		'btquicktable' : 1,
 		'clipboard' : 1,
 		'contextmenu' : 1,
 		'elementspath' : 1,
@@ -66,8 +72,8 @@ var CKBUILDER_CONFIG = {
 		'glyphicons' : 1,
 		'horizontalrule' : 1,
 		'htmlwriter' : 1,
+		'iframe' : 1,
 		'image' : 1,
-		'imgbrowse' : 1,
 		'indentlist' : 1,
 		'link' : 1,
 		'list' : 1,
@@ -85,6 +91,7 @@ var CKBUILDER_CONFIG = {
 		'tab' : 1,
 		'table' : 1,
 		'tabletools' : 1,
+		'texttransform' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
 		'widgetbootstrap' : 1,

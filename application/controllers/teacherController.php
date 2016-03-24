@@ -13,7 +13,6 @@ class teacherController
 
         if (!empty($_POST)) {
             $id = teacher::wisdomRecord((int)$_GET['id'],(int)$_GET['education']);
-//            $view->message = ["Ошибка добавления курса!", "Внимание", 4];
 
             if (!empty($id) && $id) {
                 header('Location:?ctrl=cabinet&action=GetUserInformation&id=' . (int)$_GET['id']);
@@ -53,14 +52,6 @@ class teacherController
                 $view->message = ["Ошибка добавления модуля!", "Добавление модуля", 4];
             }
         }
-//
-//        $wisdomData[] = $_GET['type'];
-//        $wisdomData[] = $_GET['subtype'];
-//        $wisdomData[] = $_GET['category'];
-//        $wisdomData[] = $_GET['subcategory'];
-//
-//        $view->data = teacher::addWisdom($wisdomData);
-//        echo $view->render('teacher.php');
     }
 
     function actionEditWisdom($view)
@@ -68,7 +59,7 @@ class teacherController
         $id = (int)$_GET['id'];
         $education = (int)$_GET['education'];
         $lesson = (int)$_GET['lesson'];
-        $view->data = teacher::editWisdom($id,$education,$lesson);
+        $view->data = teacher::editWisdom($id,$education);
         echo $view->render('teacher.php');
     }
 

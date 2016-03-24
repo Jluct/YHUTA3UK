@@ -221,10 +221,8 @@ class teacher
         $data = R::load('information', $id);
         if ($education)
             $education = R::load('education', $education);
-//        print_r($data);
+
         $typeData = wisdom::getType($data);
-//        echo "<br>";
-//        print_r($typeData);
 
         if (!empty($education)) {
             $aaa = '&education=' . $education->id;

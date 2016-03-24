@@ -13,8 +13,6 @@ class cabinet
 
     static function getLessonById($id)
     {
-
-
         $user = R::duplicate($_SESSION['user']);
         $data = R::load('lesson', $id);
         $userInfo = R::getAll('SELECT * FROM information_user WHERE user_id = ?', [$_SESSION['user']->id]);
@@ -147,11 +145,12 @@ class cabinet
         $menuModerator->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
 
         foreach ($value->ownLessonList as $subvalue) {
-        if($_SESSION['user']->status=='teacher')
-            $menu = $menuModerator->render();
             $helpClass = '';
-            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s&lesson=".$subvalue->id."'>%s %s</a>%s</li>";
+            if($_SESSION['user']->status=='teacher') {
+            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s&lesson=" . $subvalue->id . "'>%s %s</a>%s</li>";
+            $menu = $menuModerator->render();
 
+        }
             //подсветка
             if (self::getUserInfoProgress($subvalue->id, 'lesson_id'))
 
@@ -171,10 +170,9 @@ class cabinet
 
     static private function getInfoEducation($item, $wisdom = '')
     {
-
-        /*********************\
-         * |******лекции*******|
-         * \*********************/
+         /*********************\
+         |********лекции*******|
+         \*********************/
 
         $menuModerator = new menu("SELECT menu_item.*
         FROM  `menu` ,  `menu_item`
@@ -182,7 +180,6 @@ class cabinet
        AND menu.menu_id = menu_item.menu_id", [8]);
 
         $menuModerator->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
-
 
         $data = "<ul class=\"list-group\">";
 
@@ -194,10 +191,15 @@ class cabinet
         }
 
         foreach ($item->ownEducationList as $value) {
-            if($_SESSION['user']->status=='teacher')
-                $menu = $menuModerator->render();
+//            print_r($item->id);
+//            echo "<br>";
+//            print_r($value->id);
+//            echo "<br>";
             $helpClass = '';
             $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "&education=".$value->id."'>%s %s</a>%s</li>";
+            if($_SESSION['user']->status=='teacher')
+                $menu = $menuModerator->render();
+
 
             //подсветка
             if (self::getUserInfoProgress($value->id, 'education_id'))
@@ -237,9 +239,7 @@ class cabinet
     {
         $data = R::duplicate($_SESSION['user']);
 
-        $out = '';
-
-        $out .= "<div class='col-sm-12'>
+        $out = "<div class='col-sm-12'>
             <div class=\"list-group\"><ul style='padding-left:0;'>";
         $out .= "<li class=\"list-group-item active\">";
 
@@ -263,12 +263,8 @@ class cabinet
                     if (!is_null($value->status) && is_null($value->education_id) && is_null($value->lesson_id))
                         $arrayId[] = $value->information_id;
                 }
-
-
             }
             $wisdom = R::loadAll('information', $arrayId);
-//            print_r($wisdom);
-
 
         } else {
 
@@ -278,7 +274,6 @@ class cabinet
                 if ($value->information_id == $id)
                     $wisdom = R::findAll('information', 'where id = ?', [$id]);
             }
-
         }
 
         $typeMenu = '6';
@@ -312,21 +307,17 @@ class cabinet
 
         $bigMenu->ul_tpl = "<ul class=\"nav nav-tabs nav-justified menu_heavy\">";
 
-
         if (!empty($wisdom))
             foreach ($wisdom as $item) {
                 $typeData = wisdom::getType($item);
 
-//                echo 1;
                 if ($id != 0) {
                     $itemClone = '';
                     if ($typeData[3]->id != 1) {
                         $itemClone = $item;
                     }
                     $modul = self::getInfoEducation($item, $itemClone);
-
                 }
-
 
                 if ($_SESSION['user']->status !== 'author') {
                     $autor = wisdom::getAuthorName($item->id);
@@ -334,7 +325,6 @@ class cabinet
                     <a  href='?ctrl=cabinet&action=UserInfo&id=" . $autor['id'] . "'> " . $autor['surname'] .
                         " " . $autor['name'] . " " . $autor['andername'] . " </a> ";
                 }
-
 
                 $short_description = !empty($item->shortdescription) ? $item->shortdescription : 'Краткое описание отсутствует';
                 $out .= "<li class=\"list-group-item\">
@@ -473,6 +463,8 @@ class cabinet
         db_connect::connect();
         $user = R::load('user', $id);
 
+        $status = $user->status=='teacher'?'Преподаватель':'Студент';
+
         $out = "<div class='col-sm-4 text-center'>
                     <img style=\"max-width: 100%;max-height:100%;margin: 15px; \" src='images/user/" . $user->dossier->image . "'>
                 </div>
@@ -482,7 +474,7 @@ class cabinet
             "</h3>";
         $out .= "<ul class=\"list-group\">
                     <li class=\"list-group-item\"><h4>Основная информация</h4></li>
-                    <li class=\"list-group-item\">Статус: " . $user->status . "</li>
+                    <li class=\"list-group-item\">Статус: " . $status . "</li>
                     <li class=\"list-group-item\">Страна: " . $user->dossier->land . "</li>
                     <li class=\"list-group-item\">Город: " . $user->dossier->sity . "</li>
                     <li class=\"list-group-item\">Электронная почта: " . $user->dossier->email . "</li>
