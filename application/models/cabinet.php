@@ -17,7 +17,7 @@ class cabinet
         $data = R::load('lesson', $id);
         $userInfo = R::getAll('SELECT * FROM information_user WHERE user_id = ?', [$_SESSION['user']->id]);
         $userInfo = R::convertToBeans('information_user', $userInfo);
-        if (!empty($data->education_id ) && $_SESSION['user']->status=='student') {
+        if (!empty($data->education_id) && $_SESSION['user']->status == 'student') {
             $education = R::load('education', $data->education_id);
             if ($education->number != 1) {
                 $numb = $education->number - 1;
@@ -39,7 +39,7 @@ class cabinet
 
 
         }
-        if ($data->number != 1 && $_SESSION['user']->status=='student') {
+        if ($data->number != 1 && $_SESSION['user']->status == 'student') {
             $numb = $data->number - 1;
 //            echo $numb;
             if (!empty($data->education_id)) {
@@ -146,22 +146,22 @@ class cabinet
 
         foreach ($value->ownLessonList as $subvalue) {
             $helpClass = '';
-            if($_SESSION['user']->status=='teacher') {
-            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s&lesson=" . $subvalue->id . "'>%s %s</a>%s</li>";
-            $menu = $menuModerator->render();
+            if ($_SESSION['user']->status == 'teacher') {
+                $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s&lesson=" . $subvalue->id . "'>%s %s</a>%s</li>";
+                $menu = $menuModerator->render();
 
-        }
+            }
             //подсветка
             if (self::getUserInfoProgress($subvalue->id, 'lesson_id'))
 
-            $helpClass = 'bg-success';
+                $helpClass = 'bg-success';
 
             $data .= "
   <li class=\"list-group-item " . $helpClass . "\">
     <h4>" . $subvalue->number . ". " . $subvalue->name . "<a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $subvalue->id . "' style='float:right;' class='btn btn-primary'>Открыть</a></h4>
     <p>" . $subvalue->description . "</p>
 
-    ".$menu."
+    " . $menu . "
   </li>
 ";
         }
@@ -170,9 +170,9 @@ class cabinet
 
     static private function getInfoEducation($item, $wisdom = '')
     {
-         /*********************\
-         |********лекции*******|
-         \*********************/
+        /*********************\
+         * |********лекции*******|
+         * \*********************/
 
         $menuModerator = new menu("SELECT menu_item.*
         FROM  `menu` ,  `menu_item`
@@ -196,8 +196,8 @@ class cabinet
 //            print_r($value->id);
 //            echo "<br>";
             $helpClass = '';
-            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "&education=".$value->id."'>%s %s</a>%s</li>";
-            if($_SESSION['user']->status=='teacher')
+            $menuModerator->li_tpl = "<li  class=\"dropdown primary\"  role=\"presentation\"><a data-toggle=\"tooltip\" href='%s" . $item->id . "&education=" . $value->id . "'>%s %s</a>%s</li>";
+            if ($_SESSION['user']->status == 'teacher')
                 $menu = $menuModerator->render();
 
 
@@ -310,7 +310,8 @@ class cabinet
         if (!empty($wisdom))
             foreach ($wisdom as $item) {
                 $typeData = wisdom::getType($item);
-
+                if ($typeData[3]->id == 6 && $id!=0)
+                    header('Location:?ctrl=wisdom&action=GetWisdomById&id=' . $id);
                 if ($id != 0) {
                     $itemClone = '';
                     if ($typeData[3]->id != 1) {
@@ -463,7 +464,7 @@ class cabinet
         db_connect::connect();
         $user = R::load('user', $id);
 
-        $status = $user->status=='teacher'?'Преподаватель':'Студент';
+        $status = $user->status == 'teacher' ? 'Преподаватель' : 'Студент';
 
         $out = "<div class='col-sm-4 text-center'>
                     <img style=\"max-width: 100%;max-height:100%;margin: 15px; \" src='images/user/" . $user->dossier->image . "'>
