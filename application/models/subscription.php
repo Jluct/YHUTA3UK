@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 /**
  * Created by PhpStorm.
@@ -10,18 +11,19 @@ class subscription
 {
     static function subscriptionUser($id)
     {
-//        if(!$_SESSION['user'])
-//            header("Location: ?ctrl=registration&action=Registration");
-
+        if(empty($_SESSION['user']))
+            header("Location: ?ctrl=wisdom&action=GetWisdomById&id=".$id);
 
         $requirement = R::findAll('requirements', "WHERE requirements.information_id = ?", [$id]);
         if(empty($requirement)){
-            echo"NOT<br>";
-            print_r($requirement);
+            $information = R::load('information',$id);
+            $information->sharedUser[] = $_SESSION['user'];
+            R::store($information);
+
+            header("Location:?ctrl=cabinet&action=GetUserInformation&id=".$id);
+
         }else{
-
-
-            print_r($requirement);
+            header("Location:?ctrl=wisdom&action=GetWisdomById&id=".$id);
         }
 
         die();

@@ -23,7 +23,6 @@ class cabinetController
         $id = (int)$_GET['id'];
         $view->data = cabinet::getLessonById($id);
         if ($view->data == false) {
-
             $view->message = ["Вы не изучили приведущие материалы", "Внимание", 4];
         }else{
 

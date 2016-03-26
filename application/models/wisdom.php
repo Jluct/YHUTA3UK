@@ -132,7 +132,7 @@ class wisdom
         $out .= "<div style='margin-bottom: 15px;'>" . $information->description . "</div>";
         if ($typeData[3]->id == 6)
             return $out;
-        if ($count_modul === 0) {
+        if ($count_modul == 0) {
             $out .= "<h2 class='text-center'>Совсем скоро!</h2>";
             return $out;
         }

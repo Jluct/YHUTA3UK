@@ -96,6 +96,7 @@ class cabinet
 <div class='col-sm-2'><a role='button' href='?ctrl=cabinet&action=GetLesson&id=" . $next . "' class='btn " . $help_class_next . " btn-success btn-block'>Далее<span class=\"glyphicon glyphicon-arrow-right\" aria-hidden=\"true\"></span></a></div>
 <div class='col-sm-4'></div>
 ";
+
         return $out;
     }
 
