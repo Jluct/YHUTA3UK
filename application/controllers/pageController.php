@@ -9,10 +9,9 @@
 class pageController
 {
     function actionPage($view){
-        if(!isset($_GET['id'])){return;}
+//        if(!isset($_GET['id'])){return;}
         $id=$_GET['id'];;
-        $view->page = page::getPageById($id);
-
-        echo $view->render('page.php');
+        $view->page = pageData::getPageById($id);
+        echo $view->render('pageData.php');
     }
 }
