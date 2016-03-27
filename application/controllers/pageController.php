@@ -8,12 +8,10 @@
  */
 class pageController
 {
-    function actionPage(){
+    function actionPage($view){
         if(!isset($_GET['id'])){return;}
         $id=$_GET['id'];;
-        $view = new View();
         $view->page = page::getPageById($id);
-
 
         echo $view->render('page.php');
     }

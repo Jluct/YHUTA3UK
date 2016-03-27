@@ -12,8 +12,6 @@ class page
     static function getPageById($id)
     {
         $id = (int)$id;
-
-
         db_connect::connect();
 
         $result = R::load('page',$id);
