@@ -9,10 +9,10 @@
 require_once(__DIR__ . "/../include/header.php"); ?>
 
         <div class="row">
-            <div class="col-sm-2 category">
+            <div class="col-md-2 category">
                 <? echo $categoryList; ?>
             </div>
-            <div class="col-sm-10">
+            <div class="col-md-10">
                 <? echo $wisdom;
 
                 $page = new pagination($count_data, 10, $page);
