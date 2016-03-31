@@ -340,7 +340,8 @@ body{
 }
 
 .category .dropdown ul li a {
-    font-size: 9pt;
+    font-size: 10pt;
+    padding: 5px 0;
 }
 
 .categor_menu{

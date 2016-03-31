@@ -245,10 +245,13 @@ class cabinet
         $out .= "<li class=\"list-group-item active\">";
 
         if ($id == 0 && $complete == 0)
-            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Текущие курсы </h4>";
+            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>В кабинет </h4>";
 
         if ($complete == 1)
-            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Изученные курсы</h4>";
+            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetCabinet' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>В кабинет</h4>";
+
+        if($id !=0)
+            $out .= "<h4 class=\"list-group-item-heading \"><a role='button' href='?ctrl=cabinet&action=GetUserInformation' class='btn btn-info back_button'><span class=\"glyphicon glyphicon-arrow-left\" aria-hidden=\"true\"></span></a>Вернуться к списку</h4>";;//?ctrl=cabinet&action=GetUserInformation
 
         $out .= '</li></ul></div>';
 

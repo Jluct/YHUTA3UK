@@ -1,21 +1,18 @@
 <?php
 session_start();
-
-
-
 /**
  * Created by PhpStorm.
  * User: инкогнито
  * Date: 03.01.2016
  * Time: 16:09
  */
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/../../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/../../favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <script src="../../js/jquery-2.1.1.min.js"></script>
