@@ -68,16 +68,20 @@ class cabinet
 
         $prev = '';
         $next = '';
-        $next_lesson = array_values(R::find('lesson', "where number = ? and education_id=? and block=1", [$data->number + 1, $data->education_id]));
+        if(!empty($data->education_id)) {
+            $next_lesson = array_values(R::find('lesson', "where number = ? and education_id=? and block=1", [$data->number + 1, $data->education_id]));
+        }else{
+            $next_lesson = array_values(R::find('lesson', "where number = ? and information_id=? and block=1", [$data->number + 1, $data->information_id]));
+        }
 
 
         if ($data->number == 1) {
             $help_class_prev = 'disabled';
-            $prev = 1;
+//            $prev = 1;
         } else {
             $help_class_prev = '';
-            $prev = array_values(R::find('lesson', 'WHERE number = ? and block=1', [$numb]))[0]->id;
-            print_r($prev);
+            $prev = array_values(R::find('lesson', 'WHERE number = ? and block=1', [$data->number - 1]))[0]->id;
+//            print_r($prev);
         }
         if (!empty($next_lesson)) {
             $help_class_next = '';
