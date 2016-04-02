@@ -80,7 +80,13 @@ class cabinet
 //            $prev = 1;
         } else {
             $help_class_prev = '';
-            $prev = array_values(R::find('lesson', 'WHERE number = ? and block=1', [$data->number - 1]))[0]->id;
+
+            if(!empty($data->education_id)) {
+                $prev = array_values(R::find('lesson', "where number = ? and education_id=? and block=1", [$data->number - 1, $data->education_id]))[0]->id;
+            }else{
+                $prev = array_values(R::find('lesson', "where number = ? and information_id=? and block=1", [$data->number - 1, $data->information_id]))[0]->id;
+            }
+
 //            print_r($prev);
         }
         if (!empty($next_lesson)) {
